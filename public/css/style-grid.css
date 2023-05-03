@@ -1,0 +1,250 @@
+
+*,
+::before,
+::after {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {   
+    margin: 0px auto;
+    background-color: #ffffff;
+}
+#wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "mainpage"
+                         "footer";
+
+    gap: 0px;
+    
+    max-width: 1280px;
+
+    font-family: 'Neucha', cursive;
+
+    text-align: center;
+
+    margin: 0px auto;
+    padding: auto;
+    background-color: #e7e6db;  
+}
+#mainpage {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "header"
+                         "main";
+
+    gap: 0px;
+    
+    max-width: 1280px;
+
+    font-family: 'Neucha', cursive;
+
+    text-align: center;
+
+    margin: 0px auto;
+    padding: auto;
+
+    background-color: #DFF6FF;  
+}
+
+/************** Header *********************/
+#header {
+    grid-area: header;
+    grid-column: 1/4;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "logoAndSiteName logoAndSiteName nav";
+
+    color: #DFF6FF;
+
+    background-color: #06283D;
+}
+.logoAndSiteName {
+    grid-area: logoAndSiteName;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "logo siteName";
+
+    color: #DFF6FF;
+    text-decoration: none;
+}
+.logo {
+    grid-area: logo;
+
+    width: 170px;
+    height: 170px;
+
+    font-family: 'Neucha', cursive;
+    font-size: 5em;
+    color: #06283D;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin: 10px auto;
+
+    background-color: #DFF6FF;
+    border-radius: 50%;
+}
+.siteName {
+    grid-area: siteName;
+
+    font-family: 'Neucha', cursive;
+    font-size: 5em;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+/************** Nav *********************/
+nav {
+    grid-area: nav;
+    grid-column: 3/4;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "icon_connexion icon_register";   
+
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+#nav-left {
+    color: #DFF6FF;
+}
+#nav-right a {
+    
+    color: #DFF6FF;
+
+    display: inline-block;
+}
+.icon_connexion, .icon_register {
+    grid-area: icon_connexion, icon_register;
+
+    width: 40px;
+    height: 40px;
+    margin: 10px;   
+}
+
+/************** Main *********************/
+main {
+    grid-area: main;
+}
+.featuredEvent {
+    grid-area: featuredEvent;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "titleEvent"
+                         "linkEvent"
+                         "descAndInfos";
+    
+    padding: 20px;
+
+    border: 1px solid black;
+}
+.titleEvent {
+    grid-area: titleEvent;
+    text-align: left;
+
+    margin: 10px 0px;
+    padding: 10px;
+    border: 1px solid black;
+}
+.linkEvent img {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+}
+.descAndInfos {
+    grid-area: descAndInfos;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "descSmall infoForAll";
+
+    border: 1px solid black;
+}
+
+.nextEvents {
+    grid-area: nextEvents;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "titleNextEvent titleNextEvent titleNextEvent"
+                         "nextEvent nextEvent nextEvent"
+                         "nextEvent nextEvent nextEvent";
+    
+    gap: 30px;
+
+    margin: 20px 0px 0px 0px;
+    padding: 20px;
+
+    border: 1px solid black;
+}
+.titleNextEvent {
+    grid-area: titleNextEvent;
+}
+.nextEvent {  
+    border: 1px solid black;
+}
+.linkEvent {
+    object-fit: cover; 
+}
+.imgEvent {
+    object-fit: cover; 
+}
+.passedEvents {
+    grid-area: passedEvents;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "titlePassedEvent titlePassedEvent titlePassedEvent"
+                         "passedEvent passedEvent passedEvent"
+                         "passedEvent passedEvent passedEvent";
+       
+    gap: 30px;
+
+    margin: 20px 0px 0px 0px;
+    padding: 20px;
+    
+    border: 1px solid black;
+}
+.titlePassedEvent {
+    grid-area: titlePassedEvent;
+}
+.passedEvent {    
+    border: 1px solid black;
+}
+
+/************** Footer *********************/
+
+footer {
+    grid-area: footer;
+
+    background-color: #06283D;
+    border: 1px solid black;
+}
+.info-footer, .info-footer a {
+    color: #DFF6FF;
+    padding: 15px;
+}
+
+/**************** Table ********************/
+
+table {
+    border: 1px solid #6d6c6c;
+}
+
+th, td {
+    padding: 5px 20px;
+    border: 1px solid #6d6c6c;
+}
