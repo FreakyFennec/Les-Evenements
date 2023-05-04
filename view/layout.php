@@ -23,7 +23,7 @@
     <div id="wrapper"> 
        
         <div id="mainpage">
-            <!-- c'est ici que les messages (erreur ou succès) s'affichent-->
+            <!-- This is where the messages (error or success) are displayed-->
             <h3 class="message" style="color: red"><?= App\Session::getFlash("error") ?></h3>
             <h3 class="message" style="color: green"><?= App\Session::getFlash("success") ?></h3>
             <header id="header">
@@ -35,7 +35,7 @@
                     <div id="nav-left">
                         
                         <?php
-                        if(App\Session::isAdmin()){     // Si c'est la session admin affiche les liens suivants.
+                        if(App\Session::isAdmin()){     // If it's the admin session display theses links
                             ?>
                             <a href="index.php?ctrl=home&action=users">Voir la liste des membres</a>
                             <a href="/security/admin.php">Admin</a>
@@ -47,7 +47,7 @@
                     <div id="nav-right">
                     <?php
                         
-                        if(App\Session::getUser()){     // Si l'utilisateur est connecté on affiche son profil et la possibilité de se déconnecter.
+                        if(App\Session::getUser()){     // If the user is logged in, his profile and the possibility to log out are displayed.
                             ?>
 
                             <a href="index.php?ctrl=security&action=profileUser&id=<?= App\Session::getUser()->getId() ?>"><img class="icon_user" src="public/img/icon/ico_user_01.svg" alt="ico_user_01">&nbsp;<?= App\Session::getUser() ?></a>

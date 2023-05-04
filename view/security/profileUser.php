@@ -15,7 +15,7 @@
     
     if(App\Session::getUser()) {
         
-        if(App\Session::getUser()->getStatus() == 'admin') { // Visible par l'admin
+        if(App\Session::getUser()->getStatus() == 'admin') { // Visible by the admin
             ?>
             <thead>
                 <tr>
@@ -39,7 +39,7 @@
                     <td><?= $user->getRegisterDate() ?></td>
                 </tr>
 
-        <?php } elseif(App\Session::getUser()->getStatus() == 'moderator') { // Visible par le modérateur
+        <?php } elseif(App\Session::getUser()->getStatus() == 'moderator') { // Visible by the modérateur
             ?>
             <thead>
                 <tr>
@@ -61,7 +61,7 @@
                     <td><?= $user->getRegisterDate() ?></td>
                 </tr>
 
-        <?php } elseif(App\Session::getUser()->getStatus() == 'user') { // Visible par le modérateur
+        <?php } elseif(App\Session::getUser()->getStatus() == 'user') { // Visible by the modérateur
             ?>
             <thead>
                 <tr>
@@ -127,17 +127,5 @@
         <?php } ?>
     </tbody>
 </table>
-<?php }
-
-    // Visible par le user
-    
-    // Visible par le modérateur
-    // Visible par tout le monde
-
-
-    // Evénements créés par le user
-
-    // Nombres de comment par event
-
-?>      
+<?php } ?>      
     

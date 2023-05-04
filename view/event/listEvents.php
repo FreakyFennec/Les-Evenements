@@ -1,5 +1,5 @@
 <?php
-    $events = $result["data"]['events']; // c'est un tableau d'objets.
+    $events = $result["data"]['events']; // It's un object array.
 ?>
 
 <?php
@@ -8,7 +8,7 @@
     ?>
     <div class="featuredEvent">
         <h2 class="titleEvent"><?=$featuredEvent->getTitleEvent()?></h2>
-        <a class="linkEvent" href="#"><img id="imgEventFeatured" src="public/img/<?=$featuredEvent->getImgEvent()?>" alt="<?=$featuredEvent->getAlt()?>"></a>
+        <a class="linkEvent" href="index.php?ctrl=event&action=detailEvent"><img id="imgEventFeatured" src="public/img/<?=$featuredEvent->getImgEvent()?>" alt="<?=$featuredEvent->getAlt()?>"></a>
         <div class="descAndInfos">
             <div class="descSmall"><?=$featuredEvent->getDescription()?></div>
             <div class="infoForAll">
@@ -32,7 +32,7 @@
         ?>
             <div class="nextEvent">
                 <h3><?= $findNextEvent->getTitleEvent()?></h3>
-                <a class="linkEvent" href="#"><img class="imgEvent" src="public/img/<?=$findNextEvent->getImgEvent()?>" alt="<?=$findNextEvent->getAlt()?>"></a>
+                <a class="linkEvent" href="index.php?ctrl=event&action=detailEvent"><img class="imgEvent" src="public/img/<?=$findNextEvent->getImgEvent()?>" alt="<?=$findNextEvent->getAlt()?>"></a>
             </div>
             
         <?php } ?>
@@ -50,7 +50,7 @@
         ?>
             <div class="passedEvent">
                 <h3 class="titlePassedEvent"><?= $findPassedEvent->getTitleEvent()?></h3>
-                <a class="linkEvent" href="#"><img class="imgEvent" src="public/img/<?= $findPassedEvent->getImgEvent()?>" alt="<?=$findNextEvent->getAlt()?>"></a>
+                <a class="linkEvent" href="index.php?ctrl=event&action=detailEvent"><img class="imgEvent" src="public/img/<?= $findPassedEvent->getImgEvent()?>" alt="<?=$findNextEvent->getAlt()?>"></a>
             </div>
         <?php } ?>
     </div>
