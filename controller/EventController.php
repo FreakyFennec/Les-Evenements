@@ -31,7 +31,7 @@
             $eventManager = new EventManager(); // The object $eventManager contain an instanciation of EventManager.
             echo '<pre>';
             //var_dump($id);
-            var_dump($eventManager->detailEvent($id));
+            //var_dump($eventManager->detailEvent($id));
             echo '</pre>';
             $detailEvent = $eventManager->detailEvent($id);
 
