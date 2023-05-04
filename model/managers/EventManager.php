@@ -52,6 +52,21 @@
             );
         }
 
+        public function detailEvent($id) {
+            echo '<pre>';
+            //var_dump($id);
+            echo '</pre>';
+            $sql = "SELECT *
+                    FROM ".$this->tableName." e
+                    WHERE e.id_event = $id
+            ";
+
+            return $this->getOneOrNullResult(
+                DAO::select($sql, [], true),
+                $this->className
+            );
+        }
+
         public function findEventByIdUser($id) {
             $eventManager = new EventManager();
 
