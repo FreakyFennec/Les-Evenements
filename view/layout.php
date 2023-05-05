@@ -50,9 +50,9 @@
                         if(App\Session::getUser()){     // If the user is logged in, his profile and the possibility to log out are displayed.
                             ?>
 
-                            <a href="index.php?ctrl=security&action=profileUser&id=<?= App\Session::getUser()->getId() ?>"><img class="icon_user" src="public/img/icon/ico_user_01.svg" alt="ico_user_01">&nbsp;<?= App\Session::getUser() ?></a>
+                            <a href="index.php?ctrl=security&action=profileUser&id=<?= App\Session::getUser()->getId() ?>"><img class="icon_user" src="public/img/icon/ico_user_01.svg" alt="Ico user">&nbsp;<?= App\Session::getUser() ?></a>
 
-                            <a href="index.php?ctrl=security&action=deconnexion"><img class="icon_deconnexion" src="public/img/icon/ico_deconnection_01.svg" alt="ico_deconnection_01">Déconnexion</a>
+                            <a href="index.php?ctrl=security&action=deconnexion"><img class="icon_deconnexion" src="public/img/icon/ico_deconnection_01.svg" alt="Icon deconnection">Déconnexion</a>
 
                             <?php
 
@@ -63,9 +63,9 @@
                         else{
                             ?>
                             
-                            <a href="index.php?ctrl=security&action=connexion"><img class="icon_connexion" src="public/img/icon/ico_connection_01.svg" alt="ico_connection_01"></a>
+                            <a href="index.php?ctrl=security&action=connexion"><img class="icon_connexion" src="public/img/icon/ico_connection_01.svg" alt="Icon connection"></a>
                             
-                            <a href="index.php?ctrl=security&action=addUser"><img class="icon_register" src="public/img/icon/ico_register_01.svg" alt="ico_register_01"></a>
+                            <a href="index.php?ctrl=security&action=addUser"><img class="icon_register" src="public/img/icon/ico_register_01.svg" alt="Icon register"></a>
                             
                             <?php
                         

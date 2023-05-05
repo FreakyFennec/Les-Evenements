@@ -7,9 +7,7 @@ $detailEvent = $result["data"]['findOneById']; // It's un object array.
 ?>
 
 <div class="detailEvent">
-    <h2 class="titleEvent">Détail de l'événement</h2>
-
-    <h3><?= $detailEvent->getTitleEvent(); ?></h3>
+    <h2 class="titleEvent"><?= $detailEvent->getTitleEvent(); ?></h2>
 
     <img src="public/img/<?= $detailEvent->getImgEvent(); ?>" alt="<?= $detailEvent->getAlt(); ?>" id="imgEvent">
 
