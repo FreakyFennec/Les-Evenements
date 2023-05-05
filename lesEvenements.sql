@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `id_comment` int NOT NULL AUTO_INCREMENT,
   `titleComment` varchar(50) NOT NULL DEFAULT '',
   `comment` text NOT NULL,
-  `creationdDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `creationDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `event_id` int NOT NULL,
   `user_id` int DEFAULT NULL,
   PRIMARY KEY (`id_comment`),
@@ -46,16 +46,17 @@ CREATE TABLE IF NOT EXISTS `comment` (
   KEY `membre_id` (`user_id`) USING BTREE,
   CONSTRAINT `FK_comment_event` FOREIGN KEY (`event_id`) REFERENCES `event` (`id_event`),
   CONSTRAINT `FK_comment_users` FOREIGN KEY (`user_id`) REFERENCES `user` (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Listage des données de la table lesevenements.comment : ~5 rows (environ)
 DELETE FROM `comment`;
-INSERT INTO `comment` (`id_comment`, `titleComment`, `comment`, `creationdDate`, `event_id`, `user_id`) VALUES
+INSERT INTO `comment` (`id_comment`, `titleComment`, `comment`, `creationDate`, `event_id`, `user_id`) VALUES
 	(1, 'Ca c\'est du sport !', 'Ils se sont dépassés', '2023-01-23 10:36:02', 1, 3),
 	(2, 'C\'est une honte !', 'Tolérer ce genre d\'activitées est une insulte à la personne. On devrait commencer à interdire ce genre d\'événements inhumain.', '2023-02-15 10:11:37', 1, 1),
 	(3, 'Ma qué, on va brûler de la gomme', 'Les bambinis se sont régalé. On reviendra.', '2023-02-15 10:45:14', 2, 3),
 	(4, 'La recontre des cerveaux', 'Les Kasparovs n\'ont qu\'à bien se tenir, la relève arrive.', '2023-02-15 10:46:44', 3, 2),
-	(5, 'La cervelle en bouillie', 'Y avait des Kadors de l\'échiquier cette année. Il m\'ont massacré.', '2023-02-28 15:51:13', 3, 4);
+	(5, 'La cervelle en bouillie', 'Y avait des Kadors de l\'échiquier cette année. Il m\'ont massacré.', '2023-02-28 15:51:13', 3, 4),
+	(6, 'Bonne lecture.', 'Si tu aimes les bons mots.', '2023-05-05 04:46:29', 4, 8);
 
 -- Listage de la structure de table lesevenements. event
 CREATE TABLE IF NOT EXISTS `event` (
@@ -78,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `event` (
   CONSTRAINT `FK_event_users` FOREIGN KEY (`user_id`) REFERENCES `user` (`id_user`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Listage des données de la table lesevenements.event : ~15 rows (environ)
+-- Listage des données de la table lesevenements.event : ~11 rows (environ)
 DELETE FROM `event`;
 INSERT INTO `event` (`id_event`, `titleEvent`, `description`, `place`, `dateStart`, `dateEnd`, `maxUsers`, `contribution`, `imgEvent`, `alt`, `user_id`, `category_id`) VALUES
 	(1, 'Lancer de noyaux de cerises party', 'Venez découvrir une discipline revenue du fond des ages', 'Là-bas', '2023-01-23 09:00:00', '2023-01-23 22:59:59', 500, 25.320000, 'cerisiers.jpg', 'cerisiers', 2, 1),
@@ -107,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `participate` (
   CONSTRAINT `FK_participate_users` FOREIGN KEY (`user_id`) REFERENCES `user` (`id_user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Listage des données de la table lesevenements.participate : ~5 rows (environ)
+-- Listage des données de la table lesevenements.participate : ~4 rows (environ)
 DELETE FROM `participate`;
 INSERT INTO `participate` (`user_id`, `event_id`) VALUES
 	(2, 1),
@@ -128,15 +129,18 @@ CREATE TABLE IF NOT EXISTS `user` (
   `banish` tinyint(1) NOT NULL DEFAULT '0',
   `registerDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_user`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Listage des données de la table lesevenements.user : ~3 rows (environ)
+-- Listage des données de la table lesevenements.user : ~4 rows (environ)
 DELETE FROM `user`;
 INSERT INTO `user` (`id_user`, `firstName`, `lastName`, `email`, `pseudo`, `password`, `status`, `banish`, `registerDate`) VALUES
-	(1, 'Paquita', 'Lacorason', 'paquit@lacora.com', 'PaquitaLacora', '0lAp@quItQ7al:-)', 'user', 0, '2023-02-06 11:34:22'),
-	(2, 'Elbono', 'DeUto', 'elbonod@uto.com', 'ElbonoDeUto', '$2y$10$t6anq8NxM29I1toqEWDpB.aAEYkFiUXkkA2EynPVhbfzXygCh0nUi', 'admin', 0, '2023-02-06 11:34:22'),
-	(3, 'Enzo', 'Mazer', 'Mazer@ti.com', 'Enzo', '$2y$10$DqpP.wZ6Az.j.6Ga6yXWEu4rqFlp7ejWPoxoOc2XZxsCr9VfGfc.C', 'user', 0, '2023-02-06 16:06:54'),
-	(4, 'El', 'Lobo', 'ellobo@gmail.com', 'Ellobo', '$2y$10$pTlDOUhdiydUdoqw63nEcuh6MjZuFhzxScnDKE1vkr8knf9QHjbTq', 'user', 0, '2023-02-28 08:42:18');
+	(1, 'Paquita', 'Lacorason', 'paquit@lacora.com', 'PaquitaLacora', '$2y$10$pTlDOUhdiydUdoqw63nEcuh6MjZuFhzxScnDKE1vkr8knf9QHjbTq', 'moderator', 0, '2023-02-06 11:34:22'),
+	(2, 'Elbono', 'DeUto', 'elbonod@uto.com', 'ElbonoDeUto', '$2y$10$pTlDOUhdiydUdoqw63nEcuh6MjZuFhzxScnDKE1vkr8knf9QHjbTq', 'admin', 0, '2023-02-06 11:34:22'),
+	(3, 'Enzo', 'Mazer', 'Mazer@ti.com', 'Enzo', '$2y$10$pTlDOUhdiydUdoqw63nEcuh6MjZuFhzxScnDKE1vkr8knf9QHjbTq', 'user', 0, '2023-02-06 16:06:54'),
+	(4, 'El', 'Lobo', 'ellobo@gmail.com', 'Ellobo', 'azer', 'admin', 0, '2023-02-28 08:42:18'),
+	(6, 'Freaky', 'Fennec', 'freaky@fennec.com', 'FreakyFennec', 'azert', 'admin', 0, '2023-04-17 19:17:46'),
+	(7, 'zaza', 'zaza', 'zaza@gmail.com', 'zaza', '$2y$10$PRU5hIOYXrSTRIwc22P67OD8Y2If4zw/LmqhyPIFn4fYgzdcLzqyi', 'admin', 0, '2023-05-04 07:52:58'),
+	(8, 'zeze', 'zeze', 'zeze@gmail.com', 'zeze', '$2y$10$xmdZJ9I34lv6Pjp/8uAeXOYfPMmorqB48cB/06M9uaMYEgnwDZnd6', 'user', 0, '2023-05-04 09:49:32');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
