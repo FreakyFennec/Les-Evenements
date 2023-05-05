@@ -1,10 +1,5 @@
 <?php
 $detailEvent = $result["data"]['findOneById']; // It's un object array.
-
-echo '<pre>';
-var_dump($id);
-var_dump($detailEvent);
-echo '</pre>';
 ?>
 
 <?php
@@ -14,9 +9,9 @@ echo '</pre>';
 <div class="detailEvent">
     <h2 class="titleEvent">Détail de l'événement</h2>
 
-
     <h3><?= $detailEvent->getTitleEvent(); ?></h3>
-    <img src="public/img/<?= $detailEvent->getImgEvent() ?>" alt="<?= $detailEvent->getImgAlt() ?>" id="imgEvent">
+
+    <img src="public/img/<?= $detailEvent->getImgEvent(); ?>" alt="<?= $detailEvent->getAlt(); ?>" id="imgEvent">
 
     <!-- If not connected -->
     <div class="descSmall"><?= $detailEvent->getDescription(); ?></div>
