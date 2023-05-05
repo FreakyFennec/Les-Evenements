@@ -29,10 +29,7 @@
         {
             $userManager = new UserManager();
             $eventManager = new EventManager(); // The object $eventManager contain an instanciation of EventManager.
-            echo '<pre>';
-            //var_dump($id);
-            //var_dump($eventManager->detailEvent($id));
-            echo '</pre>';
+           
             $detailEvent = $eventManager->detailEvent($id);
 
             return [
@@ -40,7 +37,7 @@
                 "data" => [
                     "user" => $userManager->findOneById($id),
                     "findEventByIdUser" => $eventManager->findEventByIdUser($id),
-                    "detailEvent" => $eventManager->detailEvent($id),
+                    "findOneById" => $eventManager->findOneById($id),
                 ]
             ];
         }
