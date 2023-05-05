@@ -1,7 +1,8 @@
 <?php
 $detailEvent = $result["data"]['detailEvent']; // It's un object array.
 echo '<pre>';
-//var_dump($id);
+//
+var_dump($id);
 var_dump($detailEvent);
 echo '</pre>';
 ?>

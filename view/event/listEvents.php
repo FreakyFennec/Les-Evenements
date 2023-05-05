@@ -8,7 +8,7 @@ $featuredEvent = $result["data"]['featuredEvent'];
 
 <div class="featuredEvent">
     <h2 class="titleEvent"><?=$featuredEvent->getTitleEvent()?></h2>
-    <a class="linkEvent" href="index.php?ctrl=event&action=detailEvent&id=<?= $featuredEvent->getId ?>"><img id="imgEventFeatured" src="public/img/<?=$featuredEvent->getImgEvent()?>" alt="<?=$featuredEvent->getAlt()?>"></a>
+    <a class="linkEvent" href="index.php?ctrl=event&action=detailEvent&id=<?= $featuredEvent->getId() ?>"><img id="imgEventFeatured" src="public/img/<?=$featuredEvent->getImgEvent()?>" alt="<?=$featuredEvent->getAlt()?>"></a>
     <div class="descAndInfos">
         <div class="descSmall"><?=$featuredEvent->getDescription()?></div>
         <div class="infoForAll">
@@ -31,7 +31,7 @@ $findNextEvents = $result["data"]['findNextEvent'];
     ?>
         <div class="nextEvent">
             <h3><?= $findNextEvent->getTitleEvent()?></h3>
-            <a class="linkEvent" href="index.php?ctrl=event&action=detailEvent&id=<?= $featuredEvent->getId() ?>"><img class="imgEvent" src="public/img/<?=$findNextEvent->getImgEvent()?>" alt="<?=$findNextEvent->getAlt()?>"></a>
+            <a class="linkEvent" href="index.php?ctrl=event&action=detailEvent&id=<?= $findNextEvent->getId() ?>"><img class="imgEvent" src="public/img/<?=$findNextEvent->getImgEvent()?>" alt="<?=$findNextEvent->getAlt()?>"></a>
         </div>
         
     <?php } ?>
@@ -49,7 +49,7 @@ $findPassedEvents = $result["data"]['findPassedEvent'];
     ?>
         <div class="passedEvent">
             <h3 class="titlePassedEvent"><?= $findPassedEvent->getTitleEvent()?></h3>
-            <a class="linkEvent" href="index.php?ctrl=event&action=detailEvent&id=<?= $featuredEvent->getId ?>"><img class="imgEvent" src="public/img/<?= $findPassedEvent->getImgEvent()?>" alt="<?=$findNextEvent->getAlt()?>"></a>
+            <a class="linkEvent" href="index.php?ctrl=event&action=detailEvent&id=<?= $findPassedEvent->getId() ?>"><img class="imgEvent" src="public/img/<?= $findPassedEvent->getImgEvent()?>" alt="<?=$findNextEvent->getAlt()?>"></a>
         </div>
     <?php } ?>
 </div>
