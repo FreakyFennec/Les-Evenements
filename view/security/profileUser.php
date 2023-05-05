@@ -6,7 +6,7 @@
     $comments = $result["data"]['comments'];
 ?>
 
-<h1 class="title-page">Profil <?= $user->getPseudo() ?></h1>
+<h1 class="title-page">Mon profil <?= $user->getPseudo() ?></h1>
 
 <table>
 
@@ -81,7 +81,7 @@
         </tbody>
 </table>
 
-<h2>Ses événements</h2>
+<h2>Mes événements</h2>
 
 <table>
     <thead>
@@ -105,7 +105,7 @@
     </tbody>
 </table>
 
-<h2>Ses commentaires</h2>
+<h2>Mes commentaires</h2>
 
 <table>
     <thead>

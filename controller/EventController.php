@@ -20,9 +20,9 @@
                     "events" => $eventManager->findAll(["dateStart", "DESC"]),
                     "featuredEvent" => $eventManager->findFeaturedEvent(),
                     "findNextEvent" => $eventManager->findNextEvent(),
-                    "findPassedEvent" => $eventManager->findPassedEvent()
+                    "findPassedEvent" => $eventManager->findPassedEvent(),
                 ]
-            ];        
+            ];
         }
 
         public function detailEvent($id)

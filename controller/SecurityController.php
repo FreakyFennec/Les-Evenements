@@ -71,6 +71,7 @@
 
         public function connexion() {
 
+            $eventManager = new EventManager;
             $userManager = new UserManager;
 
             if (isset($_POST['submit'])) {
@@ -81,7 +82,13 @@
                 if ($userManager->findOneByEmail($email) && password_verify($password, $userManager->findOneByEmail($email)->getPassword())) {
                     Session::setUser($userManager->findOneByEmail($email));
                     return [
-                        "view" => VIEW_DIR."/home.php"
+                        "view" => VIEW_DIR."/event/listEvents.php",
+                        "data" => [
+                            "events" => $eventManager->findAll(["dateStart", "DESC"]),
+                            "featuredEvent" => $eventManager->findFeaturedEvent(),
+                            "findNextEvent" => $eventManager->findNextEvent(),
+                            "findPassedEvent" => $eventManager->findPassedEvent(),
+                        ]
                     ];
                 } else {
 
