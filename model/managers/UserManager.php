@@ -54,6 +54,21 @@
             );
         }
 
+        public function findAllUsers() {
+
+            $userManager = new UserManager;
+
+            $sql = "
+                SELECT id_user, email, pseudo
+                FROM " . $this->tableName . " u
+            ";
+
+            return $this->getMultipleResults(
+                DAO::select($sql, [], true),
+                $this->className
+            );
+        }
+
         public function removeById($id) {
 
             $userManager = new UserManager;
