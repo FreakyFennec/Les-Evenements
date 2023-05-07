@@ -133,10 +133,15 @@
     ?>
         <h3>Espace admin</h3>
 
-        <div>Delete a user</div>
+        <div>
+            <a href="index.php?ctrl=security&action=admin.php">Admin space</a>
+        </div>
+        <div>
+            <a href="index.php?ctrl=security&action=listUsers.php">Delete a user</a>
+        </div>
 
         <div id="box" name="box">
-            <h1 class="titleAddEvent">Ajouter un événement</h1>
+            <h1 class="titleAddEvent">Add an event</h1>
 
             <form id="formRegister" method="POST" action="index.php?ctrl=security&action=addUser">
 
