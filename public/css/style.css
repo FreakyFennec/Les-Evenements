@@ -29,6 +29,7 @@ p {
 }
 
 /************** Nav *********************/
+
 nav {
     text-align: center;
     margin: 15px 0;
@@ -37,9 +38,7 @@ nav {
 }
 
 /************** Main *********************/
-/*main {
-    background-color: #fff;
-}*/
+
 .title-page {
     font-family: 'Neucha', cursive;
 }
@@ -51,6 +50,7 @@ nav {
 }
 .nextEvents, .passedEvents {
     margin: 15px 0;
+    background-color: #ffffff;
     border: 1px solid black;
 }
 .nextEvent, .passedEvent {
