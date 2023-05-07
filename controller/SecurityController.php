@@ -168,5 +168,17 @@
                 ]
             ];
         }
+
+        public function findAllUsers() {
+
+            $userManager = new UserManager;
+
+            return [
+                "view" => VIEW_DIR."security/listUsers.php",
+                "data" => [
+                    "user" => $userManager->findAll()
+                ]
+            ];
+        }
     }
 ?>
