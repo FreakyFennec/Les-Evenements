@@ -49,7 +49,7 @@ $findPassedEvents = $result["data"]['findPassedEvent'];
     ?>
         <div class="passedEvent">
             <h3 class="titlePassedEvent"><?= $findPassedEvent->getTitleEvent()?></h3>
-            <a class="linkEvent" href="index.php?ctrl=event&action=detailEvent&id=<?= $findPassedEvent->getId() ?>"><img class="imgEvent" src="public/img/<?= $findPassedEvent->getImgEvent()?>" alt="<?=$findNextEvent->getAlt()?>"></a>
+            <a class="linkEvent" href="index.php?ctrl=event&action=detailEvent&id=<?= $findPassedEvent->getId() ?>"><img class="imgEvent" src="public/img/<?= $findPassedEvent->getImgEvent()?>" alt="<?=$findPassedEvent->getAlt()?>"></a>
         </div>
     <?php } ?>
 </div>
