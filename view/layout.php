@@ -11,7 +11,10 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet"><!-- Ma police de caractères -->
     
-    <link rel="shortcut icon" href="public/img/mibs_logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+    <script src="public/js/myMapOSM.js"></script>
+    
+    <link rel="shortcut icon" href="public/img/icon/mibs_logo.svg" type="image/x-icon">
     <title>Les événements</title>
     
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-responsive.css">
@@ -29,9 +32,11 @@
             <h3 class="message" style="color: red"><?= App\Session::getFlash("error") ?></h3>
             <h3 class="message" style="color: green"><?= App\Session::getFlash("success") ?></h3>
             <header id="header">
-                <a class="logoAndSiteName" href="/">
-                    <p class="logo">Mib's</p>
-                    <p class="siteName">Événements</p>                    
+                <a class="logoAndSiteName" href="index.php">
+                    <div class="logo">
+                        <p class="logoText">Mib's</p>
+                    </div>
+                    <p class="siteName">Les événements</p>                    
                 </a>                
                 <nav>
                     <div id="nav-left">
@@ -52,9 +57,9 @@
                         if(App\Session::getUser()){     // If the user is logged in, his profile and the possibility to log out are displayed.
                             ?>
 
-                            <a href="index.php?ctrl=security&action=profileUser&id=<?= App\Session::getUser()->getId() ?>"><img class="icon_user" src="public/img/icon/ico_user_01.svg" alt="Ico user">&nbsp;<?= App\Session::getUser() ?></a>
+                            <a href="index.php?ctrl=security&action=profileUser&id=<?= App\Session::getUser()->getId() ?>"><img class="icon_user" src="public/img/icon/ico_user_01.svg" alt="Ico user"></a>
 
-                            <a href="index.php?ctrl=security&action=deconnexion"><img class="icon_deconnexion" src="public/img/icon/ico_deconnection_01.svg" alt="Icon deconnection">Déconnexion</a>
+                            <a href="index.php?ctrl=security&action=deconnexion"><img class="icon_deconnexion" src="public/img/icon/ico_deconnection_01.svg" alt="Icon deconnection"></a>
 
                             <?php
 
@@ -81,6 +86,7 @@
             </header><!-- /.header -->
             
             <main>
+                <p class="pseudoUser">Bienvenue <?= App\Session::getUser() ?> !</p>
                 <?= $page ?>
             </main>
         </div><!-- /.mainpage -->
@@ -138,5 +144,8 @@
             )
         })*/
     </script>
+    <!-- Fichier JS -->
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+
 </body>
 </html>

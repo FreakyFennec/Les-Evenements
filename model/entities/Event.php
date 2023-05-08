@@ -8,7 +8,9 @@
         private $id;
         private $titleEvent;
         private $description;
+        private $address;
         private $place;
+        private $town;
         private $dateStart;
         private $dateEnd;
         private $maxUsers;
@@ -84,6 +86,26 @@
         }
 
         /**
+         * Get the value of address
+         */ 
+        public function getAddress()
+        {
+            return $this->address;
+        }
+
+        /**
+         * Set the value of address
+         *
+         * @return  self
+         */ 
+        public function setAdress($address)
+        {
+            $this->address = $address;
+
+            return $this;
+        }
+
+        /**
          * Get the value of place
          */ 
         public function getPlace()
@@ -102,6 +124,26 @@
 
             return $this;
         }
+
+        /**
+         * Get the value of town
+         */ 
+        public function getTown()
+        {
+            return $this->town;
+        }
+
+        /**
+         * Set the value of town
+         *
+         * @return  self
+         */ 
+        public function setTown($town)
+        {
+            $this->town = $town;
+
+            return $this;
+        }       
 
         /**
          * Get the value of dateStart

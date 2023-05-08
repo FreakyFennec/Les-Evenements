@@ -16,10 +16,6 @@
         grid-template-areas: "mainpage"
                             "footer";
 
-        gap: 0px;
-        
-        /* max-width: 1280px; */
-
         font-family: 'Neucha', cursive;
 
         text-align: center;
@@ -51,11 +47,11 @@
     /************** Header *********************/
     #header {
         grid-area: header;
-        grid-column: 1/4;
+        grid-column: 1/3;
 
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-areas: "logoAndSiteName logoAndSiteName nav";
+        grid-template-columns: 69% 1% 30%;
+        grid-template-areas: "logoAndSiteName nav";
 
         color: #DFF6FF;
 
@@ -65,7 +61,7 @@
         grid-area: logoAndSiteName;
 
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 25% 75%;
         grid-template-areas: "logo siteName";
 
         color: #DFF6FF;
@@ -74,18 +70,18 @@
     .logo {
         grid-area: logo;
 
-        width: 90px;
-        height: 90px;
+        width: 70px;
+        height: 70px;
 
         font-family: 'Neucha', cursive;
-        font-size: 3em;
+        font-size: 2.3em;
         color: #06283D;
 
         display: flex;
         justify-content: center;
         align-items: center;
         
-        margin: 10px auto;
+        /* margin-right: 10px; */
 
         background-color: #DFF6FF;
         border-radius: 50%;
@@ -94,11 +90,13 @@
         grid-area: siteName;
 
         font-family: 'Neucha', cursive;
-        font-size: 3em;
+        font-size: 2.3em;
 
         display: flex;
         justify-content: left;
         align-items: center;
+
+        /* margin-left: 10px; */
     }
 
     /************** Nav *********************/
@@ -142,6 +140,10 @@
     main {
         grid-area: main;
     }
+    .pseudoUser {
+        font-size: 1.3em;
+        margin: 15px 0px 0px 0px;
+    }
     .featuredEvent {
         grid-area: featuredEvent;
 
@@ -154,7 +156,7 @@
         
         /* width: 800px; */
         margin: 0px auto;
-        padding: 20px;
+        padding: 5px;
 
         /* border: 1px solid black; */
     }
@@ -197,10 +199,10 @@
                             "nextEvent nextEvent"
                             "nextEvent nextEvent";
         
-        gap: 30px;
+        gap: 10px;
 
         margin: 20px 0px 0px 0px;
-        padding: 20px;
+        padding: 5px;
 
         /* border: 1px solid black; */
     }
@@ -222,16 +224,16 @@
 
         display: grid;
 
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-template-areas: 
-            "titlePassedEvent titlePassedEvent titlePassedEvent"
-            "passedEvent passedEvent passedEvent"
-            "passedEvent passedEvent passedEvent";
+            "titlePassedEvent titlePassedEvent"
+            "passedEvent passedEvent"
+            "passedEvent passedEvent";
         
-        gap: 30px;
+            gap: 10px;
 
-        margin: 20px 0px 0px 0px;
-        padding: 20px;
+            margin: 20px 0px 0px 0px;
+            padding: 5px;
         
         /* border: 1px solid black; */
     }
@@ -243,9 +245,6 @@
         /* border: 1px solid black; */
     }
 
-
-
-
     .detailEvent {
         grid-area: detailEvent;
     
@@ -253,17 +252,22 @@
     
         grid-template-columns: 1fr;
         grid-template-areas: 
-            "titleEvent"
+            "titleDetailEvent"
             "imgDetailEvent"
-            "descAndInfos";
+            "descAndInfos"
+            "map";
         
         width: auto;
-        margin: 10px;
-        padding: 20px;
+        margin: 0px 5px 10px 5px;
+        padding: 0px 0px 0px 0px;
         
-        background-color: #ffffff;   
+        background-color: #DFF6FF;   
         /* 
         border: 1px solid black; */
+    }
+    .titleDetailEvent {
+        grid-area: titleDetailEvent;
+        margin-bottom: 5px;
     }
     #imgDetailEvent {
         object-fit: cover;
@@ -276,7 +280,9 @@
     .infoForAll {
         grid-area: infoForAll;
     }
-    
+    #map {
+        grid-area: map;
+    }
 
 
 
