@@ -9,8 +9,9 @@
         private $titleEvent;
         private $description;
         private $address;
-        private $place;
-        private $town;
+        private $zipcode;
+        private $city;
+        private $country;
         private $dateStart;
         private $dateEnd;
         private $maxUsers;
@@ -106,41 +107,41 @@
         }
 
         /**
-         * Get the value of place
+         * Get the value of zipcode
          */ 
-        public function getPlace()
+        public function getZipcode()
         {
-            return $this->place;
+            return $this->zipcode;
         }
 
         /**
-         * Set the value of place
+         * Set the value of zipcode
          *
          * @return  self
          */ 
-        public function setPlace($place)
+        public function setZipcode($zipcode)
         {
-            $this->place = $place;
+            $this->zipcode = $zipcode;
 
             return $this;
         }
 
         /**
-         * Get the value of town
+         * Get the value of city
          */ 
-        public function getTown()
+        public function getCity()
         {
-            return $this->town;
+            return $this->city;
         }
 
         /**
-         * Set the value of town
+         * Set the value of city
          *
          * @return  self
          */ 
-        public function setTown($town)
+        public function setCity($city)
         {
-            $this->town = $town;
+            $this->city = $city;
 
             return $this;
         }       
