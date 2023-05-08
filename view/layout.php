@@ -9,10 +9,12 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
     
-    <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet"><!-- Ma police de caractères -->
-    
+    <!-- My fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
+
+    <!-- CSS for OpenStreetMap -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
-    <script src="public/js/myMapOSM.js"></script>
+    
     
     <link rel="shortcut icon" href="public/img/icon/mibs_logo.svg" type="image/x-icon">
     <title>Les événements</title>
@@ -146,6 +148,6 @@
     </script>
     <!-- Fichier JS -->
     <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
-
+    <script defer src="public/js/myMapOSM.js"></script>
 </body>
 </html>

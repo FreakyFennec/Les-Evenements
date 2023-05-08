@@ -1,3 +1,13 @@
+// Retriev zipcode
+document.addEventListener("DOMContentLoaded", function() {
+    const zipcodeElement = document.querySelector('.zipcode');
+    if (zipcodeElement) {
+      const zipcode = zipcodeElement.textContent.trim();
+      console.log(zipcode);
+    } else {
+      console.log("Élément avec la classe 'zipcode' non trouvé.");
+    }
+});
 
 
 // On crée un tableau associatif avec les lieux et leurs coordonnées
