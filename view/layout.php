@@ -14,7 +14,9 @@
     <link rel="shortcut icon" href="public/img/mibs_logo.svg" type="image/x-icon">
     <title>Les événements</title>
     
-    <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-grid.css">
+    <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-responsive.css">
+    <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style.css">
+
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-winModaRegister.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-winModaLogin.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-winModaAddEvent.css">

@@ -13,8 +13,8 @@ $featuredEvent = $result["data"]['featuredEvent'];
         <div class="descSmall"><?=$featuredEvent->getDescription();?></div>
         <div class="infoForAll">
             <p class="place"><?=$featuredEvent->getPlace();?></p> 
-            <p class="dateStart"><?=$featuredEvent->getDateStart();?></p>
-            <p class="dateEnd"><?=$featuredEvent->getDateEnd();?></p>
+            <p class="dateStart">Du : <?=$featuredEvent->getDateStart();?></p>
+            <p class="dateEnd">Au : <?=$featuredEvent->getDateEnd();?></p>
         </div>
     </div>
 </div>
