@@ -9,7 +9,7 @@ $detailEvent = $result["data"]['findOneById']; // It's un object array.
 <div class="detailEvent">
     <h2 class="titleEvent titleDetailEvent"><?= $detailEvent->getTitleEvent(); ?></h2>
 
-    <img src="public/img/<?= $detailEvent->getImgEvent(); ?>" alt="<?= $detailEvent->getAlt(); ?>" id="imgDetailEvent">
+    <img src="public/img/<?= $detailEvent->getImgEvent(); ?>" alt="<?= $detailEvent->getAlt(); ?>" class="imgDetailEvent" id="imgDetailEvent">
 
     <div class="descAndInfos">
         <!-- If not connected -->
