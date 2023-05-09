@@ -26,7 +26,6 @@ $detailEvent = $result["data"]['findOneById']; // It's un object array.
     <div id="map">
         <!-- Map's place -->
     </div>
-        
 </div>
 
 
