@@ -25,7 +25,6 @@
             $this->hydrate($data);
         }
         
-
         /**
          * Get the value of id
          */ 
@@ -152,7 +151,7 @@
         public function getDateStart()
         {
             $date = new \DateTime($this->dateStart);          // transforme la string en un objet
-            $dateFr = date_format($date, 'd-m-Y H:i:s');
+            $dateFr = date_format($date, 'd M Y');
             return $dateFr;
         }
 
@@ -174,7 +173,7 @@
         public function getDateEnd()
         {
             $date = new \DateTime($this->dateEnd);
-            $dateFr = date_format($date, 'd-m-Y H:i:s');
+            $dateFr = date_format($date, 'd M Y');
             return $dateFr;
         }
 
@@ -309,5 +308,25 @@
             $this->category = $category;
 
             return $this;
+        }
+
+        /**
+         * Get the value of country
+         */ 
+        public function getCountry()
+        {
+                return $this->country;
+        }
+
+        /**
+         * Set the value of country
+         *
+         * @return  self
+         */ 
+        public function setCountry($country)
+        {
+                $this->country = $country;
+
+                return $this;
         }
     }

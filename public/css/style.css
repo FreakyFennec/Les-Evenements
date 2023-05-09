@@ -279,6 +279,16 @@
     }
     .infoForAll {
         grid-area: infoForAll;
+
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-areas:
+            "city zipcode"
+            "dateEvent dateEvent"
+            "descSmall descSmall";
+    }
+    .city, .zipcode, .dateEvent, .dateEvent, .descSmall {
+        grid-area: city zipcode dateEvent descSmall;
     }
     #map {
         grid-area: map;
