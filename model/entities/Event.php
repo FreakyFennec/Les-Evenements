@@ -150,8 +150,26 @@
          */ 
         public function getDateStart()
         {
-            $date = new \DateTime($this->dateStart);        // Transform the string in an object.
+            // Transform the string in an object.
+            $date = new \DateTime($this->dateStart); 
+            
+            // Creat object IntlDateFormatter for formate the date in french.
+            $dateFormatter = new \IntlDateFormatter(
+                'fr_FR',
+                \IntlDateFormatter::LONG,       // Const who specifie the objcet format.
+                \IntlDateFormatter::NONE        // Const who specifie the objcet format.
+            );
+
+            // Set the time zone to use.
+            $dateFormatter->setTimeZone('Europe/Paris');
+
+            // Format the date with IntlDateFormatter.
+            // 
+            $dateFr = $dateFormatter->format($date);
+            
+            // Set the french format
             $dateFr = date_format($date, 'd M Y');
+
             return $dateFr;
         }
 

@@ -14,7 +14,6 @@ $featuredEvent = $result["data"]['featuredEvent'];
         <div class="infoForAll">
             <p class="zipcodeAndCity"><?= $featuredEvent->getCity(); ?> <?= $featuredEvent->getZipcode(); ?></p>
             <p class="dates">Du : <?=$featuredEvent->getDateStart();?> au : <?=$featuredEvent->getDateEnd();?></p>
-            <p class="dateEnd"</p>
         </div>
     </div>
 </div>
