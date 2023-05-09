@@ -44,18 +44,18 @@ $(document).ready(function() {
 //console.log("lon : ", lon);
 //console.log("lat : ", lat);
 
-                        // Créer l'objet "myMap" et l'insèrer dans l'élément HTML qui a l'ID "map"
-                        myMap = L.map('map').setView([lat, lon], 11); // Le deuxième argument de setView() c'est le zoom sur la carte (de 0 à 20 ?).
-                        // 0 C'est la map monde et plus le chiffre est grand plus on se rapproche.
-                        // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
+                        // Create the object "myMap" and insert it in the HTML element that has the ID "map".
+                        myMap = L.map('map').setView([lat, lon], 11); // The second argument of setView() is the zoom on the map (from 0 to 20).
+                        // At 0 it's full zoom and 20 it's the nearest
+                        // We ask to Leaflet to load the (tiles) from openstreetmap.fr.
                         L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
-                            // Il est toujours bien de laisser le lien vers la source des données
+                            // It is a good practice to give the link of the data source.
                             attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
                             minZoom: 1,
                             maxZoom: 20
                         }).addTo(myMap);
 
-                        // Personnalisation du marquer.
+                        // Customization of the mark.
                         var icon = L.icon(
                             {
                                 iconUrl: "public/img/icon/pushpin-blue-01.svg",
@@ -65,7 +65,7 @@ $(document).ready(function() {
                             }    
                         );
                        
-                        // Nous ajoutons un marqueur sur la carte.
+                        // Add a pushpin on the map.
                         var marker = L.marker(
                             [
                                 lat,
@@ -73,12 +73,12 @@ $(document).ready(function() {
                             ], 
                             {icon: icon}
                         ).addTo(myMap);
-                        // On ajoute un popup avec le nom du lieu.
+                        // Add popup with city name and an img.
                         marker.bindPopup(
                             "<p>" + city + "</p>" +
                             "<img src=" + img + " alt=" + alt + ">", {minWidth: 150} 
                         );
-                        // On l'affiche au chargement de la page.
+                        // Displayed when the page loads.
                         // marker.openPopup();
                          
                     });
