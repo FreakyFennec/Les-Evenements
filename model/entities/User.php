@@ -196,7 +196,9 @@
          */ 
         public function getRegisterDate()
         {
-            return $this->registerDate;
+            $date = new \DateTime($this->registerDate);
+            $registerDateFr = date_format($date, 'd M Y');
+            return $registerDateFr;
         }
 
         /**

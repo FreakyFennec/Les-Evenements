@@ -58,9 +58,8 @@
 
             $userManager = new UserManager;
 
-            $sql = "
-                SELECT id_user, email, pseudo
-                FROM " . $this->tableName . " u
+            $sql = "SELECT id_user, email, pseudo
+                    FROM " . $this->tableName . " u
             ";
 
             return $this->getMultipleResults(

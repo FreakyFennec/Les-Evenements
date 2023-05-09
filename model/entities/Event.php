@@ -150,7 +150,7 @@
          */ 
         public function getDateStart()
         {
-            $date = new \DateTime($this->dateStart);          // transforme la string en un objet
+            $date = new \DateTime($this->dateStart);        // Transform the string in an object.
             $dateFr = date_format($date, 'd M Y');
             return $dateFr;
         }
