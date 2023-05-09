@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   CONSTRAINT `FK_comment_users` FOREIGN KEY (`user_id`) REFERENCES `user` (`id_user`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Listage des données de la table lesevenements.comment : ~5 rows (environ)
+-- Listage des données de la table lesevenements.comment : ~6 rows (environ)
 DELETE FROM `comment`;
 INSERT INTO `comment` (`id_comment`, `titleComment`, `comment`, `creationDate`, `event_id`, `user_id`) VALUES
 	(1, 'Ca c\'est du sport !', 'Ils se sont dépassés', '2023-01-23 10:36:02', 1, 3),
@@ -63,7 +63,10 @@ CREATE TABLE IF NOT EXISTS `event` (
   `id_event` int NOT NULL AUTO_INCREMENT,
   `titleEvent` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `place` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `zipcode` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `address` varchar(50) NOT NULL,
+  `city` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `country` varchar(100) NOT NULL,
   `dateStart` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `dateEnd` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `maxUsers` int DEFAULT NULL,
@@ -79,24 +82,24 @@ CREATE TABLE IF NOT EXISTS `event` (
   CONSTRAINT `FK_event_users` FOREIGN KEY (`user_id`) REFERENCES `user` (`id_user`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Listage des données de la table lesevenements.event : ~11 rows (environ)
+-- Listage des données de la table lesevenements.event : ~15 rows (environ)
 DELETE FROM `event`;
-INSERT INTO `event` (`id_event`, `titleEvent`, `description`, `place`, `dateStart`, `dateEnd`, `maxUsers`, `contribution`, `imgEvent`, `alt`, `user_id`, `category_id`) VALUES
-	(1, 'Lancer de noyaux de cerises party', 'Venez découvrir une discipline revenue du fond des ages', 'Là-bas', '2023-01-23 09:00:00', '2023-01-23 22:59:59', 500, 25.320000, 'cerisiers.jpg', 'cerisiers', 2, 1),
-	(2, 'Grand prix de la petite Italie', 'Encore une fois cette année nos petits Fangio pourront s\'affronter sur le circuit en vue de remporter la coupe des petits Fangion, sur le circuit de karting de ...', '54500 Ailleurs les bains', '2023-02-15 10:20:05', '2023-02-15 10:20:05', 650, 30.000000, 'piste-karting-740x494.jpg', 'piste-karting', 3, 2),
-	(3, 'Tournoi d\'échecs', 'Appel à tous les amoureux du jeu d\'échecs....', '67200 Cronenbourg', '2023-02-15 10:32:46', '2023-02-15 10:32:47', NULL, 5.000000, 'Echecs2.jpg', 'Echecs', 4, 3),
-	(4, 'Le livre toujours', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, assumenda est, amet minus distinctio incidunt et maiores autem quaerat rem, error asperiores iste temporibus id voluptatibus eaque provident fugit tempora.', '67100 Strasbourg', '2023-02-20 09:16:47', '2023-02-20 09:16:47', 450, 0.000000, 'image_livre.jpg', 'image_livre', 1, 1),
-	(5, 'Toujours plus haut', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, assumenda est, amet minus distinctio incidunt et maiores autem quaerat rem, error asperiores iste temporibus id voluptatibus eaque provident fugit tempora.', '67300 Schiltigheim', '2023-02-20 09:21:19', '2023-02-20 09:21:19', 500, 0.000000, 'Capture-escalade.png', 'Capture-escalade', 2, 2),
-	(6, 'Du son', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, assumenda est, amet minus distinctio incidunt et maiores autem quaerat rem, error asperiores iste temporibus id voluptatibus eaque provident fugit tempora.', '67000 Strasbourg', '2023-02-20 09:24:30', '2023-02-20 09:24:30', 800, 95.000000, 'Orchestre_Philharmonique_de_Strasbourg_1.jpg', 'Orchestre_Philharmonique_de_Strasbourg', 1, 1),
-	(7, 'On joue à Berstett', 'Cette balade est destinée aux familles avec enfants de 4 à plus de 10 ans. Vous serez amenés à répondre à plusieurs énigmes portant sur le patrimoine et la culture de Berstett tout en visitant le village. Un moyen ludique pour en apprendre un peu plus sur les trésors de cette commune ! Venez ensuite donner vos réponses à l\'Office de Tourisme et si elles s\'avèrent justes, un petit cadeau bien mérité vous attend !', '67000', '2023-02-20 15:19:22', '2023-02-22 21:19:36', NULL, 0.000000, 'ferme-Berstett.jpg', 'Ferme Berstett', 1, 3),
-	(8, 'Y a du Rock', 'Ils vont mettre le feux', '67000 Strasbourg', '2023-02-19 15:45:09', '2023-02-19 15:45:23', 500, 10.000000, 'concert-medium.jpg', 'Concert Medium', 2, 1),
-	(9, 'A vos plumes', 'Un marthon d\'écriture...', '67000', '2023-09-15 14:51:13', '2023-02-15 15:51:01', 1000, 0.000000, 'write-a-story.jpg', 'Write a story', 3, 1),
-	(10, 'La nuit des clémentines', 'Une soirée sucré acidulée au son du rock méditerranéen', '67000 Ecbolsheim', '2023-09-14 15:02:53', '2023-02-14 16:03:09', 800, 0.000000, 'Zénith-Strasbourg.jpg', 'Zénith Strasbourg la nuit', 2, 1),
-	(11, 'Découverte de la Petite-france', 'Un cadre idillyque à redécouvrir. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est tempore numquam et aut illum pariatur impedit dignissimos vitae aperiam, cum ipsa assumenda officia blanditiis, necessitatibus, fuga dolorem modi maxime expedita quasi. Atque veniam quaerat eius.', '67000 Strasbourg-centre', '2023-09-28 07:00:00', '2023-09-28 15:00:00', NULL, 0.000000, 'petite-france-strasbourg.jpg', 'Petite-france Strasbourg', 3, 3),
-	(12, 'Rétrospective de Un Tel', 'Une exposition à vous couper le souffle', '67000', '2023-09-27 22:00:00', '2023-10-12 22:00:00', NULL, 10.000000, 'exposition.jpg', 'Exposition', 2, 1),
-	(13, 'Le Vox vous invite', 'Comme tous les ans', '67000', '2023-06-03 13:12:23', '2023-07-06 13:12:05', 250, 4.000000, 'cinema_vox.jpg', 'cinema vox', 1, 1),
-	(14, 'La maison bleue fait peau neuve', 'Lieu pour les musiciens et maintenant pour les mélomanes aussi', '67100', '2023-06-22 13:19:00', '2023-06-22 13:19:16', 300, 0.000000, 'maison-bleue-oiseau-de-nuit.jpg', 'maison bleue', 2, 1),
-	(15, 'La Desertus Bikus', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, assumenda est, amet minus distinctio incidunt et maiores autem quaerat rem, error asperiores iste temporibus id voluptatibus eaque provident fugit tempora.', 'Espagne', '2024-04-22 09:24:13', '2024-02-29 10:24:37', NULL, NULL, 'desertus-bikus-header.jpg', 'desertus bikus', 2, 2);
+INSERT INTO `event` (`id_event`, `titleEvent`, `description`, `zipcode`, `address`, `city`, `country`, `dateStart`, `dateEnd`, `maxUsers`, `contribution`, `imgEvent`, `alt`, `user_id`, `category_id`) VALUES
+	(1, 'Lancer de noyaux de cerises party', 'Venez découvrir une discipline revenue du fond des ages', '66400', '', 'Céret', 'France', '2023-01-22 23:00:00', '2023-01-23 22:59:59', 500, 25.320000, 'cerisiers.jpg', 'cerisiers', 2, 1),
+	(2, 'Grand prix de la petite Italie', 'Encore une fois cette année nos petits Fangio pourront s\'affronter sur le circuit en vue de remporter la coupe des petits Fangion, sur le circuit de karting de ...', '54500', '', 'Vandœuvre-lès-Nancy', 'France', '2023-02-15 10:20:05', '2023-02-15 10:20:05', 650, 30.000000, 'piste-karting-740x494.jpg', 'piste-karting', 3, 2),
+	(3, 'Tournoi d\'échecs', 'Appel à tous les amoureux du jeu d\'échecs....', '67200', '', 'Strasbourg', 'France', '2023-02-15 10:32:46', '2023-02-15 10:32:47', NULL, 5.000000, 'Echecs2.jpg', 'Echecs', 4, 3),
+	(4, 'Le livre toujours', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, assumenda est, amet minus distinctio incidunt et maiores autem quaerat rem, error asperiores iste temporibus id voluptatibus eaque provident fugit tempora.', '67100', '', 'Strasbourg', 'France', '2023-02-20 09:16:47', '2023-02-20 09:16:47', 450, 0.000000, 'image_livre.jpg', 'image_livre', 1, 1),
+	(5, 'Toujours plus haut', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, assumenda est, amet minus distinctio incidunt et maiores autem quaerat rem, error asperiores iste temporibus id voluptatibus eaque provident fugit tempora.', '67300', '', 'Schiltigheim', 'France', '2023-02-20 09:21:19', '2023-02-20 09:21:19', 500, 0.000000, 'Capture-escalade.png', 'Capture-escalade', 2, 2),
+	(6, 'Du son', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, assumenda est, amet minus distinctio incidunt et maiores autem quaerat rem, error asperiores iste temporibus id voluptatibus eaque provident fugit tempora.', '67000', '', 'Strasbourg', 'France', '2023-02-20 09:24:30', '2023-02-20 09:24:30', 800, 95.000000, 'Orchestre_Philharmonique_de_Strasbourg_1.jpg', 'Orchestre_Philharmonique_de_Strasbourg', 1, 1),
+	(7, 'On joue à Berstett', 'Cette balade est destinée aux familles avec enfants de 4 à plus de 10 ans. Vous serez amenés à répondre à plusieurs énigmes portant sur le patrimoine et la culture de Berstett tout en visitant le village. Un moyen ludique pour en apprendre un peu plus sur les trésors de cette commune ! Venez ensuite donner vos réponses à l\'Office de Tourisme et si elles s\'avèrent justes, un petit cadeau bien mérité vous attend !', '67000', '', 'Strasbourg', 'France', '2023-02-20 15:19:22', '2023-02-22 21:19:36', NULL, 0.000000, 'ferme-Berstett.jpg', 'Ferme Berstett', 1, 3),
+	(8, 'Y a du Rock', 'Ils vont mettre le feux', '67000', '', 'Strasbourg', 'France', '2023-02-19 15:45:09', '2023-02-19 15:45:23', 500, 10.000000, 'concert-medium.jpg', 'Concert Medium', 2, 1),
+	(9, 'A vos plumes', 'Un marthon d\'écriture...', '67000', '', 'Strasbourg', 'France', '2023-09-15 14:51:13', '2023-02-15 15:51:01', 1000, 0.000000, 'write-a-story.jpg', 'Write a story', 3, 1),
+	(10, 'La nuit des clémentines', 'Une soirée sucré acidulée au son du rock méditerranéen', '67201', '', 'Eckbolsheim', 'France', '2023-09-14 15:02:53', '2023-02-14 16:03:09', 800, 0.000000, 'Zénith-Strasbourg.jpg', 'Zénith Strasbourg la nuit', 2, 1),
+	(11, 'Découverte de la Petite-france', 'Un cadre idillyque à redécouvrir. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est tempore numquam et aut illum pariatur impedit dignissimos vitae aperiam, cum ipsa assumenda officia blanditiis, necessitatibus, fuga dolorem modi maxime expedita quasi. Atque veniam quaerat eius.', '67000', '', 'Strasbourg', 'France', '2023-09-28 07:00:00', '2023-09-28 15:00:00', NULL, 0.000000, 'petite-france-strasbourg.jpg', 'Petite-france Strasbourg', 3, 3),
+	(12, 'Rétrospective de Un Tel', 'Une exposition à vous couper le souffle', '67000', '', 'Strasbourg', 'France', '2023-09-27 22:00:00', '2023-10-12 22:00:00', NULL, 10.000000, 'exposition.jpg', 'Exposition', 2, 1),
+	(13, 'Le Vox vous invite', 'Comme tous les ans', '67000', '', 'Strasbourg', 'France', '2023-06-03 13:12:23', '2023-07-06 13:12:05', 250, 4.000000, 'cinema_vox.jpg', 'cinema vox', 1, 1),
+	(14, 'La maison bleue fait peau neuve', 'Lieu pour les musiciens et maintenant pour les mélomanes aussi', '67100', '3 Rue de Guebwiller', 'Strasbourg', 'France', '2023-06-22 13:19:00', '2023-06-22 13:19:16', 300, 0.000000, 'maison-bleue-oiseau-de-nuit.jpg', 'maison bleue', 2, 1),
+	(15, 'Le vélo-rail de Drulingen', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, assumenda est, amet minus distinctio incidunt et maiores autem quaerat rem, error asperiores iste temporibus id voluptatibus eaque provident fugit tempora.', '67302', '6 rue de Weyer', 'Drulingen', 'France', '2024-04-22 09:24:13', '2024-02-29 10:24:37', NULL, NULL, 'Velorail-Drulingen.jpg', 'Vélo-rail de Drulingen', 7, 2);
 
 -- Listage de la structure de table lesevenements. participate
 CREATE TABLE IF NOT EXISTS `participate` (
@@ -131,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`id_user`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Listage des données de la table lesevenements.user : ~4 rows (environ)
+-- Listage des données de la table lesevenements.user : ~7 rows (environ)
 DELETE FROM `user`;
 INSERT INTO `user` (`id_user`, `firstName`, `lastName`, `email`, `pseudo`, `password`, `status`, `banish`, `registerDate`) VALUES
 	(1, 'Paquita', 'Lacorason', 'paquit@lacora.com', 'PaquitaLacora', '$2y$10$pTlDOUhdiydUdoqw63nEcuh6MjZuFhzxScnDKE1vkr8knf9QHjbTq', 'moderator', 0, '2023-02-06 11:34:22'),
