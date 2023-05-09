@@ -98,7 +98,7 @@
          *
          * @return  self
          */ 
-        public function setAdress($address)
+        public function setAddress($address)
         {
             $this->address = $address;
 

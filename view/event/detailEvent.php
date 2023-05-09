@@ -16,7 +16,7 @@ $detailEvent = $result["data"]['findOneById']; // It's un object array.
         <div class="descSmall"><?= $detailEvent->getDescription(); ?></div>
         <div class="infoForAll">
             <p class="dateEvent">Du : <?= $detailEvent->getDateStart(); ?> au : <?= $detailEvent->getDateEnd(); ?></p>
-            <p class="address"><?= $detailEvent->getAddress(); ?></p>
+            <p class="address">Au <?= $detailEvent->getAddress(); ?></p>
             <p class="city"><?= $detailEvent->getCity(); ?></p>
             <p class="zipcode"><?= $detailEvent->getZipcode(); ?></p>
         </div>
