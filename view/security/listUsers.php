@@ -28,7 +28,7 @@
                 <td><?= $user->getRegisterDate() ?></td>
                 <td><?= $user->getStatus() ?></td>
                 <td><?= $user->getBanish() ?></td>
-                <td><a href="index.php?ctrl=security&action=removeUser&id=<?= $user->getId() ?>">Del</a></td>
+                <td><a href="index.php?ctrl=security&action=removeByPseudo&id=<?= $user->getPseudo() ?>">Del</a></td>
             </tr>            
         <?php }
     } else {

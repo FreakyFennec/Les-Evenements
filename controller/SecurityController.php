@@ -136,6 +136,20 @@
             ];
         }
 
+        public function removeByPseudo($pseudo)
+        {
+            $userManager = new UserManager;
+
+            $userManager->removeByPseudo($pseudo);
+
+            return [
+                "view" => VIEW_DIR."security/listUsers.php",
+                "data" => [
+                    "users" => $userManager->findAll()
+                ]
+            ];
+        }
+
         public function profileUser($id) {
 
             $userManager = new UserManager;
