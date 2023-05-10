@@ -20,6 +20,8 @@
     <title>Les événements</title>
     
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-responsive.css">
+    <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-listUsers-responsive.css">
+    <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-listUsers.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style.css">
 
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-winModaRegister.css">
@@ -89,7 +91,7 @@
             </main>
         </div><!-- /.mainpage -->
         <footer>
-            <p class="info-footer">&copy; 2023 - Events CDA - <a href="/home/eventRules.html">Règlement du site</a> - <a href="">Mentions légales</a></p>
+            <p class="info-footer">&copy; 2023 Mib's Les Événements  <a href="/home/eventRules.html">Règlement du site</a><a href="">Mentions légales</a></p>
             <!--<button id="ajaxbtn">Surprise en Ajax !</button> -> cliqué <span id="nbajax">0</span> fois-->
         </footer>
     </div>

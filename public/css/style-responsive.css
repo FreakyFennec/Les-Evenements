@@ -271,6 +271,11 @@ main {
 
     background-color: #6d6c6c;
 }
+
+
+.title-page, .title-myEvents, .title-myComments {
+    text-align: center;
+}
 /************** Footer *********************/
 
 footer {
@@ -280,6 +285,7 @@ footer {
     border: 1px solid black;
 }
 .info-footer, .info-footer a {
+    text-align: center;
     color: #DFF6FF;
     padding: 15px;
 }

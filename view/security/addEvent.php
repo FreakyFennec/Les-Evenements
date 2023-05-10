@@ -1,7 +1,7 @@
 <div id="box" name="box">
     <h1 class="titleAddEvent">Ajouter un événement</h1>
 
-    <form id="formRegister" method="POST" action="index.php?ctrl=security&action=addUser">
+    <form id="formRegister" method="POST" action="index.php?ctrl=security&action=addEvent">
 
         <label for="titleEvent">Title event</label>
         <input type="text" name="titleEvent">

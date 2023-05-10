@@ -1,30 +1,5 @@
 @media (max-width: 768px) {
-    *,
-    ::before,
-    ::after {
-        margin: 0px;
-        padding: 0px;
-        box-sizing: border-box;
-    }
-    body { 
-        font-family: 'Neucha', cursive;
-        font-size: 1em; 
-        margin: 0px auto;
-        background-color: #DFF6FF;
-    }
-    #wrapper {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas: "mainpage"
-                            "footer";
-
-        
-        text-align: center;
-
-        margin: 0px auto;
-        padding: auto;
-        background-color: #e7e6db;  
-    }
+    
     #mainpage {
         display: grid;
         grid-template-columns: 1fr;
@@ -129,9 +104,6 @@
         height: 40px;
         margin: 10px;   
     }
-    .linksAdmin {
-        color: #DFF6FF;
-    }
 
     /************** Main *********************/
     main {
@@ -140,6 +112,9 @@
     .pseudoUser {
         font-size: 1.3em;
         margin: 15px 0px 0px 0px;
+    }
+    .linksAdmin {
+        color: #171818;
     }
     .featuredEvent {
         grid-area: featuredEvent;
@@ -291,7 +266,9 @@
         grid-area: map;
     }
 
-
+    .title-page {
+        text-align: center;
+    }
 
 
 
@@ -304,6 +281,7 @@
         border: 1px solid black;
     }
     .info-footer, .info-footer a {
+        text-align: center;
         color: #DFF6FF;
         padding: 15px;
     }
