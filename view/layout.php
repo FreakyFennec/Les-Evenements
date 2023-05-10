@@ -41,18 +41,6 @@
                     <p class="siteName">Les événements</p>                    
                 </a>                
                 <nav>
-                    <div id="nav-left">
-                        
-                        <?php
-                        if(App\Session::isAdmin()){     // If it's the admin session display theses links
-                            ?>
-                            <a href="index.php?ctrl=home&action=users">Voir la liste des membres</a>
-                            <a href="/security/admin.php">Admin</a>
-                            <a href="index.php?ctrl=secutity&action=addEvent">Ajouter un événement</a>
-                            <?php
-                        }
-                        ?>
-                    </div>
                     <div id="nav-right">
                     <?php
                         
@@ -89,6 +77,14 @@
             
             <main>
                 <p class="pseudoUser">Bienvenue <?= App\Session::getUser() ?> !</p>
+                <?php
+                        if(App\Session::isAdmin()){     // If it's the admin session display theses links
+                            ?>
+                            <a class="linksAdmin" href="index.php?ctrl=home&action=users">Liste des membres</a>
+                            <a class="linksAdmin" href="index.php?ctrl=secutity&action=addEvent">Ajout d'événements</a>
+                            <?php
+                        }
+                        ?>
                 <?= $page ?>
             </main>
         </div><!-- /.mainpage -->
