@@ -6,7 +6,9 @@
         padding: 0px;
         box-sizing: border-box;
     }
-    body {   
+    body { 
+        font-family: 'Neucha', cursive;
+        font-size: 1em; 
         margin: 0px auto;
         background-color: #DFF6FF;
     }
@@ -16,8 +18,7 @@
         grid-template-areas: "mainpage"
                             "footer";
 
-        font-family: 'Neucha', cursive;
-
+        
         text-align: center;
 
         margin: 0px auto;
@@ -33,8 +34,6 @@
         gap: 0px;
         
         /* max-width: 1280px; */
-
-        font-family: 'Neucha', cursive;
 
         text-align: center;
 
@@ -73,7 +72,6 @@
         width: 70px;
         height: 70px;
 
-        font-family: 'Neucha', cursive;
         font-size: 2.3em;
         color: #06283D;
 
@@ -89,7 +87,6 @@
     .siteName {
         grid-area: siteName;
 
-        font-family: 'Neucha', cursive;
         font-size: 2.3em;
 
         display: flex;
@@ -115,8 +112,7 @@
     #nav-left {
         color: #DFF6FF;
     }
-    #nav-right a {
-        
+    #nav-right a {        
         color: #DFF6FF;
 
         display: inline-block;
@@ -129,12 +125,13 @@
         margin: 10px;   
     }
     .icon_user, .icon_deconnexion {
-
         width: 40px;
         height: 40px;
         margin: 10px;   
     }
-
+    .linksAdmin {
+        color: #DFF6FF;
+    }
 
     /************** Main *********************/
     main {
