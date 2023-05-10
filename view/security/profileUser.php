@@ -8,7 +8,7 @@
 
 <h1 class="title-page">Mon profil <?= $user->getPseudo() ?></h1>
 
-<table>
+<table class="tableProfileUser">
 
 <?php
 // Informations sur les users
@@ -84,7 +84,7 @@ if(App\Session::getUser()) {
 
     <h2 class="title-myEvents">Mes événements</h2>
 
-    <table>
+    <table class="tableEvents">
         <thead>
             <tr>
                 <th>title</th>
@@ -107,7 +107,7 @@ if(App\Session::getUser()) {
 
     <h2 class="title-myComments">Mes commentaires</h2>
 
-    <table>
+    <table class="tableComments">
         <thead>
             <tr>
                 <th>text</th>

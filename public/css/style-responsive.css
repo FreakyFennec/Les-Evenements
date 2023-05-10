@@ -297,7 +297,9 @@ table {
 }
 
 th, td {
-    padding: 5px 20px;
+    padding: 5px 10px;
     border: 1px solid #6d6c6c;
 }
-
+.tableProfileUser, .tableEvents, .tableComments, .tableListUsers {
+    margin: 0px auto;
+}

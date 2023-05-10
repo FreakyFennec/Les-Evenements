@@ -3,7 +3,7 @@
 ?>
 
 <h1 class="title-page">liste users</h1>
-<table>
+<table class="tableListUsers">
     <thead>
         <tr>
             <th>user</th>
