@@ -12,7 +12,7 @@
         <label for="zipcode">Zipcode</label>
         <input type="number" name="zipcode">
 
-        <label for="addres">Addres</label>
+        <label for="addres">Address</label>
         <input type="text" name="addres">
 
         <label for="city">City</label>
@@ -27,6 +27,9 @@
         <label for="dateEnd">Date end</label>
         <input type="date" name="dateEnd">
 
+        <label for="maxUsers">Max users</label>
+        <input type="number" name="maxUsers">
+
         <label for="contribution">Contribution</label>
         <input type="number" name="contribution">
 
@@ -36,7 +39,16 @@
         <label for="alt">Alt</label>
         <input type="text" name="alt">
 
+        <label for="user_id">user_id</label>
+        <input type="number" name="user_id">
+
+        <label for="category">Category</label>
+        <select type="text" name="category">
+            <option value="1">Culture</option>
+            <option value="2">Sport</option>
+            <option value="3">Jeux de sociétés</option>
+        </select>
+
         <input id="submit" type="submit" name="submit" value="Envoyer">
     </form>
 </div>
-

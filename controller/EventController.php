@@ -53,17 +53,17 @@
                 // Name of the columns placed in the super global $_POST that is stored in the variable.
                 $titleEvent = filter_input(INPUT_POST, "titleEvent", FILTER_SANITIZE_SPECIAL_CHARS);
                 $description = filter_input(INPUT_POST, "description", FILTER_SANITIZE_SPECIAL_CHARS);
-                $zipcode = filter_input("zipcode", FILTER_SANITIZE_);
+                $zipcode = filter_input(INPUT_POST, "zipcode", FILTER_SANITIZE_NUMBER_INT);
                 $address = filter_input(INPUT_POST, "address", FILTER_SANITIZE_SPECIAL_CHARS);
                 $city = filter_input(INPUT_POST, "city", FILTER_SANITIZE_SPECIAL_CHARS);
                 $country = filter_input(INPUT_POST, "country", FILTER_SANITIZE_SPECIAL_CHARS);
                 $dateStart = filter_input(INPUT_POST, "dateStart", FILTER_SANITIZE_SPECIAL_CHARS);
                 $dateEnd = filter_input(INPUT_POST, "dateEnd", FILTER_SANITIZE_SPECIAL_CHARS);
-                $maxUsers = filter_input("maxUsers", FILTER_SANITIZE_);
-                $constribution = filter_input("constribution", FILTER_SANITIZE_);
+                $maxUsers = filter_input(INPUT_POST, "maxUsers", FILTER_SANITIZE_NUMBER_INT);
+                $contribution = filter_input(INPUT_POST, "contribution", FILTER_SANITIZE_NUMBER_INT);
                 $imgEvent = filter_input(INPUT_POST, "imgEvent", FILTER_SANITIZE_SPECIAL_CHARS);
                 $alt = filter_input(INPUT_POST, "alt", FILTER_SANITIZE_SPECIAL_CHARS);
-                $user_id = filter_input("user_id", FILTER_SANITIZE_);
+                $user_id = filter_input(INPUT_POST, "user_id", FILTER_SANITIZE_NUMBER_INT);
                 $category_id = filter_input(INPUT_POST, "category_id", FILTER_SANITIZE_SPECIAL_CHARS);
             }
 
@@ -78,7 +78,7 @@
                 'dateStart' => $dateStart,
                 'dateEnd' => $dateEnd,
                 'maxUsers' => $maxUsers,
-                'contribution' => $constribution,
+                'contribution' => $contribution,
                 'imgEvent' => $imgEvent,
                 'alt' => $alt,
                 'user_id' => $user_id,
