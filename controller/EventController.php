@@ -64,6 +64,23 @@
                 $category_id = filter_input(INPUT_POST, "category_id", FILTER_SANITIZE_SPECIAL_CHARS);
             }
 
+            $data = [
+                'titleEvent' => $titleEvent,
+                'description' => $description,
+                'zipcode' => $zipcode,
+                'address' => $address,
+                'city' => $city,
+                'country' => $country,
+                'dateStart' => $dateStart,
+                'dateEnd' => $dateEnd,
+                'maxUsers' => $maxUsers,
+                'constribution' => $constribution,
+                'imgEvent' => $imgEvent,
+                'alt' => $alt,
+                'user_id' => $user_id,
+                'category_id' => $category_id,
+            ];
+            
             return [
                 "view" => VIEW_DIR."security/addEvent"
             ];
