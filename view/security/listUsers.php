@@ -32,12 +32,12 @@
                     <button onclick="window.location.href = 'index.php?ctrl=security&action=updateStatus&id=<?= $user->getId() ?>';">Modify</button>
                 </td>
                 <td><?= $user->getBanish() ?></td>
-                <td><a href="index.php?ctrl=security&action=removeByPseudo&id=<?= $user->getId() ?>">Del</a></td>
+                <td><a href="index.php?ctrl=security&action=removeUserById&id=<?= $user->getId() ?>">Del</a></td>
             </tr>            
         <?php }
     } else {
         ?>
-        <form method="post" action="index.php?ctrl=security&action=removeByPseudo">
+        <form method="post" action="index.php?ctrl=security&action=removeUserById">
 
             <label for="pseudo">Supprimer un membre</label>
             <input type="text" name="pseudo">

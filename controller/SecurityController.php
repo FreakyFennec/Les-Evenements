@@ -69,6 +69,30 @@
             ];
         }
 
+        
+        public function updateStatus($id)
+        {
+            $userManager = new UserManager;
+
+            $userManager->findOneById($id);
+
+            if (isset($_POST['submit'])) {
+                $status = filter_input(INPUT_POST, "status", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+                $userManager->updateStatus($id, $status);
+
+                $this->redirectTo('security', 'listUsers');
+            }
+            
+            return [
+                "view" => VIEW_DIR."security/updateStatus.php",
+                "data" => [
+                    "user" => $userManager->findOneById($id),
+                ]
+            ];
+        }
+
+
         public function connexion() {
 
             $eventManager = new EventManager;
@@ -136,11 +160,11 @@
             ];
         }
 
-        public function removeByPseudo($pseudo)
+        public function removeUserById($pseudo)
         {
             $userManager = new UserManager;
 
-            $userManager->removeByPseudo($pseudo);
+            $userManager->removeUserById($pseudo);
 
             return [
                 "view" => VIEW_DIR."security/listUsers.php",
@@ -164,20 +188,6 @@
                     "user" => $userManager->findOneById($id),
                     "findEventByIdUser" => $eventManager->findEventByIdUser($id),
                     "comments" => $commentManager->findCommentByIdUser($id)
-                ]
-            ];
-        }
-
-        public function updateStatus($id)
-        {
-            $userManager = new UserManager;
-
-            $userManager->findOneById($id);
-
-            return [
-                "view" => VIEW_DIR."security/updateStatus.php",
-                "data" => [
-                    "user" => $userManager->findOneById($id),
                 ]
             ];
         }

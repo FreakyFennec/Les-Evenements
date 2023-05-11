@@ -1,7 +1,11 @@
+<?php
+    $user = $result["data"]['user'];
+?>
+
 <div id="box" name="box">
     <h3 class="titleformUpdateStatus">Update status</h3>
 
-    <form id="formUpdateStatus" method="POST" action="index.php?ctrl=security&action=updateStatus">
+    <form id="formUpdateStatus" method="POST" action="index.php?ctrl=security&action=updateStatus&id=<?= $user->getId() ?>">
         
         <input type="radio" name="status" value="user" > user
         

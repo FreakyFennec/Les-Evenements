@@ -89,7 +89,7 @@
             DAO::delete($sql, ['email' => $email]);
         }
 
-        public function removeByPseudo(int $id_user)
+        public function removeUserById(int $id_user)
         {
             // $userManager = new UserManager;
             // $eventManager = new EventManager;
@@ -136,12 +136,13 @@
         }
 
         
-        public function updateStatus()
+        public function updateStatus($id_user, $status)
         {
             // Update table comment
             $sql = "UPDATE user 
-                    SET status = 
-                    WHERE user_id = :id";
-            DAO::update($sql, ['id' => $id_user]);
+                    SET status = :status
+                    WHERE id_user = :id";
+            DAO::update($sql, ['id' => $id_user,
+            'status' => $status]);
         }
     }
