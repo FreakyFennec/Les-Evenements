@@ -168,6 +168,20 @@
             ];
         }
 
+        public function updateStatus($id)
+        {
+            $userManager = new UserManager;
+
+            $userManager->findOneById($id);
+
+            return [
+                "view" => VIEW_DIR."security/updateStatus.php",
+                "data" => [
+                    "user" => $userManager->findOneById($id),
+                ]
+            ];
+        }
+
         public function addEvent($id) {
 
             $userManager = new UserManager;

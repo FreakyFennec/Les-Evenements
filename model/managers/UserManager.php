@@ -134,4 +134,14 @@
             DAO::delete($sql6, ['id' => $id_user]);
 
         }
+
+        
+        public function updateStatus()
+        {
+            // Update table comment
+            $sql = "UPDATE user 
+                    SET status = 
+                    WHERE user_id = :id";
+            DAO::update($sql, ['id' => $id_user]);
+        }
     }
