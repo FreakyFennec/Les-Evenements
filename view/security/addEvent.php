@@ -1,5 +1,5 @@
 <div id="box" name="box">
-    <h1 class="titleAddEvent">Ajouter un événement</h1>
+    <h1 class="titleAddEvent">Add event</h1>
 
     <form id="formRegister" method="POST" action="index.php?ctrl=security&action=addEvent">
 

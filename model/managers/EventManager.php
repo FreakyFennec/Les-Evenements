@@ -90,4 +90,13 @@
                 $this->className
             );
         }
+
+        public function addEvent()
+        {
+            $eventManager = new EventManager;
+
+            $sql = "INSERT INTO " . $this->tableName . " (titleEvent, description, zipcode, address, city, country, dateStart, dateEnd, maxUsers, constribution, imgEvent, alt, user_id, category_id)
+                    VALUES ()
+            ";
+        }
     }

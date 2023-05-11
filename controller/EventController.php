@@ -42,6 +42,33 @@
             ];
         }
 
+        public function addEvent()
+        {
+            $eventManager = new EventManager;
+
+            if (isset($_POST['submit'])) {
+
+                $titleEvent = filter_input(INPUT_POST, "titleEvent", FILTER_SANITIZE_SPECIAL_CHARS);
+                $description = filter_input(INPUT_POST, "description", FILTER_SANITIZE_SPECIAL_CHARS);
+                $zipcode = "zipcode";
+                $address = filter_input(INPUT_POST, "address", FILTER_SANITIZE_SPECIAL_CHARS);
+                $city = filter_input(INPUT_POST, "city", FILTER_SANITIZE_SPECIAL_CHARS);
+                $country = filter_input(INPUT_POST, "country", FILTER_SANITIZE_SPECIAL_CHARS);
+                $dateStart = filter_input(INPUT_POST, "dateStart", FILTER_SANITIZE_SPECIAL_CHARS);
+                $dateEnd = filter_input(INPUT_POST, "dateEnd", FILTER_SANITIZE_SPECIAL_CHARS);
+                $maxUsers = "maxUsers";
+                $constribution = "constribution";
+                $imgEvent = filter_input(INPUT_POST, "imgEvent", FILTER_SANITIZE_SPECIAL_CHARS);
+                $alt = filter_input(INPUT_POST, "alt", FILTER_SANITIZE_SPECIAL_CHARS);
+                $user_id = "user_id";
+                $category_id = filter_input(INPUT_POST, "category_id", FILTER_SANITIZE_SPECIAL_CHARS);
+            }
+
+            return [
+                "view" => VIEW_DIR."security/addEvent"
+            ];
+        }
+
         public function removeUser() {
 
             $userManager = new UserManager();

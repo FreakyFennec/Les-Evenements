@@ -83,7 +83,7 @@
                         if(App\Session::isAdmin()){     // If it's the admin session display theses links
                             ?>
                             <a class="linksAdmin" href="index.php?ctrl=home&action=users">Liste des membres</a>
-                            <a class="linksAdmin" href="index.php?ctrl=secutity&action=addEvent">Ajout d'événements</a>
+                            <a class="linksAdmin" href="index.php?ctrl=security&action=addEvent">Ajout d'événements</a>
                             <?php
                         }
                         ?>
