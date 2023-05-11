@@ -44,26 +44,30 @@
 
         public function addEvent()
         {
+            // Instantiation of EventManager putting in variable eventManager.
             $eventManager = new EventManager;
 
+            // Verify is there is a submit.
             if (isset($_POST['submit'])) {
 
+                // Name of the columns placed in the super global $_POST that is stored in the variable.
                 $titleEvent = filter_input(INPUT_POST, "titleEvent", FILTER_SANITIZE_SPECIAL_CHARS);
                 $description = filter_input(INPUT_POST, "description", FILTER_SANITIZE_SPECIAL_CHARS);
-                $zipcode = "zipcode";
+                $zipcode = filter_input("zipcode", FILTER_SANITIZE_);
                 $address = filter_input(INPUT_POST, "address", FILTER_SANITIZE_SPECIAL_CHARS);
                 $city = filter_input(INPUT_POST, "city", FILTER_SANITIZE_SPECIAL_CHARS);
                 $country = filter_input(INPUT_POST, "country", FILTER_SANITIZE_SPECIAL_CHARS);
                 $dateStart = filter_input(INPUT_POST, "dateStart", FILTER_SANITIZE_SPECIAL_CHARS);
                 $dateEnd = filter_input(INPUT_POST, "dateEnd", FILTER_SANITIZE_SPECIAL_CHARS);
-                $maxUsers = "maxUsers";
-                $constribution = "constribution";
+                $maxUsers = filter_input("maxUsers", FILTER_SANITIZE_);
+                $constribution = filter_input("constribution", FILTER_SANITIZE_);
                 $imgEvent = filter_input(INPUT_POST, "imgEvent", FILTER_SANITIZE_SPECIAL_CHARS);
                 $alt = filter_input(INPUT_POST, "alt", FILTER_SANITIZE_SPECIAL_CHARS);
-                $user_id = "user_id";
+                $user_id = filter_input("user_id", FILTER_SANITIZE_);
                 $category_id = filter_input(INPUT_POST, "category_id", FILTER_SANITIZE_SPECIAL_CHARS);
             }
 
+            // This associative array contain the columns name and de values.
             $data = [
                 'titleEvent' => $titleEvent,
                 'description' => $description,
@@ -74,13 +78,15 @@
                 'dateStart' => $dateStart,
                 'dateEnd' => $dateEnd,
                 'maxUsers' => $maxUsers,
-                'constribution' => $constribution,
+                'contribution' => $constribution,
                 'imgEvent' => $imgEvent,
                 'alt' => $alt,
                 'user_id' => $user_id,
                 'category_id' => $category_id,
             ];
-            
+            // Here we tell to eventManager to execute method add with attribut $data.
+            $eventManager->add($data);
+
             return [
                 "view" => VIEW_DIR."security/addEvent"
             ];

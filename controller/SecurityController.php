@@ -51,7 +51,7 @@
 
                     if (!$userManager->findOneByEmail($email) && !$userManager->findUserByPseudo($pseudo)) {
 
-                        $userManager = $userManager->add($data);
+                        $userManager->add($data);
 
                         return [
                             "view" => VIEW_DIR."/home.php"

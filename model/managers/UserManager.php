@@ -134,8 +134,7 @@
             DAO::delete($sql6, ['id' => $id_user]);
 
         }
-
-        
+       
         public function updateStatus($id_user, $status)
         {
             // Update table comment
