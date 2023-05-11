@@ -89,18 +89,18 @@
             DAO::delete($sql, ['email' => $email]);
         }
 
-        public function removeByPseudo(string $pseudo)
+        public function removeByPseudo(int $id_user)
         {
             // $userManager = new UserManager;
             // $eventManager = new EventManager;
             // $participateManager = new ParticipateManager;
             // $commentManger = new CommentManager;
 
-            // Retrive id.
-            $sql1 = "SELECT id_user 
-                    FROM user  
-                    WHERE pseudo = :pseudo";
-            $id_user = DAO::select($sql1, ['pseudo' => $pseudo]);
+            // Delete id_user.
+            $sql1 = "DELETE p
+            FROM participate p
+            WHERE p.user_id = :id_user";
+            DAO::delete($sql1, ['id_user' => $id_user]);
 
             // Delete participate.
             $sql2 ="DELETE p 
@@ -126,10 +126,12 @@
             $sql5 = "UPDATE comment 
                     SET user_id = NULL
                     WHERE user_id = :id";
+            DAO::update($sql5, ['id' => $id_user]);
 
             // Delete user by pseudo.
             $sql6 = "DELETE 
-                    FROM " . $this->tableName . " WHERE pseudo = :pseudo";
-            DAO::delete($sql6, ['pseudo' => $pseudo]);
+                    FROM " . $this->tableName . " WHERE id_user = :id";
+            DAO::delete($sql6, ['id' => $id_user]);
+
         }
     }
