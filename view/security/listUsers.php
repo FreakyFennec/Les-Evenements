@@ -10,6 +10,7 @@
             <th>email</th>
             <th>registerdate</th>
             <th>status</th>
+            <th>modify status</th>
             <th>banish</th>
             <th>delete</th>
         </tr>
@@ -27,6 +28,9 @@
                 <td><?= $user->getEmail() ?></td>
                 <td><?= $user->getRegisterDate() ?></td>
                 <td><?= $user->getStatus() ?></td>
+                <td>
+                    <button onclick="window.location.href = 'index.php?ctrl=security&action=updateStatus&id=<?= $user->getId() ?>';">Modify</button>
+                </td>
                 <td><?= $user->getBanish() ?></td>
                 <td><a href="index.php?ctrl=security&action=removeByPseudo&id=<?= $user->getId() ?>">Del</a></td>
             </tr>            
