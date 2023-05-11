@@ -43,7 +43,7 @@
         <input type="number" name="user_id">
 
         <label for="category">Category</label>
-        <select type="text" name="category">
+        <select name="category">
             <option value="1">Culture</option>
             <option value="2">Sport</option>
             <option value="3">Jeux de sociétés</option>
