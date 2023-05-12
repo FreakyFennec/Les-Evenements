@@ -50,7 +50,7 @@ $commentsEvent = $result["data"]['findCommentById'];
     </table>
 </div>
 
-<div class="AddComArea"></div>
+<div class="AddComArea">
     <h2 class="titleAddComArea">Ajoutez votre commentaire</h2>
 </div>
 

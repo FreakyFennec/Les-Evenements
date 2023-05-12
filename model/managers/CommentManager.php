@@ -12,8 +12,7 @@
         {
             parent::connect();
         }
-
-        
+       
         public function findCommentByIdUser($id) 
         {
             $CommentManager = new CommentManager();
@@ -41,5 +40,4 @@
                 $this->className
             );
         }
-
     }

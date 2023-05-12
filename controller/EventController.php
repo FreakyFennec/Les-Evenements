@@ -30,7 +30,7 @@
         {
             $userManager = new UserManager();
             $eventManager = new EventManager(); // The object $eventManager contain an instanciation of EventManager.
-            $commentManager = new CommentManager;
+            $commentManager = new CommentManager();
            
             $detailEvent = $eventManager->detailEvent($id);
 
