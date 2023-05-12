@@ -29,7 +29,7 @@
         public function detailEvent($id)
         {
             $userManager = new UserManager();
-            $eventManager = new EventManager(); // The object $eventManager contain an instanciation of EventManager.
+            $eventManager = new EventManager(); // The object $eventManager contain an Instanciation of EventManager.
             $commentManager = new CommentManager();
            
             $detailEvent = $eventManager->detailEvent($id);
@@ -92,6 +92,28 @@
 
             return [
                 "view" => VIEW_DIR."security/addEvent"
+            ];
+        }
+
+        public function addComment($id)
+        {
+            $commentManager = new CommentManager();
+
+            if (isset($_POST['submit'])) {
+
+                $titleComment = filter_input(INPUT_POST, 'titleComment', FILTER_SANITIZE_SPECIAL_CHARS);
+                $comment = filter_input(INPUT_POST, 'comment',FILTER_SANITIZE_SPECIAL_CHARS);
+            }
+
+            $data = [
+                'titleComment' => $titleComment,
+                'comment' => $comment,
+            ];
+
+            $commentManager->add($data);
+
+            return [
+                "view" => VIEW_DIR."security/detailEvent"
             ];
         }
 

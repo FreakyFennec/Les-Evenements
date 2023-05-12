@@ -132,7 +132,6 @@
             $sql6 = "DELETE 
                     FROM " . $this->tableName . " WHERE id_user = :id";
             DAO::delete($sql6, ['id' => $id_user]);
-
         }
        
         public function updateStatus($id_user, $status)

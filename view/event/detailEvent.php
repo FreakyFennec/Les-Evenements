@@ -53,9 +53,19 @@ $commentsEvent = $result["data"]['findCommentById'];
     </table>
 </div>
 
-<div class="AddComArea">
+<div id="box" name="box">
     <h2 class="titleAddComArea">Ajoutez votre commentaire</h2>
-</div>
+
+    <form id="formRegister" method="POST" action="index.php?ctrl=event&action=addComment">
+
+        <label for="titleComment">Title comment</label>
+        <input type="text" name="titleComment">
+
+        <label for="Comment">Comment</label>
+        <input type="text" name="Comment">
+
+        <input id="submit" type="submit" name="submit" value="Submit">
+    </div>
 
 
     
