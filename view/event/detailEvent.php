@@ -41,11 +41,14 @@ $commentsEvent = $result["data"]['findCommentById'];
             </tr>
         </thead>
         <tbody>
-            <td>
-                <th><?= $commentsEvent->getTitleComment(); ?></th>
-                <th><?= $commentsEvent->getComment(); ?></th>
-                <th><?= $commentsEvent->getCreationDate(); ?></th>
-            </td>
+            
+        <?php foreach ($commentsEvent as $comment) : ?>
+                <tr>
+                    <td><?= $comment->getTitleComment(); ?></td>
+                    <td><?= $comment->getComment(); ?></td>
+                    <td><?= $comment->getCreationDate(); ?></td>
+                </tr>
+            <?php endforeach; ?>
         </tbody>
     </table>
 </div>
