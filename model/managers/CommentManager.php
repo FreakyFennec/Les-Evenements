@@ -14,13 +14,28 @@
         }
 
         
-        public function findCommentByIdUser($id) {
+        public function findCommentByIdUser($id) 
+        {
             $CommentManager = new CommentManager();
 
             $sql = "SELECT *
                     FROM ". $this->tableName ." c
                     WHERE c.user_id = :id";
         
+            return $this->getMultipleResults(
+                DAO::select($sql, ['id' => $id]),
+                $this->className
+            );
+        }
+
+        public function findCommentById($id)
+        {
+            $CommentManager = new CommentManager;
+
+            $sql = "SELECT *
+                    FROM " . $this->tableName . " c
+                    WHERE c.event_id = :id";
+
             return $this->getMultipleResults(
                 DAO::select($sql, ['id' => $id]),
                 $this->className

@@ -5,6 +5,7 @@
     use App\Session;
     use App\AbstractController;
     use App\ControllerInterface;
+    use Model\Managers\CommentManager;
     use Model\Managers\EventManager;
     use Model\Managers\UserManager;
     
@@ -29,6 +30,7 @@
         {
             $userManager = new UserManager();
             $eventManager = new EventManager(); // The object $eventManager contain an instanciation of EventManager.
+            $commentManager = new CommentManager;
            
             $detailEvent = $eventManager->detailEvent($id);
 
@@ -38,6 +40,7 @@
                     "user" => $userManager->findOneById($id),
                     "findEventByIdUser" => $eventManager->findEventByIdUser($id),
                     "findOneById" => $eventManager->findOneById($id),
+                    "findCommentById" => $commentManager->findCommentById($id),
                 ]
             ];
         }
