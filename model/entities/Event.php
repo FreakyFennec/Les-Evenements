@@ -18,8 +18,9 @@
         private $contribution;
         private $imgEvent;
         private $alt;
-        private $user;
+        private $user_id;
         private $category;
+        private $event_id;
 
         public function __construct($data) {
             $this->hydrate($data);
@@ -289,11 +290,11 @@
         }
 
         /**
-         * Get the value of user
+         * Get the value of user_id
          */ 
-        public function getUser()
+        public function getUser_id()
         {
-            return $this->user;
+            return $this->user_id;
         }
 
         /**
@@ -301,9 +302,9 @@
          *
          * @return  self
          */ 
-        public function setUser($user)
+        public function setUser($user_id)
         {
-            $this->user = $user;
+            $this->user_id = $user_id;
 
             return $this;
         }
@@ -344,6 +345,26 @@
         public function setCountry($country)
         {
                 $this->country = $country;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of event_id
+         */ 
+        public function getEvent_id()
+        {
+                return $this->event_id;
+        }
+
+        /**
+         * Set the value of event_id
+         *
+         * @return  self
+         */ 
+        public function setEvent_id($event_id)
+        {
+                $this->event_id = $event_id;
 
                 return $this;
         }
