@@ -2,17 +2,17 @@
     $users = $result["data"]['users'];
 ?>
 
-<h1 class="title-page">liste users</h1>
+<h1 class="title-page">Liste des membres</h1>
 <table class="tableListUsers">
     <thead>
         <tr>
-            <th>user</th>
-            <th>email</th>
-            <th>registerdate</th>
-            <th>status</th>
-            <th>modify status</th>
-            <th>banish</th>
-            <th>delete</th>
+            <th>Membre</th>
+            <th>Email</th>
+            <th>Inscrit le :</th>
+            <th>Status</th>
+            <th>Modifier status</th>
+            <th>État</th>
+            <th>Supprimer</th>
         </tr>
     </thead>
 
