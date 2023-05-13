@@ -112,7 +112,7 @@
                 'titleComment' => $titleComment,
                 'comment' => $comment,
                 'event_id' => $id,
-                'user_id' => $user_id,
+                //'user_id' => $user_id,
             ];
 
             $commentManager->add($data);
