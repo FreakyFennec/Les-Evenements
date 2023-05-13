@@ -56,16 +56,17 @@ $commentsEvent = $result["data"]['findCommentById'];
 <div id="box" name="box">
     <h2 class="titleAddComArea">Ajoutez votre commentaire</h2>
 
-    <form id="formRegister" method="POST" action="index.php?ctrl=event&action=addComment">
+    <form id="formRegister" method="POST" action="index.php?ctrl=event&action=addComment&id=<?= $detailEvent->getId(); ?>">
 
-        <label for="titleComment">Title comment</label>
+        <label for="titleComment">Titre du commentaire</label>
         <input type="text" name="titleComment">
 
-        <label for="Comment">Comment</label>
-        <input type="text" name="Comment">
+        <label for="comment">Votre commentaire</label>
+        <input type="text" name="comment">
 
         <input id="submit" type="submit" name="submit" value="Submit">
-    </div>
+    </form>
+</div>
 
 
     

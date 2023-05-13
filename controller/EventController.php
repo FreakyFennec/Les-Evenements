@@ -98,16 +98,22 @@
         public function addComment($id)
         {
             $commentManager = new CommentManager();
+            $userManager = new UserManager();
 
             if (isset($_POST['submit'])) {
 
                 $titleComment = filter_input(INPUT_POST, 'titleComment', FILTER_SANITIZE_SPECIAL_CHARS);
                 $comment = filter_input(INPUT_POST, 'comment',FILTER_SANITIZE_SPECIAL_CHARS);
+                $user_id = filter_input(INPUT_POST, "user_id", FILTER_SANITIZE_NUMBER_INT);
             }
-
+            echo '<pre>';
+            var_dump($_GET);
+            echo '</pre>';
             $data = [
                 'titleComment' => $titleComment,
                 'comment' => $comment,
+                'event_id' => $id,
+                'user_id' => $user_id,
             ];
 
             $commentManager->add($data);
