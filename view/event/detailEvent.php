@@ -35,9 +35,9 @@ $commentsEvent = $result["data"]['findCommentById'];
     <table class="tableCom">
         <thead>
             <tr>
-                <th>Title comment</th>
-                <th>Comment</th>
-                <th>Creation date</th>
+                <th>Titre</th>
+                <th>Commentaire</th>
+                <th>Crée le :</th>
             </tr>
         </thead>
         <tbody>
