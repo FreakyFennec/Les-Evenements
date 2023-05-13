@@ -19,13 +19,13 @@ if(App\Session::getUser()) {
     ?>
         <thead>
             <tr>
-                <th>firstName</th>
-                <th>lastName</th>
-                <th>email</th>
-                <th>pseudo</th>
-                <th>status</th>
-                <th>banish</th>
-                <th>registerdate</th>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Pseudo</th>
+                <th>Status</th>
+                <th>État</th>
+                <th>Inscrit le :</th>
             </tr>
         </thead>
         <tbody> 
@@ -44,13 +44,13 @@ if(App\Session::getUser()) {
     ?>
         <thead>
             <tr>
-                <th>firstName</th>
-                <th>lastName</th>
-                <th>email</th>
-                <th>pseudo</th>
-                <th>status</th>
-                <th>banish</th>
-                <th>registerdate</th>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Pseudo</th>
+                <th>Status</th>
+                <th>État</th>
+                <th>Inscrit le :</th>
             </tr>
         </thead>
         <tbody> 
@@ -67,9 +67,9 @@ if(App\Session::getUser()) {
     ?>
         <thead>
             <tr>
-                <th>pseudo</th>
-                <th>status</th>
-                <th>registerdate</th>
+                <th>Pseudo</th>
+                <th>Status</th>
+                <th>Inscrit le</th>
             </tr>
         </thead>
         <tbody> 
@@ -87,9 +87,9 @@ if(App\Session::getUser()) {
     <table class="tableEvents">
         <thead>
             <tr>
-                <th>title</th>
-                <th>place</th>
-                <th>date</th>
+                <th>Titre</th>
+                <th>Ville</th>
+                <th>Date</th>
             </tr>
         </thead>
         <tbody>
@@ -110,8 +110,8 @@ if(App\Session::getUser()) {
     <table class="tableComments">
         <thead>
             <tr>
-                <th>text</th>
-                <th>dateComment</th>
+                <th>Comment</th>
+                <th>Crée le :</th>
             </tr>
         </thead>
         <tbody>
