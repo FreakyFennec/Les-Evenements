@@ -98,7 +98,6 @@
         public function addComment($id)
         {
             $commentManager = new CommentManager();
-            $userManager = new UserManager();
 
             if (isset($_POST['submit'])) {
 
