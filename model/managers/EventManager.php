@@ -89,11 +89,4 @@
                 $this->className
             );
         }
-/* 
-        public function insertComment($id)
-        {
-            $commentManager = new CommentManager();
-
-            $sql = "INSERT INTO "
-        } */
     }
