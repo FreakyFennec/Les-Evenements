@@ -1,0 +1,6 @@
+git config --global user.name "abdel_Hamid.JINANI"
+git config --global "user.email" "ahjinani@gmail.com"
+
+git add .
+git commit -m "commentaire"
+git push
