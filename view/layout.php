@@ -84,6 +84,8 @@
                             ?>
                             <a class="linksAdmin" href="index.php?ctrl=home&action=users">Liste des membres</a>
                             <a class="linksAdmin" href="index.php?ctrl=security&action=addEvent">Ajout d'événements</a>
+                            <a class="linksAdmin" href="index.php?ctrl=security&action=updateEvent">Modification d'événements</a>
+
                             <?php
                         }
                         ?>
