@@ -1,28 +1,32 @@
+<?php
+    $event = $result["data"]['event'];
+?>
+
 <div id="box" name="box">
     <h1 class="titleAddEvent">Modifier un événement</h1>
 
     <form id="formRegister" method="POST" action="index.php?ctrl=event&action=updateEvent">
 
         <label for="titleEvent">Titre :</label>
-        <input type="text" id="titleEvent" name="titleEvent" required>
+        <input type="text" id="titleEvent" name="titleEvent" required value="<?= $event->getTitleEvent() ?>">
 
         <label for="description">Description :</label>
-        <textarea name="description" id="description" cols="30" rows="10" required></textarea>
+        <textarea name="description" id="description" cols="30" rows="10" required><?= $event->getDescription() ?></textarea>
 
         <label for="zipcode">Code postal :</label>
-        <input type="number" id="zipcode" name="zipcode" required>
+        <input type="number" id="zipcode" name="zipcode" required value="<?= $event->getZipcode() ?>"> 
 
         <label for="address">Adresse :</label>
         <input type="text" id="address" name="address" required>
 
         <label for="city">Ville :</label>
-        <input type="text" id="city" name="city" required>
+        <input type="text" id="city" name="city" required value="<?= $event->getCity() ?>">
 
         <label for="country">Pays :</label>
         <input type="text" id="country" name="country" required>
 
         <label for="dateStart">Date début :</label>
-        <input type="datetime-local" id="dateStart" name="dateStart" required>
+        <input type="datetime-local" id="dateStart" name="dateStart" required value="<?= $event->getDateStartForm() ?>">
 
         <label for="dateEnd">Date fin :</label>
         <input type="datetime-local" id="dateEnd" name="dateEnd" required>

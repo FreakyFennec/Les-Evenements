@@ -146,6 +146,10 @@
             return $this;
         }       
 
+        public function getDateStartForm() {
+            return $this->dateStart;
+        }
+
         /**
          * Get the value of dateStart
          */ 

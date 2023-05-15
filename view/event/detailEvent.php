@@ -26,7 +26,7 @@ $commentsEvent = $result["data"]['findCommentById'];
         
 
     </div>
-<a class="linksAdmin" href="index.php?ctrl=security&action=updateEvent&id_event=<?= $detailEvent->getId(); ?>">Modifier événement</a>
+<a class="linksAdmin" href="index.php?ctrl=event&action=updateEvent&id=<?= $detailEvent->getId(); ?>">Modifier événement</a>
 
     <div id="map">
         <!-- Map's place -->

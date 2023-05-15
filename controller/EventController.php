@@ -151,11 +151,12 @@
             }
         }
 
-        public function updateEvent(int $id)
+        public function updateEvent($id)
         {
-            $eventManager = new EventManager;
+            $eventManager = new EventManager();
+            $event = $eventManager->findOneById($id);
 
-            if (isset($_POST['sumbit'])) {
+            if (isset($_POST['submit'])) {
 
                 // Name of the columns placed in the super global $_POST that is stored in the variable.
                 $titleEvent = filter_input(INPUT_POST, "titleEvent", FILTER_SANITIZE_SPECIAL_CHARS);
@@ -212,7 +213,10 @@
             } // fin submit
             
             return [
-                "view" => VIEW_DIR."security/updateEvent.php"
+                "view" => VIEW_DIR."security/updateEvent.php",
+                "data" => [
+                   "event" => $event
+                ]
             ];
         }
 
