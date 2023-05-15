@@ -43,11 +43,17 @@
                 ]
             ];
         }
+        
 
         public function addEvent()
         {
+
             // Instantiation of EventManager putting in variable eventManager.
             $eventManager = new EventManager;
+            // Variable containing id of user. It comes from the class SESSION
+            $user = Session::getUser();
+
+            // 
 
             // Verify is there is a submit.
             if (isset($_POST['submit'])) {
@@ -66,31 +72,51 @@
                 $imgEvent = filter_input(INPUT_POST, "imgEvent", FILTER_SANITIZE_SPECIAL_CHARS);
                 $alt = filter_input(INPUT_POST, "alt", FILTER_SANITIZE_SPECIAL_CHARS);
                 $user_id = filter_input(INPUT_POST, "user_id", FILTER_SANITIZE_NUMBER_INT);
-                $category_id = filter_input(INPUT_POST, "category_id", FILTER_SANITIZE_NUMBER_INT);
-            }
+                $category_id = filter_input(INPUT_POST, "category", FILTER_SANITIZE_NUMBER_INT);
+                // var_dump($_POST['submit']); 
+                // die();
+    
+                // Verify there are filtered datas
+                if ($titleEvent &&
+                    $description &&
+                    $zipcode &&
+                    $address &&
+                    $city &&
+                    $country &&
+                    $dateStart &&
+                    $dateEnd &&
+                    $maxUsers &&
+                    $contribution &&
+                    $imgEvent &&
+                    $alt &&
+                    $category_id) {
+    
+                    // This associative array contain the columns name and de values.
+                    $data = [
+                        'titleEvent' => $titleEvent,
+                        'description' => $description,
+                        'zipcode' => $zipcode,
+                        'address' => $address,
+                        'city' => $city,
+                        'country' => $country,
+                        'dateStart' => $dateStart,
+                        'dateEnd' => $dateEnd,
+                        'maxUsers' => $maxUsers,
+                        'contribution' => $contribution,
+                        'imgEvent' => $imgEvent,
+                        'alt' => $alt,
+                        'user_id' => $user->getId(),
+                        'category_id' => $category_id,
+                    ];
+                    // Here we tell to eventManager to execute method add with attribut $data.
+                    $eventManager->add($data);
 
-            // This associative array contain the columns name and de values.
-            $data = [
-                'titleEvent' => $titleEvent,
-                'description' => $description,
-                'zipcode' => $zipcode,
-                'address' => $address,
-                'city' => $city,
-                'country' => $country,
-                'dateStart' => $dateStart,
-                'dateEnd' => $dateEnd,
-                'maxUsers' => $maxUsers,
-                'contribution' => $contribution,
-                'imgEvent' => $imgEvent,
-                'alt' => $alt,
-                'user_id' => $user_id,
-                'category_id' => $category_id,
-            ];
-            // Here we tell to eventManager to execute method add with attribut $data.
-            $eventManager->add($data);
+                    $this->redirectTo('event', 'addEvent');
+                } // fin filter_input
+            } // fin submit
 
             return [
-                "view" => VIEW_DIR."security/addEvent"
+                "view" => VIEW_DIR."security/addEvent.php"
             ];
         }
 
@@ -118,7 +144,6 @@
                         'event_id' => $id,
                         'user_id' => $user->getId(),
                     ];
-        
                 }
 
                 // Here we tell to eventManager to execute method add with attribut $data.
@@ -141,20 +166,11 @@
                         'email' => $email
                     ];
     
+                    // Here we tell to eventManager to execute method add with attribut $data.
                     $pseudo = $userManager->removeByEmail($data);
-                    // redirection
-                    
-                }
-                
-                
+                    // redirection to (view, method, id) with empty imput.
+                    $this->redirectTo('users', 'listUsers', $email);
+                }                
             }
-            
-            // return [
-            //     "view" => VIEW_DIR."event/listUsers.php",
-            //     "data" => [
-            //         "user" => $userManager->findAll(["pseudo", "ASC"])
-            //     ]
-            // ];
         }
-
     }
