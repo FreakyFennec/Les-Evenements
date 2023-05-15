@@ -4,10 +4,10 @@
     <form id="formUpdateEvent" method="POST" action="index.php?ctrl=security&action=updateEvent">
         
         <label for=""></label>
-        <input type="" name="">
+        <input type="" name="" id="" required>
 
         <label for=""></label>
-        <input type="" name="">
+        <input type="" name="" id="" required>
 
         <input id="submit" type="submit" name="submit" value="Envoyer">
 

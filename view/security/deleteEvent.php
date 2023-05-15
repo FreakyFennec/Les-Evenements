@@ -4,7 +4,7 @@
     <form id="formDeleteEvent" method="POST" action="index.php?ctrl=security&action=deleteEvent">
         
         <label for="id_event"></label>
-        <input type="number" name="id_event">
+        <input type="number" name="id_event" id="id_event" required>
 
         <input id="submit" type="submit" name="submit" value="Envoyer">
 
