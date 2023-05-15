@@ -29,7 +29,7 @@
         <input type="datetime-local" id="dateStart" name="dateStart" required value="<?= $event->getDateStartForm() ?>">
 
         <label for="dateEnd">Date fin :</label>
-        <input type="datetime-local" id="dateEnd" name="dateEnd" required value="<?= $event->getDateEnd() ?>">
+        <input type="datetime-local" id="dateEnd" name="dateEnd" required value="<?= $event->getDateEndForm() ?>">
 
         <label for="maxUsers">Max participants :</label>
         <input type="number" id="maxUsers" name="maxUsers" required value="<?= $event->getMaxUsers() ?>">
