@@ -2,7 +2,10 @@
 $detailEvent = $result["data"]['findOneById']; // It's un object array.
 $commentsEvent = $result["data"]['findCommentById'];
 ?>
+<pre>
+<?= var_dump($result); ?>
 
+</pre>
 <?php
 // $userManager = $result["data"]['userManager'];
 ?>
@@ -24,7 +27,11 @@ $commentsEvent = $result["data"]['findCommentById'];
         
         <!-- If connected -->
         
+        
+
     </div>
+<a class="linksAdmin" href="index.php?ctrl=security&action=updateEvent&id_event=<?= $detailEvent->getId(); ?>">Modifier événement</a>
+
     <div id="map">
         <!-- Map's place -->
     </div>
