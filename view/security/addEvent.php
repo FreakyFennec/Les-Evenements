@@ -4,46 +4,43 @@
     <form id="formRegister" method="POST" action="index.php?ctrl=event&action=addEvent">
 
         <label for="titleEvent">Titre :</label>
-        <input type="text" name="titleEvent">
+        <input type="text" id="titleEvent" name="titleEvent" required>
 
         <label for="description">Description :</label>
-        <input type="text" name="lastName">
+        <textarea name="description" id="description" cols="30" rows="10" required></textarea>
 
         <label for="zipcode">Code postal :</label>
-        <input type="number" name="zipcode">
+        <input type="number" id="zipcode" name="zipcode" required>
 
-        <label for="addres">Adresse :</label>
-        <input type="text" name="addres">
+        <label for="address">Adresse :</label>
+        <input type="text" id="address" name="address" required>
 
         <label for="city">Ville :</label>
-        <input type="text" name="city">
+        <input type="text" id="city" name="city" required>
 
         <label for="country">Pays :</label>
-        <input type="text" name="country">
+        <input type="text" id="country" name="country" required>
 
         <label for="dateStart">Date début :</label>
-        <input type="date" name="dateStart">
+        <input type="datetime-local" id="dateStart" name="dateStart" required>
 
         <label for="dateEnd">Date fin :</label>
-        <input type="date" name="dateEnd">
+        <input type="datetime-local" id="dateEnd" name="dateEnd" required>
 
         <label for="maxUsers">Max participants :</label>
-        <input type="number" name="maxUsers">
+        <input type="number" id="maxUsers" name="maxUsers" required>
 
         <label for="contribution">Contribution :</label>
-        <input type="number" name="contribution">
+        <input type="number" id="contribution" name="contribution" required>
 
         <label for="ImgEvent">Image :</label>
-        <input type="text" name="ImgEvent">
+        <input type="text" id="ImgEvent" name="imgEvent" required>
 
         <label for="alt">Alt :</label>
-        <input type="text" name="alt">
-
-        <label for="user_id">user_id :</label>
-        <input type="number" name="user_id">
+        <input type="text" id="alt" name="alt" required>
 
         <label for="category">Categorie :</label>
-        <select name="category">
+        <select name="category" id="category" required>
             <option value="1">Culture</option>
             <option value="2">Sport</option>
             <option value="3">Jeux de sociétés</option>
