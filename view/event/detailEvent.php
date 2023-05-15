@@ -38,6 +38,7 @@ $commentsEvent = $result["data"]['findCommentById'];
                 <th>Titre</th>
                 <th>Commentaire</th>
                 <th>Crée le :</th>
+                <th>Auteur:</th>
             </tr>
         </thead>
         <tbody>
@@ -47,6 +48,7 @@ $commentsEvent = $result["data"]['findCommentById'];
                     <td><?= $comment->getTitleComment(); ?></td>
                     <td><?= $comment->getComment(); ?></td>
                     <td><?= $comment->getCreationDate(); ?></td>
+                    <td><?= $comment->getUser(); ?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
@@ -56,7 +58,7 @@ $commentsEvent = $result["data"]['findCommentById'];
 <div id="box" name="box">
     <h2 class="titleAddComArea">Ajoutez votre commentaire</h2>
 
-    <form id="formRegister" method="POST" action="index.php?ctrl=event&action=addComment&id=<?= $detailEvent->getId(); ?>">
+    <form id="formRegister" method="POST" action="index.php?ctrl=event&action=addComment&id=<?= $detailEvent->getId(); ?>&user_id=">
 
         <label for="titleComment">Titre du commentaire</label>
         <input type="text" name="titleComment">
