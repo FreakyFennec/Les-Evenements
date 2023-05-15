@@ -155,6 +155,8 @@
         {
             $eventManager = new EventManager();
             $event = $eventManager->findOneById($id);
+            $user = Session::getUser();
+
 
             if (isset($_POST['submit'])) {
 

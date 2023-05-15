@@ -1,10 +1,10 @@
 *,
-    ::before,
-    ::after {
-        margin: 0px;
-        padding: 0px;
-        box-sizing: border-box;
-    }
+::before,
+::after {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
 body {
     font-family: 'Neucha', cursive;
     font-size: 1.2em; 
