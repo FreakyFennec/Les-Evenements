@@ -67,6 +67,29 @@
             }
         }
         
+        public function update($data)
+        {
+            // $keys = ['id_event', 'titleEvent',...]
+            $keys = array_keys($data);
+            // $values = ['10', 'The event',...]
+            // $values = array_values($data);
+
+            $updatePairs = [];
+            foreach ($keys as $key) {
+                $updatePairs[] = $key . " = '" . $data[$key] . "'";
+            }
+
+            $sql = "UPDATE " . $this->tableName . "
+                    SET " . implode(", ", $updatePairs); // Correction ici
+
+            try {
+                return DAO::update($sql);
+            } catch (\PDOException $e) {
+                echo $e->getMessage();
+                die();
+            }
+        }
+
         public function delete($id){
             $sql = "DELETE FROM ".$this->tableName."
                     WHERE id_".$this->tableName." = :id
