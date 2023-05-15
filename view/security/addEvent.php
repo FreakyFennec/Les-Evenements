@@ -28,10 +28,10 @@
         <input type="datetime-local" id="dateEnd" name="dateEnd" required>
 
         <label for="maxUsers">Max participants :</label>
-        <input type="number" id="maxUsers" name="maxUsers" required>
+        <input type="number" id="maxUsers" name="maxUsers">
 
         <label for="contribution">Contribution :</label>
-        <input type="number" id="contribution" name="contribution" required>
+        <input type="number" id="contribution" name="contribution">
 
         <label for="ImgEvent">Image :</label>
         <input type="text" id="ImgEvent" name="imgEvent" required>
