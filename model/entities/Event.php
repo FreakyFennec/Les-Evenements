@@ -146,12 +146,15 @@
             return $this;
         }       
 
+        /**
+         * Get the value of dateStart without dateFormatter.
+         */
         public function getDateStartForm() {
             return $this->dateStart;
         }
 
         /**
-         * Get the value of dateStart
+         * Get the value of dateStart.
          */ 
         public function getDateStart()
         {
@@ -190,6 +193,14 @@
             return $this;
         }
 
+        /**
+         * Get the value of dateEnd without dateFormatter.
+         */
+        public function getDateEndForm()
+        {
+            return $this->dateEnd;
+        }
+        
         /**
          * Get the value of dateEnd
          */ 
@@ -237,7 +248,8 @@
          */ 
         public function getContribution()
         {
-            return $this->contribution;
+            $formattedContribution = number_format($this->contribution, 2);
+            return $formattedContribution;
         }
 
         /**
