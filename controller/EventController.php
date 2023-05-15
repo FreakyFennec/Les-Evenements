@@ -1,5 +1,4 @@
 <?php
-
     namespace Controller;
 
     use App\Session;
@@ -97,25 +96,36 @@
 
         public function addComment($id)
         {
+            // Instantiation of EventManager putting in variable eventManager.
             $commentManager = new CommentManager();
+            // Variable containing id of user. It comes from the class SESSION
+            $user = Session::getUser();
 
+            // Verify is there is a submit.
             if (isset($_POST['submit'])) {
 
+                // Name of the columns placed in the super global $_POST that is stored in the variable.
                 $titleComment = filter_input(INPUT_POST, 'titleComment', FILTER_SANITIZE_SPECIAL_CHARS);
                 $comment = filter_input(INPUT_POST, 'comment',FILTER_SANITIZE_SPECIAL_CHARS);
-                $user_id = filter_input(INPUT_POST, "user_id", FILTER_SANITIZE_NUMBER_INT);
-            }
-            echo '<pre>';
-            var_dump($_GET);
-            echo '</pre>';
-            $data = [
-                'titleComment' => $titleComment,
-                'comment' => $comment,
-                'event_id' => $id,
-                //'user_id' => $user_id,
-            ];
 
-            $commentManager->add($data);
+                // Verify there are filtered datas
+                if($titleComment && $comment) {
+
+                    // Associative array containing datas.
+                    $data = [
+                        'titleComment' => $titleComment,
+                        'comment' => $comment,
+                        'event_id' => $id,
+                        'user_id' => $user->getId(),
+                    ];
+        
+                }
+
+                // Here we tell to eventManager to execute method add with attribut $data.
+                $commentManager->add($data);
+                // And redirection to (view, method, id) with empty imput.
+                $this->redirectTo('event', 'detailEvent', $id);
+            }
 
             return [
                 "view" => VIEW_DIR."security/detailEvent"
