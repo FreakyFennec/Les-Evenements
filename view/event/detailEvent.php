@@ -1,11 +1,7 @@
 <?php
 $detailEvent = $result["data"]['findOneById']; // It's un object array.
 $commentsEvent = $result["data"]['findCommentById'];
-?>
-<pre>
-<?= var_dump($result); ?>
-
-</pre>
+?> 
 <?php
 // $userManager = $result["data"]['userManager'];
 ?>
