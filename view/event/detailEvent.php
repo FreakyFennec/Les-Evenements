@@ -2,7 +2,6 @@
 $detailEvent = $result["data"]['findOneById']; // It's un object array.
 $commentsEvent = $result["data"]['findCommentById'];
 ?>
-<pre><?= var_dump($commentsEvent); ?></pre>
 
 <?php
 // $userManager = $result["data"]['userManager'];
@@ -22,6 +21,7 @@ $commentsEvent = $result["data"]['findCommentById'];
             <p class="city"><?= $detailEvent->getCity(); ?></p>
             <p class="zipcode"><?= $detailEvent->getZipcode(); ?></p>
         </div>
+        
         <!-- If connected -->
         
     </div>

@@ -126,10 +126,6 @@
                 // And redirection to (view, method, id) with empty imput.
                 $this->redirectTo('event', 'detailEvent', $id);
             }
-
-            return [
-                "view" => VIEW_DIR."security/detailEvent"
-            ];
         }
 
         public function removeUser() {
@@ -140,20 +136,25 @@
                 
                 $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-                $data = [
-                    'email' => $email
-                ];
-
-                $pseudo = $userManager->removeByEmail($data);
+                if($email) {
+                    $data = [
+                        'email' => $email
+                    ];
+    
+                    $pseudo = $userManager->removeByEmail($data);
+                    // redirection
+                    
+                }
+                
                 
             }
             
-            return [
-                "view" => VIEW_DIR."event/listUsers.php",
-                "data" => [
-                    "user" => $userManager->findAll(["pseudo", "ASC"])
-                ]
-            ];
+            // return [
+            //     "view" => VIEW_DIR."event/listUsers.php",
+            //     "data" => [
+            //         "user" => $userManager->findAll(["pseudo", "ASC"])
+            //     ]
+            // ];
         }
 
     }
