@@ -1,0 +1,67 @@
+/**
+    style-table.css LesEvenements
+    =======================================
+    By AHJ
+*/
+
+/**************** Table ********************/
+
+.tableProfileUser, .tableEvents, .tableComments, .tableListUsers, .tableCom {
+  margin: 0px auto;
+}
+
+.tableProfileUser, .tableEvents, .tableComments, .tableListUsers, .tableCom {
+    width: 95%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+.tableProfileUser th,
+.tableProfileUser td,
+.tableEvents th,
+.tableEvents td,
+.tableComments th,
+.tableComments td, 
+.tableListUsers th, 
+.tableListUsers td, 
+.tableCom th,
+.tableCom td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+@media (min-width: 768px) {
+    .tableProfileUser thead,
+    .tableEvents thead,
+    .tableComments thead, 
+    .tableListUsers thead, 
+    .tableCom thead {
+      display: table-row-group;
+    }
+
+    .tableProfileUser tbody,
+    .tableEvents tbody,
+    .tableComments tbody, 
+    .tableListUsers tbody, 
+    .tableCom tbody {
+      display: table-row-group;
+    }
+
+    .tableProfileUser tr 
+    .tableEvents tr,
+    .tableComments tr, 
+    .tableListUsers tr,
+    .tableCom tr {
+      display: table-row;
+    }
+
+    .tableProfileUser td, 
+    .tableEvents td, 
+    .tableComments td, 
+    .tableListUsers td,
+    .tableCom td {
+      display: table-cell;
+      width: 25%;
+    }
+}

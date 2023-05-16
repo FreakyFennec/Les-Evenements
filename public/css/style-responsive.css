@@ -273,7 +273,7 @@ main {
 }
 
 
-.title-page, .title-myEvents, .title-myComments {
+.title-page, .title-myEvents, .title-myComments, .titleComArea {
     text-align: center;
 }
 /************** Footer *********************/
@@ -288,18 +288,4 @@ footer {
     text-align: center;
     color: #DFF6FF;
     padding: 15px;
-}
-
-/**************** Table ********************/
-
-table {
-    border: 1px solid #6d6c6c;
-}
-
-th, td {
-    padding: 5px 10px;
-    border: 1px solid #6d6c6c;
-}
-.tableProfileUser, .tableEvents, .tableComments, .tableListUsers {
-    margin: 0px auto;
 }

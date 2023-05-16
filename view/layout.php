@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-responsive.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-listUsers-responsive.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-listUsers.css">
+    <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-table.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style.css">
 
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-winModaRegister.css">

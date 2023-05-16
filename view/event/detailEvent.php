@@ -32,7 +32,7 @@ $commentsEvent = $result["data"]['findCommentById'];
         <!-- Map's place -->
     </div>
 </div>
-<div class="comArea"></div>
+<div class="comArea">
     <h2 class="titleComArea">Commentaires</h2>
 
     <table class="tableCom">
@@ -40,8 +40,8 @@ $commentsEvent = $result["data"]['findCommentById'];
             <tr>
                 <th>Titre</th>
                 <th>Commentaire</th>
-                <th>Crée le :</th>
-                <th>Auteur:</th>
+                <th>Crée le</th>
+                <th>Auteur</th>
             </tr>
         </thead>
         <tbody>
