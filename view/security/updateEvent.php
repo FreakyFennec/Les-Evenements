@@ -44,10 +44,10 @@
         <input type="text" id="alt" name="alt" required value="<?= $event->getAlt() ?>">
 
         <label for="category">Categorie :</label>
-        <select name="category" id="category" required value="<?= $event->getCategory() ?>">
-            <option value="1">Culture</option>
-            <option value="2">Sport</option>
-            <option value="3">Jeux de sociétés</option>
+        <select name="category" id="category" required>
+            <option value="1" <?= ($event->getCategory()->getId() === 1) ? 'selected' : '' ?>>Culture</option>
+            <option value="2" <?= ($event->getCategory()->getId() === 2) ? 'selected' : '' ?>>Sport</option>
+            <option value="3" <?= ($event->getCategory()->getId() === 3) ? 'selected' : '' ?>>Jeux de sociétés</option>
         </select>
 
         <input id="submit" type="submit" name="submit" value="Envoyer">
