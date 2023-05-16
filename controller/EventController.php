@@ -157,7 +157,6 @@
             $event = $eventManager->findOneById($id);
             $user = Session::getUser();
 
-
             if (isset($_POST['submit'])) {
 
                 // Name of the columns placed in the super global $_POST that is stored in the variable.
@@ -206,13 +205,13 @@
                         'imgEvent' => $imgEvent,
                         'alt' => $alt,
                         'user_id' => $user->getId(),
-                        'category_id' => $category_id,
+                        'category_id' => $event->getCategory_id(),
                     ];
-                    $eventManager->update($data);
+                    $eventManager->update($id, $data);
 
                     $this->redirectTo('event', 'updateEvent');
-                } // fin filter_input
-            } // fin submit
+                } // End filter_input
+            } // End submit
             
             return [
                 "view" => VIEW_DIR."security/updateEvent.php",

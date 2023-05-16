@@ -20,6 +20,7 @@
         private $alt;
         private $user_id;
         private $category;
+        private $category_id;
         private $event_id;
 
         public function __construct($data) {
@@ -381,6 +382,26 @@
         public function setEvent_id($event_id)
         {
                 $this->event_id = $event_id;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of category_id
+         */ 
+        public function getCategory_id()
+        {
+                return $this->category_id;
+        }
+
+        /**
+         * Set the value of category_id
+         *
+         * @return  self
+         */ 
+        public function setCategory_id($category_id)
+        {
+                $this->category_id = $category_id;
 
                 return $this;
         }
