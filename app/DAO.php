@@ -36,7 +36,8 @@
             );
         }
 
-        public static function insert($sql){
+        public static function insert($sql)
+        {
             try{
                 $stmt = self::$bdd->prepare($sql);
                 $stmt->execute();
@@ -50,7 +51,8 @@
             }
         }
 
-        public static function update($sql, $params){
+        public static function update($sql, $params)
+        {
             try{
                 $stmt = self::$bdd->prepare($sql);
                 
@@ -64,7 +66,8 @@
             }
         }
         
-        public static function delete($sql, $params){
+        public static function delete($sql, $params)
+        {
             try{
                 $stmt = self::$bdd->prepare($sql);
                 
