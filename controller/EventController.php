@@ -153,12 +153,17 @@
 
         public function updateEvent($id)
         {
+            echo '<pre>';
+            var_dump($id);
+            echo '</pre>';
             $eventManager = new EventManager();
             $event = $eventManager->findOneById($id);
             $user = Session::getUser();
 
             if (isset($_POST['submit'])) {
-
+echo '<pre>';
+var_dump($_POST);
+echo '</pre>';
                 // Name of the columns placed in the super global $_POST that is stored in the variable.
                 $titleEvent = filter_input(INPUT_POST, "titleEvent", FILTER_SANITIZE_SPECIAL_CHARS);
                 $description = filter_input(INPUT_POST, "description", FILTER_SANITIZE_SPECIAL_CHARS);
@@ -172,8 +177,8 @@
                 $contribution = filter_input(INPUT_POST, "contribution", FILTER_SANITIZE_NUMBER_INT);
                 $imgEvent = filter_input(INPUT_POST, "imgEvent", FILTER_SANITIZE_SPECIAL_CHARS);
                 $alt = filter_input(INPUT_POST, "alt", FILTER_SANITIZE_SPECIAL_CHARS);
-                $user_id = filter_input(INPUT_POST, "user_id", FILTER_SANITIZE_NUMBER_INT);
                 $category_id = filter_input(INPUT_POST, "category", FILTER_SANITIZE_NUMBER_INT);
+                $id_event = filter_input(INPUT_POST, "id_event", FILTER_SANITIZE_NUMBER_INT);
 
                 // Verify there are filtered datas
                 if ($titleEvent &&
@@ -188,7 +193,8 @@
                     $contribution &&
                     $imgEvent &&
                     $alt &&
-                    $category_id) {
+                    $category_id &&
+                    $id_event) {
                         
                     // This associative array contain the columns name and de values.
                     $data = [
@@ -206,9 +212,12 @@
                         'alt' => $alt,
                         'user_id' => $user->getId(),
                         'category_id' => $event->getCategory_id(),
+                        'id_event' => $id,
                     ];
                     $eventManager->update($id, $data);
-
+echo '<pre>';
+var_dump($data);
+echo '</pre>';
                     $this->redirectTo('event', 'updateEvent');
                 } // End filter_input
             } // End submit

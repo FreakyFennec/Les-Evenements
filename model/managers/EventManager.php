@@ -66,6 +66,9 @@
 
         public function update($id, $data)
         {
+            echo '<pre>';
+            var_dump($id);
+            echo '</pre>';
             $sql = "UPDATE event
                     SET titleEvent = :titleEvent,
                         description = :description,
@@ -81,7 +84,7 @@
                         alt = :alt,
                         user_id = :user_id,
                         category_id = :category_id
-                    WHERE id_event = $id";
+                    WHERE id_event = :id_event";
 
             DAO::update($sql, [
                 'id_event' => $id,
