@@ -64,6 +64,45 @@
             );
         }
 
+        public function update($id, $data)
+        {
+            $sql = "UPDATE event
+                    SET titleEvent = :titleEvent,
+                        description = :description,
+                        zipcode = :zipcode,
+                        address = :address,
+                        city = :city,
+                        country = :country,
+                        dateStart = :dateStart,
+                        dateEnd = :dateEnd,
+                        maxUsers = :maxUsers,
+                        contribution = :contribution,
+                        imgEvent = :imgEvent,
+                        alt = :alt,
+                        user_id = :user_id,
+                        category_id = :category_id
+                    WHERE id_event = $id";
+
+            DAO::update($sql, [
+                'id_event' => $id,
+                'titleEvent' => $data['titleEvent'],
+                'description' => $data['description'],
+                'zipcode' => $data['zipcode'],
+                'address' => $data['address'],
+                'city' => $data['city'],
+                'country' => $data['country'],
+                'dateStart' => $data['dateStart'],
+                'dateEnd' => $data['dateEnd'],
+                'maxUsers' => $data['maxUsers'],
+                'contribution' => $data['contribution'],
+                'imgEvent' => $data['imgEvent'],
+                'alt' => $data['alt'],
+                'user_id' => $data['user_id'],
+                'category_id' => $data['category_id']
+            ]);
+        }
+
+
         public function findEventByIdUser($id) {
             $eventManager = new EventManager();
 
