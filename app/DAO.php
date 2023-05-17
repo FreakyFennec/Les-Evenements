@@ -24,14 +24,17 @@
          */
         public static function connect(){
             
+            // Instanciation of class PDO
             self::$bdd = new \PDO(
+                // with statics variables for building the string of connection to the db.
                 self::$host.';dbname='.self::$dbname,
                 self::$dbuser,
                 self::$dbpass,
+                // Array of options
                 array(
-                    \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
-                    \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
-                    \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC
+                    \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",    // Configure caraters.
+                    \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,          // Configure error mode.
+                    \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC      // Configure how to retrive results.
                 )   
             );
         }
