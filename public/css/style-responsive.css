@@ -149,7 +149,7 @@ main {
     max-height: 100%;
 }
 #imgEventFeatured {
-    max-height: 300px;
+    max-height: auto;
 }
 .descAndInfos {
     grid-area: descAndInfos;
