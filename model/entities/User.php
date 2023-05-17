@@ -200,7 +200,7 @@ use IntlDateFormatter;
             $date = new \DateTime($this->registerDate);
 
             // Create object  IntlDateFormatter for formate the date in french.
-            $dateFormater = new \IntlDateFormatter(
+            $dateFormatter = new \IntlDateFormatter(
                 'fr_FR',                        // Define the local
                 IntlDateFormatter::FULL,        // Const who specifie the objcet format.
                 IntlDateFormatter::FULL,        // Const who specifie the objcet format.

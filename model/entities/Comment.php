@@ -2,7 +2,7 @@
     namespace Model\Entities;
 
     use App\Entity;
-use DateTimeZone;
+	use IntlDateFormatter;
 
     final class Comment extends Entity {
 
@@ -83,9 +83,27 @@ use DateTimeZone;
          */ 
         public function getCreationDate()
         {
-                 // Transforme la string en objet.
-                $dateFr = $this->creationDate->format('d-m-Y H:i:s');
-                return $dateFr;
+			if ($this->creationDate instanceof \DateTime) {
+				$date = $this->creationDate;
+			} else {
+				$date = new \DateTime($this->creationDate);
+			}
+			
+
+			// Create object  IntlDateFormatter for formate the date in french.
+			$dateFormatter = new \IntlDateFormatter(
+					'fr_FR',                        // Define the local
+					IntlDateFormatter::FULL,        // Const who specifie the objcet format.
+					IntlDateFormatter::FULL,        // Const who specifie the objcet format.
+					'Europe/Paris',                 // Time zone
+					IntlDateFormatter::GREGORIAN,   // Calendar type
+					//
+					'EEEE d MMMM y'               // Display format
+			);
+
+			$dateFr = $dateFormatter->format($date);
+
+			return $dateFr;
         }
 
         /**
