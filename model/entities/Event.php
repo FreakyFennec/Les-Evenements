@@ -2,6 +2,7 @@
     namespace Model\Entities;
 
     use App\Entity;
+    use IntlDateFormatter;
 
     final class Event extends Entity {
 
@@ -163,20 +164,15 @@
             
             // Creat object IntlDateFormatter for formate the date in french.
             $dateFormatter = new \IntlDateFormatter(
-                'fr_FR',
-                \IntlDateFormatter::LONG,       // Const who specifie the objcet format.
-                \IntlDateFormatter::NONE        // Const who specifie the objcet format.
+                'fr_FR',                        // Define the local
+                IntlDateFormatter::FULL,        // Const who specifie the objcet format.
+                IntlDateFormatter::FULL,        // Const who specifie the objcet format.
+                'Europe/Paris',                 // Time zone
+                IntlDateFormatter::GREGORIAN,   // Calendar type
+                //
+                'EEEE d MMMM y'               // Display format
             );
-
-            // Set the time zone to use.
-            $dateFormatter->setTimeZone('Europe/Paris');
-
-            // Format the date with IntlDateFormatter.
-            // 
             $dateFr = $dateFormatter->format($date);
-            
-            // Set the french format
-            $dateFr = date_format($date, 'd M Y');
 
             return $dateFr;
         }
@@ -207,7 +203,19 @@
         public function getDateEnd()
         {
             $date = new \DateTime($this->dateEnd);
-            $dateFr = date_format($date, 'd M Y');
+            
+            // Creat object IntlDateFormatter for formate the date in french.
+            $dateFormatter = new \IntlDateFormatter(
+                'fr_FR',                        // Define the local
+                IntlDateFormatter::FULL,        // Const who specifie the objcet format.
+                IntlDateFormatter::FULL,        // Const who specifie the objcet format.
+                'Europe/Paris',                 // Time zone
+                IntlDateFormatter::GREGORIAN,   // Calendar type
+                //
+                'EEEE d MMMM y'               // Display format
+            );
+            $dateFr = $dateFormatter->format($date);
+
             return $dateFr;
         }
 
