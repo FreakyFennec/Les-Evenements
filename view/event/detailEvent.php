@@ -19,6 +19,7 @@ $commentsEvent = $result["data"]['findCommentById'];
             <p class="address">Au <?= $detailEvent->getAddress(); ?></p>
             <p class="city"><?= $detailEvent->getCity(); ?></p>
             <p class="zipcode"><?= $detailEvent->getZipcode(); ?></p>
+            <p class="maxUsers">Participants max. : <?= $detailEvent->getMaxUsers(); ?> pers.</p>
         </div>
         
         <!-- If connected -->

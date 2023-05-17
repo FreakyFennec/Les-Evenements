@@ -265,8 +265,8 @@
             "dateEvent dateEvent"
             "descSmall descSmall";
     }
-    .city, .zipcode, .dateEvent, .dateEvent, .descSmall {
-        grid-area: city zipcode dateEvent descSmall;
+    .city, .zipcode, .dateEvent, .dateEvent, .descSmall, .maxUsers {
+        grid-area: city zipcode dateEvent descSmall maxUsers;
     }
     #map {
         grid-area: map;
