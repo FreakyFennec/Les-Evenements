@@ -35,6 +35,9 @@ $commentsEvent = $result["data"]['findCommentById'];
 <div class="comArea">
     <h2 class="titleComArea">Commentaires</h2>
 
+    <?php
+        if($commentsEvent) {
+    ?>
     <table class="tableCom">
         <thead>
             <tr>
@@ -45,17 +48,21 @@ $commentsEvent = $result["data"]['findCommentById'];
             </tr>
         </thead>
         <tbody>
-            
-        <?php foreach ($commentsEvent as $comment) : ?>
-                <tr>
-                    <td><?= $comment->getTitleComment(); ?></td>
-                    <td><?= $comment->getComment(); ?></td>
-                    <td><?= $comment->getCreationDate(); ?></td>
-                    <td><?= $comment->getUser(); ?></td>
-                </tr>
-            <?php endforeach; ?>
+        <?php   
+            foreach ($commentsEvent as $comment) : ?>
+                    <tr>
+                        <td><?= $comment->getTitleComment(); ?></td>
+                        <td><?= $comment->getComment(); ?></td>
+                        <td><?= $comment->getCreationDate(); ?></td>
+                        <td><?= $comment->getUser(); ?></td>
+                    </tr>
+                <?php endforeach; ?>
+        
         </tbody>
     </table>
+    <?php } else {
+        echo "<p>Pas de commentaire pour le moment</p>";
+    } ?>
 </div>
 
 <div id="box" name="box">

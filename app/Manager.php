@@ -104,7 +104,5 @@
                 return $value[0];
             }
             return false;
-        }
-        
-        
+        }       
     }

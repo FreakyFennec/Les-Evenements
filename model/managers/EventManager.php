@@ -66,9 +66,10 @@
 
         public function update($id, $data)
         {
-            echo '<pre>';
+            /**/ echo '<pre>';
             var_dump($id);
-            echo '</pre>';
+            echo '</pre>'; 
+            
             $sql = "UPDATE event
                     SET titleEvent = :titleEvent,
                         description = :description,
@@ -85,6 +86,8 @@
                         user_id = :user_id,
                         category_id = :category_id
                     WHERE id_event = :id_event";
+
+            //var_dump($data); die;
 
             DAO::update($sql, [
                 'id_event' => $id,
@@ -104,7 +107,6 @@
                 'category_id' => $data['category_id']
             ]);
         }
-
 
         public function findEventByIdUser($id) {
             $eventManager = new EventManager();
