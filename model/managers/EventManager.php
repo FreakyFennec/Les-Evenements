@@ -31,7 +31,7 @@
             $sql = "SELECT *
                     FROM ".$this->tableName." e
                     WHERE e.dateStart >= CURRENT_DATE
-                    LIMIT 6";
+                    LIMIT 8";
 
             return $this->getMultipleResults(
                 DAO::select($sql, [], true),
