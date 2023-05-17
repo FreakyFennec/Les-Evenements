@@ -153,18 +153,12 @@
 
         public function updateEvent($id)
         {
-            /* echo '<pre>';
-            var_dump($id);
-            echo '</pre>'; */
-
             $eventManager = new EventManager();
             $event = $eventManager->findOneById($id);
             $user = Session::getUser();
 
             if (isset($_POST['submit'])) {
-/* echo '<pre>';
-var_dump($_POST);
-echo '</pre>'; */
+
                 // Name of the columns placed in the super global $_POST that is stored in the variable.
                 $titleEvent = filter_input(INPUT_POST, "titleEvent", FILTER_SANITIZE_SPECIAL_CHARS);
                 $description = filter_input(INPUT_POST, "description", FILTER_SANITIZE_SPECIAL_CHARS);
