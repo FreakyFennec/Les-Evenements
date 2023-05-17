@@ -9,6 +9,7 @@
         protected $className = "Model\Entities\Event";
         protected $tableName = "event";
 
+        // Constructor who call the methode connect().
         public function __construct()
         {
             parent::connect();
