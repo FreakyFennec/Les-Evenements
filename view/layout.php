@@ -76,15 +76,16 @@
                     ?>
                     </div>
                 </nav>
-            </header><!-- /.header -->
+            </header><!-- /.header --> 
             
             <main>
                 <p class="pseudoUser">Bienvenue <?= App\Session::getUser() ?> !</p>
                 <?php
                         if(App\Session::isAdmin()){     // If it's the admin session display theses links
                             ?>
-                            <a class="linksAdmin" href="index.php?ctrl=home&action=users">Liste des membres</a>
-                            <a class="linksAdmin" href="index.php?ctrl=security&action=addEvent">Ajout d'événements</a>
+                            <button onclick="window.location.href = 'index.php?ctrl=home&action=users'">Liste des membres</button>
+                            
+                            <button onclick="window.location.href = 'index.php?ctrl=security&action=addEvent'">Ajout d'événements</button>
                             <?php
                         }
                         ?>

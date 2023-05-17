@@ -27,7 +27,7 @@ $commentsEvent = $result["data"]['findCommentById'];
         
 
     </div>
-<a class="linksAdmin" href="index.php?ctrl=event&action=updateEvent&id=<?= $detailEvent->getId(); ?>">Modifier événement</a>
+        <button onclick="window.location.href = 'index.php?ctrl=event&action=updateEvent&id=<?= $detailEvent->getId() ?>';">Modif</button>
 
     <div id="map">
         <!-- Map's place -->
@@ -51,14 +51,13 @@ $commentsEvent = $result["data"]['findCommentById'];
         <tbody>
         <?php   
             foreach ($commentsEvent as $comment) : ?>
-                    <tr>
-                        <td><?= $comment->getTitleComment(); ?></td>
-                        <td><?= $comment->getComment(); ?></td>
-                        <td><?= $comment->getCreationDate(); ?></td>
-                        <td><?= $comment->getUser(); ?></td>
-                    </tr>
-                <?php endforeach; ?>
-        
+                <tr>
+                    <td><?= $comment->getTitleComment(); ?></td>
+                    <td><?= $comment->getComment(); ?></td>
+                    <td><?= $comment->getCreationDate(); ?></td>
+                    <td><?= $comment->getUser(); ?></td>
+                </tr>
+            <?php endforeach; ?>        
         </tbody>
     </table>
     <?php } else {
