@@ -26,7 +26,7 @@
                 <td><a href="index.php?ctrl=security&action=listUsers&id=<?= $user->getId() ?>"><?= $user->getPseudo() ?></a></td>
                 <td><?= $user->getEmail() ?></td>
                 <td><?= $user->getRegisterDate() ?></td>
-                <td><?= $user->getStatus() ?> <button onclick="window.location.href = 'index.php?ctrl=security&action=updateStatus&id=<?= $user->getId() ?>';">Modif</button></td>
+                <td><?= $user->getStatus() ?> <button class="modifStatus" onclick="window.location.href = 'index.php?ctrl=security&action=updateStatus&id=<?= $user->getId() ?>';">Modif</button></td>
                 
                 <td><?= $user->getBanish() ?></td>
                 <td><a href="index.php?ctrl=security&action=removeUserById&id=<?= $user->getId() ?>">Del</a></td>

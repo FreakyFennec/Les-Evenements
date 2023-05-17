@@ -27,7 +27,7 @@ $commentsEvent = $result["data"]['findCommentById'];
         
 
     </div>
-        <button onclick="window.location.href = 'index.php?ctrl=event&action=updateEvent&id=<?= $detailEvent->getId() ?>';">Modif</button>
+        <button class="modifEvent" onclick="window.location.href = 'index.php?ctrl=event&action=updateEvent&id=<?= $detailEvent->getId() ?>';">Modif</button>
 
     <div id="map">
         <!-- Map's place -->
