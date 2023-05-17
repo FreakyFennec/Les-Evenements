@@ -2,6 +2,7 @@
     namespace Model\Entities;
 
     use App\Entity;
+use IntlDateFormatter;
 
     final class User extends Entity {
         private $id;
@@ -197,7 +198,20 @@
         public function getRegisterDate()
         {
             $date = new \DateTime($this->registerDate);
-            $registerDateFr = date_format($date, 'd M Y');
+
+            // Create object  IntlDateFormatter for formate the date in french.
+            $dateFormater = new \IntlDateFormatter(
+                'fr_FR',                        // Define the local
+                IntlDateFormatter::FULL,        // Const who specifie the objcet format.
+                IntlDateFormatter::FULL,        // Const who specifie the objcet format.
+                'Europe/Paris',                 // Time zone
+                IntlDateFormatter::GREGORIAN,   // Calendar type
+                //
+                'EEEE d MMMM y'               // Display format
+            );
+
+
+            $registerDateFr = $dateFormatter->format($date);
             return $registerDateFr;
         }
 
