@@ -13,21 +13,21 @@ $commentsEvent = $result["data"]['findCommentById'];
 
     <div class="descAndInfos">
         <!-- If not connected -->
-        <div class="descSmall"><?= $detailEvent->getDescription(); ?></div>
         <div class="infoForAll">
             <p class="dateEvent">Du : <?= $detailEvent->getDateStart(); ?><br /> au : <?= $detailEvent->getDateEnd(); ?></p>
             <p class="address">Au <?= $detailEvent->getAddress(); ?></p>
             <p class="city"><?= $detailEvent->getCity(); ?></p>
             <p class="zipcode"><?= $detailEvent->getZipcode(); ?></p>
             <p class="maxUsers">Participants max. : <?= $detailEvent->getMaxUsers(); ?> pers.</p>
+            <p class="descSmall"><?= $detailEvent->getDescription(); ?></p>
         </div>
         
         <!-- If connected -->
         
-        
+        <button class="modifEvent" onclick="window.location.href = 'index.php?ctrl=event&action=updateEvent&id=<?= $detailEvent->getId() ?>';">Modifier</button>
 
     </div>
-        <button class="modifEvent" onclick="window.location.href = 'index.php?ctrl=event&action=updateEvent&id=<?= $detailEvent->getId() ?>';">Modif</button>
+        
 
     <div id="map">
         <!-- Map's place -->
