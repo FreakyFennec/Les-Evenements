@@ -89,20 +89,20 @@ nav {
 #nav-left {
     color: #DFF6FF;
 }
-#nav-right a {
-    
+#nav-right a {    
     color: #DFF6FF;
 
     display: inline-block;
 }
 .icon_connexion, .icon_register {
-    grid-area: icon_connexion, icon_register;
+    grid-area: icon_connexion icon_register;
 
     width: 40px;
     height: 40px;
     margin: 10px;   
 }
 .icon_user, .icon_deconnexion {
+    grid-area: icon_user icon_deconnexion;
 
     width: 40px;
     height: 40px;
@@ -203,9 +203,10 @@ main {
     display: grid;
 
     grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "titlePassedEvent titlePassedEvent titlePassedEvent"
-                        "passedEvent passedEvent passedEvent"
-                        "passedEvent passedEvent passedEvent";
+    grid-template-areas: 
+        "titlePassedEvent titlePassedEvent titlePassedEvent"
+        "passedEvent passedEvent passedEvent"
+        "passedEvent passedEvent passedEvent";
     
     gap: 30px;
 
@@ -229,9 +230,9 @@ main {
         "imgDetailEvent map"
         "descAndInfos map";
     
-    width: auto;
-    margin: 20px;
-    padding: 20px;
+    /*width: auto;*/
+    margin: 0px;
+    padding: 0px;
     
     background-color: #ffffff;
 }
@@ -255,11 +256,17 @@ main {
     grid-template-areas:
         "city zipcode"
         "dateEvent dateEvent"
+        "maxUsers maxUsers"
         "descSmall descSmall"
-        "maxUsers maxUsers";
+        "modifEvent modifEvent";
 }
 .city, .zipcode, .dateEvent, .dateEvent, .descSmall, .maxUsers {
     grid-area: city zipcode dateEvent descSmall maxUsers;
+    text-align: left;
+}
+.modifEvent {
+    grid-area: modifEvent;
+    text-align: left;
 }
 
 #map {
