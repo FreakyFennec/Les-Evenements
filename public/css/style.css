@@ -275,6 +275,9 @@
         grid-area: map;
     }
 
+    .imgPopup {
+        height: 150px;
+    }
     .title-page {
         text-align: center;
     }

@@ -269,6 +269,9 @@ main {
 
     background-color: #6d6c6c;
 }
+.imgPopup {
+    height: 150px;
+}
 
 .title-page, .title-myEvents, .title-myComments, .titleComArea {
     text-align: center;
