@@ -1,7 +1,12 @@
 <?php
 $detailEvent = $result["data"]['findOneById']; // It's un object array.
 $commentsEvent = $result["data"]['findCommentById'];
-?> 
+$user = App\Session::getUser();
+echo '<pre>';
+var_dump($user);
+echo '</pre>';
+?>
+
 <?php
 // $userManager = $result["data"]['userManager'];
 ?>
@@ -25,13 +30,17 @@ $commentsEvent = $result["data"]['findCommentById'];
             <p class="descSmall"><?= $detailEvent->getDescription(); ?></p>
         </div>
         
-        <!-- If connected -->
+        <!-- If connected as admin or moderator -->
+        <?php
+        if (isset($user) && $user->getStatus() == 'admin' || $user->getStatus() == 'moderator') {
+        ?>
+            <button class="modifEvent" onclick="window.location.href = 'index.php?ctrl=event&action=updateEvent&id=<?= $detailEvent->getId() ?>';">Modifier</button>
+        <?php
+        } 
+        ?>
         
-        <button class="modifEvent" onclick="window.location.href = 'index.php?ctrl=event&action=updateEvent&id=<?= $detailEvent->getId() ?>';">Modifier</button>
-
     </div>
         
-
     <div id="map">
         <!-- Map's place -->
     </div>
