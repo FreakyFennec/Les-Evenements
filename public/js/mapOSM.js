@@ -76,7 +76,7 @@ $(document).ready(function() {
                         // Add popup with city name and an img.
                         marker.bindPopup(
                             "<p>" + city + "</p>" +
-                            "<img src=" + img + " alt=" + alt + ">", {minWidth: 150} 
+                            "<img class=\"imgPopup\" src=" + img + " alt=" + alt + ">", {minWidth: 150} 
                         );
                         // Displayed when the page loads.
                         // marker.openPopup();
