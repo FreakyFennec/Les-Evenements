@@ -137,8 +137,7 @@ INSERT INTO `user` (`id_user`, `firstName`, `lastName`, `email`, `pseudo`, `pass
 	(4, 'El', 'Lobo', 'ellobo@gmail.com', 'Ellobo', 'azer', 'admin', 0, '2023-02-28 08:42:18'),
 	(6, 'Freaky', 'Fennec', 'freaky@fennec.com', 'FreakyFennec', 'azert', 'admin', 0, '2023-04-17 19:17:46'),
 	(7, 'zaza', 'zaza', 'zaza@gmail.com', 'zaza', '$2y$10$PRU5hIOYXrSTRIwc22P67OD8Y2If4zw/LmqhyPIFn4fYgzdcLzqyi', 'admin', 0, '2023-05-04 07:52:58'),
-	(8, 'zeze', 'zeze', 'zeze@gmail.com', 'zeze', '$2y$10$xmdZJ9I34lv6Pjp/8uAeXOYfPMmorqB48cB/06M9uaMYEgnwDZnd6', 'user', 0, '2023-05-04 09:49:32'),
-	(9, 'Ad', 'Min', 'admin@gmail.com', 'Admin', '$2y$10$.tVhlGdV4NBDHMW8V0GruujwCHGzYk/macFOA.hYqomiLyx0E1RZm', 'admin', 0, '2023-05-04 07:52:58');
+	(8, 'zeze', 'zeze', 'zeze@gmail.com', 'zeze', '$2y$10$xmdZJ9I34lv6Pjp/8uAeXOYfPMmorqB48cB/06M9uaMYEgnwDZnd6', 'user', 0, '2023-05-04 09:49:32');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
