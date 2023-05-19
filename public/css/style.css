@@ -247,13 +247,13 @@
         display: grid;
         grid-template-columns: 50% 50%;
         grid-template-areas:
-            "dateEvent dateEvent"
+            "dateStartEnd"
             "city zipcode"
             "maxUsers maxUsers"
             "descSmall descSmall"
             "modifEvent modifEvent";
     }
-    .city, .zipcode, .dateEvent, .dateEvent, .descSmall, .maxUsers {
+    .city, .zipcode, .dateStartEnd, .descSmall, .maxUsers {
         grid-area: city zipcode dateEvent descSmall maxUsers;
         text-align: left;
     }

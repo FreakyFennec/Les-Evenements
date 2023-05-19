@@ -14,7 +14,10 @@ $commentsEvent = $result["data"]['findCommentById'];
     <div class="descAndInfos">
         <!-- If not connected -->
         <div class="infoForAll">
-            <p class="dateEvent">Du : <?= $detailEvent->getDateStart(); ?><br /> au : <?= $detailEvent->getDateEnd(); ?></p>
+            <div class="dateStartEnd">
+                <p class="dateEvent">Du : <?= $detailEvent->getDateStart(); ?><br /> au : <?= $detailEvent->getDateEnd(); ?></p>
+            </div>
+            
             <p class="address">Au <?= $detailEvent->getAddress(); ?></p>
             <p class="city"><?= $detailEvent->getCity(); ?></p>
             <p class="zipcode"><?= $detailEvent->getZipcode(); ?></p>

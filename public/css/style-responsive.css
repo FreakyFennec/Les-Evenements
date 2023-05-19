@@ -6,11 +6,13 @@
     box-sizing: border-box;
 }
 body {
+    max-width: 1280px;
+
     font-family: 'Neucha', cursive;
     font-size: 1.2em; 
+    
     margin: 0px auto;
-    background-color: #DFF6FF;/* */
-    max-width: 1280px; 
+    background-color: #DFF6FF;
 }
 
 /************** Header *********************/
@@ -20,7 +22,8 @@ body {
 
     display: grid;
     grid-template-columns: 65% 20% 15%;
-    grid-template-areas: "logoAndSiteName nav";
+    grid-template-areas: 
+        "logoAndSiteName nav";
 
     color: #DFF6FF;
 
@@ -31,7 +34,8 @@ body {
 
     display: grid;
     grid-template-columns: 25% 65%;
-    grid-template-areas: "logo siteName";
+    grid-template-areas: 
+        "logo siteName";
 
     color: #DFF6FF;
     text-decoration: none;
@@ -80,7 +84,8 @@ nav {
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: "icon_connexion icon_register";   
+    grid-template-areas: 
+        "icon_connexion icon_register";   
 
     display: flex;
     justify-content: right;
@@ -157,7 +162,6 @@ main {
     grid-area: descAndInfos;
 
     display: grid;
-
     grid-template-columns: 1fr;
     grid-template-areas: 
         "infoForAll"
@@ -170,15 +174,13 @@ main {
     grid-area: nextEvents;
 
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "titleNextEvent titleNextEvent titleNextEvent"
-                        "nextEvent nextEvent nextEvent"
-                        "nextEvent nextEvent nextEvent";
+    grid-template-areas: 
+        "titleNextEvent titleNextEvent titleNextEvent"
+        "nextEvent nextEvent nextEvent"
+        "nextEvent nextEvent nextEvent";
     
     gap: 30px;
-
-    
 
     margin: 20px 0px 0px 0px;
     padding: 20px;
@@ -201,7 +203,6 @@ main {
     grid-area: passedEvents;
 
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: 
         "titlePassedEvent titlePassedEvent titlePassedEvent"
@@ -223,7 +224,6 @@ main {
     grid-area: detailEvent;
 
     display: grid;
-
     grid-template-columns: 50% 50%;
     grid-template-areas: 
         "titleDetailEvent titleDetailEvent"
@@ -254,13 +254,13 @@ main {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-areas:
+        "dateStartEnd dateStartEnd"
         "city zipcode"
-        "dateEvent dateEvent"
         "maxUsers maxUsers"
         "descSmall descSmall"
         "modifEvent modifEvent";
 }
-.city, .zipcode, .dateEvent, .dateEvent, .descSmall, .maxUsers {
+.city, .zipcode, .dateStartEnd, .descSmall, .maxUsers {
     grid-area: city zipcode dateEvent descSmall maxUsers;
     text-align: left;
 }
@@ -283,8 +283,8 @@ main {
 .title-page, .title-myEvents, .title-myComments, .titleComArea {
     text-align: center;
 }
-/************** Footer *********************/
 
+/************** Footer *********************/
 footer {
     grid-area: footer;
 
