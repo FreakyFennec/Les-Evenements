@@ -3,12 +3,11 @@
     #mainpage {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-areas: "header"
-                            "main";
+        grid-template-areas:
+            "header"
+            "main";
 
         gap: 0px;
-        
-        /* max-width: 1280px; */
 
         text-align: center;
 
@@ -53,8 +52,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        
-        /* margin-right: 10px; */
 
         background-color: #DFF6FF;
         border-radius: 50%;
@@ -67,8 +64,6 @@
         display: flex;
         justify-content: left;
         align-items: center;
-
-        /* margin-left: 10px; */
     }
 
     /************** Nav *********************/
@@ -100,6 +95,7 @@
         margin: 10px;   
     }
     .icon_user, .icon_deconnexion {
+        grid-area: icon_user icon_deconnexion;
         width: 40px;
         height: 40px;
         margin: 10px;   
@@ -126,11 +122,8 @@
             "linkEvent"
             "descAndInfos";
         
-        /* width: 800px; */
         margin: 0px auto;
         padding: 5px;
-
-        /* border: 1px solid black; */
     }
     .titleEvent {
         grid-area: titleEvent;
@@ -139,7 +132,6 @@
         margin: 10px 0px;
         padding: 10px;
         background-color: #ffffff;
-        /* border: 1px solid black; */
     }
     .linkEvent img {
         object-fit: cover;
@@ -163,7 +155,6 @@
             "descSmall";
 
         background-color: #ffffff;
-        /* border: 1px solid black; */
     }
 
     .nextEvents {
@@ -172,17 +163,16 @@
         display: grid;
 
         grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: "titleNextEvent titleNextEvent"
-                            "nextEvent nextEvent"
-                            "nextEvent nextEvent"
-                            "nextEvent nextEvent";
+        grid-template-areas: 
+            "titleNextEvent titleNextEvent"
+            "nextEvent nextEvent"
+            "nextEvent nextEvent"
+            "nextEvent nextEvent";
         
         gap: 10px;
 
         margin: 20px 0px 0px 0px;
         padding: 5px;
-
-        /* border: 1px solid black; */
     }
     
     .titleNextEvent {
@@ -214,15 +204,12 @@
 
             margin: 20px 0px 0px 0px;
             padding: 5px;
-        
-        /* border: 1px solid black; */
     }
     .titlePassedEvent {
         grid-area: titlePassedEvent;
     }
     .passedEvent { 
-        background-color: #ffffff;    
-        /* border: 1px solid black; */
+        background-color: #ffffff;
     }
 
     .detailEvent {
@@ -237,7 +224,6 @@
             "descAndInfos"
             "map";
         
-        /* width: auto; */
         margin: 0px 5px 10px 5px;
         padding: 0px 0px 0px 0px;
         
@@ -288,7 +274,6 @@
     }
 
     /************** Footer *********************/
-
     footer {
         grid-area: footer;
 
@@ -300,5 +285,4 @@
         color: #DFF6FF;
         padding: 15px;
     }
-
 }
