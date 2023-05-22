@@ -12,3 +12,7 @@ article {
 .titleArticle {
     font-size: 1.2em;
 }
+.dataArticle {
+    text-align: justify;
+    padding-left: 30px;
+}
