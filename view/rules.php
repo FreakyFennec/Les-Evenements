@@ -1,0 +1,1 @@
+<h1>Réglement du site</h1>

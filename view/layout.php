@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-winModaRegister.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-winModaLogin.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-winModaAddEvent.css">
+    <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-legalNotices.css">
 </head>
 <body>
     <div id="wrapper"> 
@@ -79,7 +80,7 @@
             </header><!-- /.header -->
 
             <?php include 'security/cookie-popup.php'; ?>
-            
+
             <main>
                 <p class="pseudoUser">Bienvenue <?= App\Session::getUser() ?> !</p>
                 <?php
@@ -95,7 +96,7 @@
             </main>
         </div><!-- /.mainpage -->
         <footer>
-            <p class="info-footer">&copy; 2023 Mib's Les Événements  <a href="/home/eventRules.html">Règlement du site</a><a href="">Mentions légales</a></p>
+            <p class="info-footer">&copy; 2023 Mib's Les Événements  <a href="index.php?ctrl=home&action=rules">Règlement du site</a><a href="index.php?ctrl=home&action=legalNotices">Mentions légales</a></p>
             <!--<button id="ajaxbtn">Surprise en Ajax !</button> -> cliqué <span id="nbajax">0</span> fois-->
         </footer>
     </div>

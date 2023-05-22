@@ -49,10 +49,17 @@
             ];
         }
 
-        public function forumRules(){
+        public function rules(){
             
             return [
                 "view" => VIEW_DIR."rules.php"
+            ];
+        }
+
+        public function legalNotices()
+        {
+            return [
+                "view" => VIEW_DIR."legalNotices.php",
             ];
         }
 
