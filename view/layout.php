@@ -76,7 +76,9 @@
                     ?>
                     </div>
                 </nav>
-            </header><!-- /.header --> 
+            </header><!-- /.header -->
+
+            <?php include 'security/cookie-popup.php'; ?>
             
             <main>
                 <p class="pseudoUser">Bienvenue <?= App\Session::getUser() ?> !</p>
