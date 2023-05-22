@@ -1,0 +1,49 @@
+/*
+* style-menu-deroulant.css raccourcis emmet
+* ============================================
+* By AHJ
+*/
+
+.links-aside ul {
+    text-align: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.links-aside li {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+.links-aside li ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+}
+.links-aside li:hover ul {
+    display: block;
+}
+.links-aside a {
+    display: block;
+    text-align: center;
+    color: #0f3046;
+    text-decoration: none;
+    margin: 3px;
+    padding: 5px;
+    background-color: #c4c3c3;
+    border-radius: 6px;
+}
+
+.links-aside a:visited {
+    color: #207cf5;
+}
+
+.links-aside a:hover {
+    color: #5eb42b;
+}
+
+.li_titre {
+    color: #3d3c3b;
+    padding: 5px;
+}

@@ -1,0 +1,74 @@
+/**
+* style-responsive.css => Style responsive pour raccourcis_emmets.
+*************************************************
+* By AHJ 11/2022-06/2023
+*/
+/*
+@media only screen and (max-width: 375px) {
+  pre {
+    width: 375px;
+    overflow-x: auto;
+  }
+}*/
+
+@media screen and (min-width: 600px) {
+    body {
+       font-size: 0.9em; 
+    }    
+    .container {
+      display: grid;
+      grid-template-columns: 80% 20%;
+      grid-template-areas: 
+          "header header"
+          "main aside"
+          "footer footer";
+      
+      max-width: 99%;
+      margin: 0px auto;
+    }
+    header {
+      grid-area: header;
+    }
+    .title_site {
+      font-size: 2.2em;
+    }
+    .title_section {
+      font-size: 1.6em;
+    } 
+    .title_article {
+      font-size: 1.4em;
+    }
+    p {
+      font-size: 1.2em;
+    } 
+    .header_navigation {
+        float: right;
+    }
+    .header_navigation a {
+        display: block;
+        width: 80px;
+        margin: 6px;
+        padding: 5px;
+        background-color: #d3d3d4;
+        border-radius: 4px;
+    }
+    main {
+        grid-area: main;
+    }
+    aside {
+        grid-area: aside;
+        border-left: 1px solid #a3a4aa;
+    }
+    section {
+        margin: 10px 0;
+    }
+    footer {
+        grid-area: footer;
+    }
+}
+
+@media  screen and (min-width: 1024px) {
+    body {
+        font-size: 1.05em; 
+    }
+}

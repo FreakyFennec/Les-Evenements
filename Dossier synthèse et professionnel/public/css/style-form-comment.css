@@ -1,0 +1,53 @@
+
+.comment_form {
+	width: 94%;
+	max-width: 400px;
+	font-family: 'Helvetica', sans-serif;
+	font-size: 16px;
+	color: #0f3046;
+	margin: 0px auto;
+	padding: 20px; background-color: #f9f9f9;
+	border: 1px solid #a3a4aa;
+	border-radius: 6px;
+}	
+.comment_form form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "name"
+    "comment"
+    "submit";
+		
+}
+
+label {
+  grid-area: auto;
+
+}
+
+input[type="text"] {
+  grid-area: auto;
+	height: 25px;
+	margin-bottom: 5px;
+}
+
+#submit {
+  grid-area: auto;
+  color: #fff;
+  font-size: 16px;
+  justify-self: last baseline;
+  margin-top: 10px;
+  padding: 5px 15px;
+  background-color: #0f3046;
+	border-radius: 6px;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: #1e5372;
+}
+.comment_form label,
+.comment_form input[type="text"],
+.comment_form textarea {
+  display: block;
+}

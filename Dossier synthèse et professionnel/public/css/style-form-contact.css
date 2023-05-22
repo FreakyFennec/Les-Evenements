@@ -1,0 +1,62 @@
+form {   
+    width: 80%;
+
+    margin: 20px auto;
+    padding: 10px;
+    
+  font-family: 'Helvetica', sans-serif;
+
+    border: 1px solid grey;
+    border-radius: 5px 5px 5px 5px;
+}
+#title_form {
+    text-align: center;
+    color:black;
+    margin-top: 20px;
+}
+fieldset {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-areas: 
+        "labelEmail inputEmail"
+        "email-help email-help"
+        "label-message message";
+
+    padding: 10px;   
+}
+#fieldsetText {
+    border-radius: 5px;
+}
+#labelEmail {
+    grid-area: labelEmail;
+    font-size: 1.05em;
+
+    margin: 10px 0px 5px 0px;
+}
+#inputEmail {
+    grid-area: inputEmail;
+    font-size: 1.05em;
+
+    margin: 10px 0px 5px 0px;
+}
+#email-help {
+    grid-area: email-help;
+    margin: 5px 0px 10px 0px;
+}
+.label-message {
+    grid-area: label-message;
+}
+.message {
+    grid-area: message;
+}
+button {
+    font-size: 1.05em;
+
+    height: 30px;
+
+    margin: 10px auto;
+    padding: 5px;
+    
+    border: 1px solid grey;
+    border-radius: 5px 5px 5px 5px;
+}
