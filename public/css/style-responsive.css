@@ -294,7 +294,7 @@ main {
     text-align: center;
 }
 
-.messageNoCom {
+.messageNoCom, .messageNoEvent {
     display: flex;
     justify-content: center;
     align-items: center;

@@ -94,14 +94,20 @@ if(App\Session::getUser()) {
         </thead>
         <tbody>
             <?php
-            foreach($findEventByIdUsers as $findEventByIdUser) {
-            ?>
-                <tr>
-                    <td><?= $findEventByIdUser->getTitleEvent() ?></td>
-                    <td><?= $findEventByIdUser->getCity() ?></td>
-                    <td><?= $findEventByIdUser->getDateStart() ?></td>
-                </tr>            
-            <?php } ?>      
+            if ($findEventByIdUsers !== NULL) {
+           
+                foreach($findEventByIdUsers as $findEventByIdUser) {
+                ?>
+                    <tr>
+                        <td><?= $findEventByIdUser->getTitleEvent() ?></td>
+                        <td><?= $findEventByIdUser->getCity() ?></td>
+                        <td><?= $findEventByIdUser->getDateStart() ?></td>
+                    </tr>            
+                <?php }
+            } else {
+                echo "<p class=\"messageNoEvent\">Vous n'avez pas encore d'événements.</p>";
+            } ?>
+                  
         </tbody>
     </table>
 

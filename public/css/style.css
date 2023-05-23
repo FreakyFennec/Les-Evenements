@@ -275,8 +275,10 @@
     .title-page {
         text-align: center;
     }
-    .messageNoCom {
-        text-align: center;
+    .messageNoCom, .messageNoEvent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     /************** Footer *********************/
     footer {
