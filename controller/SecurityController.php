@@ -217,5 +217,14 @@
                 ]
             ];
         }
+
+        public function removeCommentById($id)
+        {
+            $commentManger = new CommentManager();
+            $id_event = $commentManger->findOneById($id)->getEvent()->getId();
+            $commentManger->delete($id);
+            // redirectTo construct the link (index.php?ctrl=event&action=detailEvent&id=id_event)
+            $this->redirectTo('event', 'detailEvent', $id_event);
+        }
     }
 ?>

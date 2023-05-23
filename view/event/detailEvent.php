@@ -73,6 +73,7 @@ $user = App\Session::getUser();
                 <th>Commentaire</th>
                 <th>Crée le</th>
                 <th>Auteur</th>
+                <th>Del</th>
             </tr>
         </thead>
         <tbody>
@@ -83,6 +84,8 @@ $user = App\Session::getUser();
                     <td><?= $comment->getComment(); ?></td>
                     <td><?= $comment->getCreationDate(); ?></td>
                     <td><?= $comment->getUser(); ?></td>
+                    <td><a href="index.php?ctrl=security&action=removeCommentById&id=<?= $comment->getId() ?>">Del</a></td>
+            
                 </tr>
             <?php endforeach; ?>        
         </tbody>
