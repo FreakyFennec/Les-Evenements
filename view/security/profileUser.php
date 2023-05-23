@@ -55,6 +55,8 @@ if(App\Session::getUser()) {
         </thead>
         <tbody> 
             <tr>
+                <td><?= $user->getFirstName() ?></td>
+                <td><?= $user->getLastName() ?></td>
                 <td><?= $user->getEmail() ?></td>
                 <td><?= $user->getPseudo() ?></td>
                 <td><?= $user->getStatus() ?></td>
@@ -63,7 +65,7 @@ if(App\Session::getUser()) {
             </tr>
 
     <?php 
-    } elseif(App\Session::getUser()->getStatus() == 'user') { // Visible by the modérateur
+    } elseif(App\Session::getUser()->getStatus() == 'user') { // Visible by the user.
     ?>
         <thead>
             <tr>
@@ -113,25 +115,33 @@ if(App\Session::getUser()) {
 
     <h2 class="title-myComments">Mes commentaires</h2>
 
-    <table class="tableComments">
-        <thead>
-            <tr>
-                <th>Comment</th>
-                <th>Crée le :</th>
-            </tr>
-        </thead>
-        <tbody>
-
-            <?php
-            foreach($comments as $comment) {
-            ?>
+    <?php
+    if ($comments !== NULL) {
+    ?>
+        <table class="tableComments">
+            <thead>
                 <tr>
-                    <td><?= $comment->getComment() ?></td>
-                    <td><?= $comment->getCreationDate() ?></td>
+                    <th>Comment</th>
+                    <th>Crée le :</th>
                 </tr>
-            <?php } ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+
+                <?php
+                foreach($comments as $comment) {
+                ?>
+                    <tr>
+                        <td><?= $comment->getComment() ?></td>
+                        <td><?= $comment->getCreationDate() ?></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    <?php
+    } else {
+        echo "<p class=\"messageNoCom\">Vous n'avez pas de commentaires.</p>";
+    }
+    ?>
 
     <?php
     if(App\Session::getUser()->getStatus() == 'admin') { // Visible by the admin
