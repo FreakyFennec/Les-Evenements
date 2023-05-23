@@ -17,7 +17,7 @@
 
     <tbody> 
     <?php
-    // Condition si status = user
+    // Condition si status = admin
     if(App\Session::getUser()->getStatus() == 'admin') {
 
         foreach($users as $user) {
