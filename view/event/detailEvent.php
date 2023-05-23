@@ -88,7 +88,7 @@ $user = App\Session::getUser();
         </tbody>
     </table>
     <?php } else {
-        echo "<p>Pas de commentaire pour le moment</p>";
+        echo "<p class='messageNoCom'>Pas de commentaire pour le moment</p>";
     } ?>
 </div>
 

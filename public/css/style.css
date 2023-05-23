@@ -272,7 +272,9 @@
     .title-page {
         text-align: center;
     }
-
+    .messageNoCom {
+        text-align: center;
+    }
     /************** Footer *********************/
     footer {
         grid-area: footer;
