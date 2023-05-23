@@ -55,6 +55,9 @@
     main {
         grid-area: main;
     }
+    .listUsers {
+      
+    }
     aside {
         grid-area: aside;
         border-left: 1px solid #a3a4aa;

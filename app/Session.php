@@ -48,4 +48,11 @@
             return false;
         }
 
+        public static function isModerator(){
+            if(self::getUser() && self::getUser()->hasRole("moderator")){
+                return true;
+            }
+            return false;
+        }
+
     }

@@ -87,9 +87,11 @@
                 <?php
                         if(App\Session::isAdmin()){     // If it's the admin session display theses links
                             ?>
-                            <button class="listUsers" onclick="window.location.href = 'index.php?ctrl=home&action=users'">Liste des membres</button>
-                            
-                            <button class="addEvent" onclick="window.location.href = 'index.php?ctrl=security&action=addEvent'">Ajout d'événements</button>
+                            <div class="buttonAdmin">
+                                <button class="listUsers" onclick="window.location.href = 'index.php?ctrl=home&action=users'">Liste des membres</button>
+                                
+                                <button class="addEvent" onclick="window.location.href = 'index.php?ctrl=security&action=addEvent'">Ajout d'événements</button>
+                            </div>
                             <?php
                         }
                         ?>

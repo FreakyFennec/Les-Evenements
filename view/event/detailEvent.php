@@ -73,6 +73,7 @@ $user = App\Session::getUser();
                 <th>Commentaire</th>
                 <th>Crée le</th>
                 <th>Auteur</th>
+                <th>Del</th>
             </tr>
         </thead>
         <tbody>
@@ -83,12 +84,14 @@ $user = App\Session::getUser();
                     <td><?= $comment->getComment(); ?></td>
                     <td><?= $comment->getCreationDate(); ?></td>
                     <td><?= $comment->getUser(); ?></td>
+                    <td><a href="index.php?ctrl=security&action=removeCommentById&id=<?= $comment->getId() ?>">Del</a></td>
+            
                 </tr>
             <?php endforeach; ?>        
         </tbody>
     </table>
     <?php } else {
-        echo "<p>Pas de commentaire pour le moment</p>";
+        echo "<p class='messageNoCom'>Pas de commentaire pour le moment</p>";
     } ?>
 </div>
 
@@ -104,7 +107,7 @@ if ($user && ($user->getStatus() == 'admin' || $user->getStatus() == 'moderator'
             <input type="text" name="titleComment">
 
             <label for="comment">Votre commentaire</label>
-            <input type="text" name="comment">
+            <textarea name="comment" rows="4" cols="50"></textarea>
 
             <input id="submit" type="submit" name="submit" value="Submit">
         </form>

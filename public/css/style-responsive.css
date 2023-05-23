@@ -126,6 +126,16 @@ main {
     text-align: center;
     margin: 15px 0px 0px 0px;
 }
+
+.buttonAdmin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.listUsers, .addEvent {
+    margin: 10px;
+}
 .featuredEvent {
     grid-area: featuredEvent;
 
@@ -284,6 +294,11 @@ main {
     text-align: center;
 }
 
+.messageNoCom, .messageNoEvent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /************** Footer *********************/
 footer {
     grid-area: footer;
