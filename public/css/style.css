@@ -112,6 +112,9 @@
     .linksAdmin {
         color: #171818;
     }
+    .listUsers, .addEvent {
+        margin: 10px;
+    }
     .featuredEvent {
         grid-area: featuredEvent;
 
