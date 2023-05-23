@@ -104,7 +104,7 @@ if ($user && ($user->getStatus() == 'admin' || $user->getStatus() == 'moderator'
             <input type="text" name="titleComment">
 
             <label for="comment">Votre commentaire</label>
-            <input type="text" name="comment">
+            <textarea name="comment" rows="4" cols="50"></textarea>
 
             <input id="submit" type="submit" name="submit" value="Submit">
         </form>
