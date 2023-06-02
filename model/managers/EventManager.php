@@ -67,9 +67,9 @@
 
         public function update($id, $data)
         {
-            /**/ echo '<pre>';
+            /* echo '<pre>';
             var_dump($id);
-            echo '</pre>'; 
+            echo '</pre>'; */
             
             $sql = "UPDATE event
                     SET titleEvent = :titleEvent,
