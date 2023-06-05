@@ -100,7 +100,9 @@
             if (isset($_POST['submit'])) {
                 
                 $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
-                $password = filter_input(INPUT_POST, "userPassW", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                $password = filter_input(INPUT_POST, "userPassW", FILTER_VALIDATE_REGEXP, array(
+                    "options" => array("regexp" => '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\d\s])[^\s]{12,}$/')
+                ));
 
                 if ($userManager->findOneByEmail($email) && password_verify($password, $userManager->findOneByEmail($email)->getPassword())) {
                     Session::setUser($userManager->findOneByEmail($email));
