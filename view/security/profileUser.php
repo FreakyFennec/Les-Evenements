@@ -72,6 +72,7 @@ if(App\Session::getUser()) {
                 <th>Pseudo</th>
                 <th>Status</th>
                 <th>Inscrit le</th>
+                <th>Sup</th>
             </tr>
         </thead>
         <tbody> 
@@ -79,6 +80,7 @@ if(App\Session::getUser()) {
                 <td><?= $user->getPseudo() ?></td>
                 <td><?= $user->getStatus() ?></td>
                 <td><?= $user->getRegisterDate() ?></td>
+                <td><a href="index.php?ctrl=security&action=removeUserById&id=<?= $user->getId() ?>">Del</a></td>
             </tr>            
     <?php } ?>
         </tbody>
