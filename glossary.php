@@ -23,3 +23,5 @@ $password = filter_input(INPUT_POST, "userPassW", FILTER_VALIDATE_REGEXP, array(
 
 
 Node JS et Svelt (framework)
+
+mickael.murmann@elan-formation.fr
