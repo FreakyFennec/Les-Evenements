@@ -2,7 +2,7 @@
 
     namespace Controller;
 
-    use App\Session;
+    use App\Session as Session;
     use App\AbstractController;
     use App\ControllerInterface;
     use Model\Managers\CategoryManager;
@@ -10,6 +10,7 @@
     use Model\Managers\EventManager;
     use Model\Managers\ParticipateManager;
     use Model\Managers\UserManager;
+
     
     
     class SecurityController extends AbstractController implements ControllerInterface{
@@ -31,9 +32,12 @@
                 $lastName = filter_input(INPUT_POST, "lastName", FILTER_SANITIZE_SPECIAL_CHARS);
                 $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
                 $pseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-                $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-
-                $confirmUserPW = filter_input(INPUT_POST, "confirmUserPW", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                $password = filter_input(INPUT_POST, "password", FILTER_VALIDATE_REGEXP, array( 
+                    "options" => array("regexp" => '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\d\s])[^\s]{12,}$/') 
+                ));
+                $confirmUserPW = filter_input(INPUT_POST, "password", FILTER_VALIDATE_REGEXP, array( 
+                    "options" => array("regexp" => '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\d\s])[^\s]{12,}$/') 
+                ));
 
                 if ($password != $confirmUserPW) {
                     
@@ -53,9 +57,7 @@
 
                         $userManager->add($data);
 
-                        return [
-                            "view" => VIEW_DIR."/home.php"
-                        ];                        
+                        header("Location: index.php");                     
                     } else {
 
                         echo "Veuillez choisir un autre email et pseudo";
@@ -126,11 +128,8 @@
         public function deconnexion() {
 
             Session::removeUser();
-
-            return [
-
-                "view" => VIEW_DIR."/home.php"
-            ];
+            header("Location: index.php");
+            
         }
 
         public function listUsers() {
@@ -164,13 +163,8 @@
             $userManager = new UserManager;
 
             $userManager->removeUserById($pseudo);
-
-            return [
-                "view" => VIEW_DIR."security/listUsers.php",
-                "data" => [
-                    "users" => $userManager->findAll()
-                ]
-            ];
+            Session::removeUser();
+            header("Location: index.php");
         }
 
         public function profileUser($id) {

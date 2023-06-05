@@ -83,7 +83,7 @@ $user = App\Session::getUser();
                     <td><?= $comment->getTitleComment(); ?></td>
                     <td><?= $comment->getComment(); ?></td>
                     <td><?= $comment->getCreationDate(); ?></td>
-                    <td><?= $comment->getUser(); ?></td>
+                    <td><?= ($comment->getUser()) ?  $comment->getUser() : "Utilisateur supprimé" ?></td>
                     <td><a href="index.php?ctrl=security&action=removeCommentById&id=<?= $comment->getId() ?>">Del</a></td>
             
                 </tr>

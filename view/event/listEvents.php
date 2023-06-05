@@ -1,3 +1,5 @@
+
+
 <?php
 $events = $result["data"]['events']; // It's un object array.
 ?>

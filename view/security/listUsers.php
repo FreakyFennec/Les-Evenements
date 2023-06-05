@@ -21,6 +21,8 @@
     if(App\Session::getUser()->getStatus() == 'admin') {
 
         foreach($users as $user) {
+        
+        if($user != App\Session::getUser()) {
         ?>
             <tr>
                 <td><a href="index.php?ctrl=security&action=listUsers&id=<?= $user->getId() ?>"><?= $user->getPseudo() ?></a></td>
@@ -32,15 +34,7 @@
                 <td><a href="index.php?ctrl=security&action=removeUserById&id=<?= $user->getId() ?>">Del</a></td>
             </tr>            
         <?php }
-    } else {
-        ?>
-        <form method="post" action="index.php?ctrl=security&action=removeUserById">
-
-            <label for="pseudo">Supprimer un membre</label>
-            <input type="text" name="pseudo" id="pseudo" required>
-
-            <input type="submit" name="submit" value="Envoyer">
-        </form>
-    <?php } ?>
+        }
+    } ?>
     </tbody>
 </table>
