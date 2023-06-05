@@ -99,7 +99,9 @@
 
             if (isset($_POST['submit'])) {
                 
-                $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
+                $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_REGEXP, array(
+                    "options" =>array("regexp" => '/^[A-Za-z0-9_.-]+@[A-Za-z0-9.-]+\.[A-Za-z0-9]+$/')
+                ));
                 $password = filter_input(INPUT_POST, "userPassW", FILTER_VALIDATE_REGEXP, array(
                     "options" => array("regexp" => '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\d\s])[^\s]{12,}$/')
                 ));
