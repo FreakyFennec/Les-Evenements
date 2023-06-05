@@ -98,7 +98,7 @@
         {
             try{
                 $stmt = self::$bdd->prepare($sql);
-                $stmt->execute($params);
+                $stmt->execute($params);        // ça vient de là ( ['id' => $id] )
               
                 $results = ($multiple) ? $stmt->fetchAll() : $stmt->fetch();
 
