@@ -101,7 +101,7 @@ if ($user && ($user->getStatus() == 'admin' || $user->getStatus() == 'moderator'
     <div id="box" name="box">
         <h2 class="titleAddComArea">Ajoutez votre commentaire</h2>
 
-        <form id="formRegister" method="POST" action="index.php?ctrl=event&action=addComment&id=<?= $detailEvent->getId(); ?>&user_id=">
+        <form id="formComment" method="POST" action="index.php?ctrl=event&action=addComment&id=<?= $detailEvent->getId(); ?>&user_id=">
 
             <label for="titleComment">Titre du commentaire</label>
             <input type="text" name="titleComment">
