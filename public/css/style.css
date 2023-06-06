@@ -241,28 +241,32 @@
         width: 50%;
         max-height: 100%;
     }
-    .descSmall {
-        grid-area: descSmall;
-    }
     .infoForAll {
         grid-area: infoForAll;
 
         display: grid;
         grid-template-columns: 50% 50%;
         grid-template-areas:
-            "dateStartEnd"
+            "dateStartEnd dateStartEnd"
             "city zipcode"
-            "maxUsers maxUsers"
             "descSmall descSmall"
+            "maxUsers maxUsers"
+            "btnParticipate btnParticipate"
             "modifEvent modifEvent";
     }
-    .city, .zipcode, .dateStartEnd, .descSmall, .maxUsers {
-        grid-area: city zipcode dateEvent descSmall maxUsers;
+    .dateStartEnd, .city, .zipcode, .descSmall, .maxUsers {
+        grid-area: city zipcode dateStartEnd descSmall maxUsers;
         text-align: left;
     }
     .modifEvent {
         grid-area: modifEvent;
         text-align: left;
+    }
+    #btnParticipate {
+        grid-area: btnParticipate;
+        width: 100px;
+        height: 45px;
+        margin: 10px;
     }
     #map {
         grid-area: map;
