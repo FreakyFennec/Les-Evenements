@@ -1,4 +1,4 @@
-<div id="box" name="box">
+<div id="boxRegister" name="box">
     <h1 class="titleFormRegister">S'inscrire</h1>
 
     <form id="formRegister" method="POST" action="index.php?ctrl=security&action=addUser">
