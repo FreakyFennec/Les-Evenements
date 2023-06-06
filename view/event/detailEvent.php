@@ -52,7 +52,8 @@ $user = App\Session::getUser();
             </div>
         <?php 
         }
-        ?>       
+        ?> 
+        <button id="btnParticipate">Je participe</button>      
     </div>
         
     <div id="map">
