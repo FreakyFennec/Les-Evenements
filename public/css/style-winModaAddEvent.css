@@ -1,10 +1,10 @@
 /**
-* style-winModaRegister.css => Fenetre modale
+* style-winModaAddEvent.css
 *=================================
 * By AHJ
 */
 
-#box {
+#boxAddEvent {
     width: 365px;
 
     margin: 10px auto;
@@ -14,14 +14,14 @@
     border: 1px solid rgb(163, 164, 170);
     border-radius: 5px;
 }
-.titleFormRegister {
+.titleFormAddEvent {
     display: flex;
     justify-content: center;
     align-items: center;
 
     margin: 0px auto;
 }
-#formRegister {
+#formAddEvent {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "label input"
