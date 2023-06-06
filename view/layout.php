@@ -50,7 +50,7 @@
                     <div id="nav-right">
                     <?php
                         
-                        if(App\Session::getUser()){     // If the user is logged in, his profile and the possibility to log out are displayed.
+                        if(App\Session::getUser()) {     // If the user is logged in, his profile and the possibility to log out are displayed.
                             ?>
 
                             <a href="index.php?ctrl=security&action=profileUser&id=<?= App\Session::getUser()->getId() ?>"><img class="icon_user" src="public/img/icon/ico_user_01.svg" alt="Ico user"></a>
@@ -59,11 +59,11 @@
 
                             <?php
 
-                            if(App\Session::getUser()) {
+                            // if(App\Session::getUser()) {
 
-                            }
+                            // }
                         }
-                        else{
+                        else {
                             ?>
                             
                             <a href="index.php?ctrl=security&action=connexion"><img class="icon_connexion" src="public/img/icon/ico_connection_01.svg" alt="Icon connection"></a>
@@ -72,9 +72,9 @@
                             
                             <?php
                         
-                            if(App\Session::getUser()) {
+                            // if(App\Session::getUser()) {
 
-                            }
+                            // }
                         }    
                     ?>
                     </div>
@@ -84,9 +84,22 @@
             <?php include 'security/cookie-popup.php'; ?>
 
             <main>
-                <p class="pseudoUser">Bienvenue <?= App\Session::getUser() ?> !</p>
+                
                 <?php
-                        if(App\Session::isAdmin()){     // If it's the admin session display theses links
+                // Condition for display welcome message
+                if (App\Session::getUser() != false) {
+                ?>
+                    <p class="pseudoUser">Bienvenue <?= App\Session::getUser() ?> !</p>
+                <?php    
+                } else {
+                ?>
+                    <p class="pseudoUser">Bienvenue invité !</p>
+                <?php
+                }
+                ?>
+                    
+                <?php
+                        if(App\Session::isAdmin()) {     // If it's the admin session display theses links
                             ?>
                             <div class="buttonAdmin">
                                 <button class="listUsers" onclick="window.location.href = 'index.php?ctrl=home&action=users'">Liste des membres</button>
