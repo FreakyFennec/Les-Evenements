@@ -1,5 +1,5 @@
-<div id="box" name="box">
-    <h1 class="titleformConnection">Connexion</h1>
+<div id="boxLogin" name="box">
+    <h1 class="titleformLogin">Connexion</h1>
 
     <form id="formLogin" method="POST" action="index.php?ctrl=security&action=connexion">
         
