@@ -114,6 +114,13 @@
                 ?>
                 
                 <?= $page ?>
+                
+                <div id="social-icons-area">
+                    <a href="#"><img id="img-social-icon" src="public/img/icon/social-icons/facebook.svg" alt="facebook" title="facebook"></a>
+                    <a href="#"><img id="img-social-icon" src="public/img/icon/social-icons/instagram.svg" alt="instagram" title="instagram"></a>
+                    <a href="#"><img id="img-social-icon" src="public/img/icon/social-icons/twitter.svg" alt="twitter" title="twitter"></a>
+                    <a href="#"><img id="img-social-icon" src="public/img/icon/social-icons/rss.svg" alt="rss" title="rss"></a>
+                </div>
             </main>
         </div><!-- /.mainpage -->
         <footer>
@@ -127,7 +134,6 @@
         crossorigin="anonymous">
     </script>
     <script>
-
         $(document).ready(function(){
             $(".message").each(function(){
                 if($(this).text().length > 0){
@@ -154,8 +160,6 @@
                 content_css: '//www.tiny.cloud/css/codepen.min.css'
             });
         })
-
-        
 
         /*
         $("#ajaxbtn").on("click", function(){

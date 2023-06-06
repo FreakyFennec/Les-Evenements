@@ -280,6 +280,19 @@
         justify-content: center;
         align-items: center;
     }
+    /************** Social icons ****************/
+    #social-icons-area {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "img-social-icon img-social-icon img-social-icon img-social-icon";
+
+        width: 300px;
+        margin: 0px auto;
+    }
+    #img-social-icon {
+        width: 40px;
+    }
     /************** Footer *********************/
     footer {
         grid-area: footer;
