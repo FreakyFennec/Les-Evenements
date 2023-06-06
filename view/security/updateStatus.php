@@ -2,7 +2,7 @@
     $user = $result["data"]['user'];
 ?>
 
-<div id="box" name="box">
+<div id="boxUpdateStatus" name="box">
     <h3 class="titleformUpdateStatus">Modifier le status</h3>
 
     <form id="formUpdateStatus" method="POST" action="index.php?ctrl=security&action=updateStatus&id=<?= $user->getId() ?>">

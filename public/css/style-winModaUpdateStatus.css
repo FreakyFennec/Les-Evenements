@@ -1,0 +1,44 @@
+/**
+* style-winModaComment.css => Fenetre modale
+*=================================
+* By AHJ
+*/
+
+#boxUpdateStatus {
+    width: 375px;
+
+    margin: 10px auto;
+    padding: 10px;
+
+    background-color: aliceblue;
+    border: 1px solid rgb(163, 164, 170);
+    border-radius: 5px;
+}
+.titleFormUpdateStatus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0px auto;
+}
+#formUpdateStatus {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-areas: "label input"
+                         "label input"
+                         "label input"
+                         "submit submit";
+
+    margin-top: 20px;                     
+}
+label, input {
+    grid-area: label, input ;
+
+    margin: 5px 0;
+}
+#submit {
+    grid-area: submit;
+    grid-column: 1 / 3;
+
+    margin: 5px 0;
+}
