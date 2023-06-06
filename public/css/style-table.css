@@ -32,36 +32,41 @@
 }
 
 @media (min-width: 768px) {
-    .tableProfileUser thead,
-    .tableEvents thead,
-    .tableComments thead, 
-    .tableListUsers thead, 
-    .tableCom thead {
-      display: table-row-group;
-    }
+  .tableProfileUser thead,
+  .tableEvents thead,
+  .tableComments thead, 
+  .tableListUsers thead, 
+  .tableCom thead {
+    display: table-row-group;
+  }
 
-    .tableProfileUser tbody,
-    .tableEvents tbody,
-    .tableComments tbody, 
-    .tableListUsers tbody, 
-    .tableCom tbody {
-      display: table-row-group;
-    }
+  .tableProfileUser tbody,
+  .tableEvents tbody,
+  .tableComments tbody, 
+  .tableListUsers tbody, 
+  .tableCom tbody {
+    display: table-row-group;
+  }
 
-    .tableProfileUser tr 
-    .tableEvents tr,
-    .tableComments tr, 
-    .tableListUsers tr,
-    .tableCom tr {
-      display: table-row;
-    }
+  .tableProfileUser tr 
+  .tableEvents tr,
+  .tableComments tr, 
+  .tableListUsers tr,
+  .tableCom tr {
+    display: table-row;
+  }
 
-    .tableProfileUser td, 
-    .tableEvents td, 
-    .tableComments td, 
-    .tableListUsers td,
-    .tableCom td {
-      display: table-cell;
-      width: 25%;
-    }
+  .tableProfileUser td, 
+  .tableEvents td, 
+  .tableComments td, 
+  .tableListUsers td,
+  .tableCom td {
+    display: table-cell;
+    width: 25%;
+  }
+      
+  .tableProfileUser td {
+    display: table-cell;
+    width: 15%;
+  }
 }
