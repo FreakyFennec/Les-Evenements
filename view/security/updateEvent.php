@@ -2,10 +2,10 @@
     $event = $result["data"]['event'];
 ?>
 
-<div id="box" name="box">
+<div id="boxUpDateEvent" name="box">
     <h1 class="titleAddEvent">Modifier un événement</h1>
 
-    <form id="formRegister" method="POST" action="index.php?ctrl=event&action=updateEvent&id=<?= $event->getId() ?>">
+    <form id="formUpDateEvent" method="POST" action="index.php?ctrl=event&action=updateEvent&id=<?= $event->getId() ?>">
 
         <label for="titleEvent">Titre :</label>
         <input type="text" id="titleEvent" name="titleEvent" required value="<?= $event->getTitleEvent() ?>">
