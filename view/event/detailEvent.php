@@ -98,16 +98,16 @@ $user = App\Session::getUser();
 <?php
 if ($user && ($user->getStatus() == 'admin' || $user->getStatus() == 'moderator' || $user->getStatus() == 'user')) {
 ?>
-    <div id="box" name="box">
-        <h2 class="titleAddComArea">Ajoutez votre commentaire</h2>
+    <div id="boxAddComment" name="box">
+        <h3 class="titleAddComArea">Ajoutez votre commentaire</h3>
 
-        <form id="formComment" method="POST" action="index.php?ctrl=event&action=addComment&id=<?= $detailEvent->getId(); ?>&user_id=">
+        <form id="formAddComment" method="POST" action="index.php?ctrl=event&action=addComment&id=<?= $detailEvent->getId(); ?>&user_id=">
 
-            <label for="titleComment">Titre du commentaire</label>
+            <label id="titleComment" for="titleComment">Titre du commentaire</label>
             <input type="text" name="titleComment">
 
-            <label for="comment">Votre commentaire</label>
-            <textarea name="comment" rows="4" cols="50"></textarea>
+            <label id="comment" for="comment">Votre commentaire</label>
+            <textarea name="comment" rows="4" cols="30"></textarea>
 
             <input id="submit" type="submit" name="submit" value="Submit">
         </form>

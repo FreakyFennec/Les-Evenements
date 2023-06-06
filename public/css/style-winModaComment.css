@@ -4,8 +4,8 @@
 * By AHJ
 */
 
-#boxComment {
-    width: 300px;
+#boxAddComment {
+    width: 375px;
 
     margin: 10px auto;
     padding: 10px;
@@ -14,16 +14,16 @@
     border: 1px solid rgb(163, 164, 170);
     border-radius: 5px;
 }
-.titleFormRegister {
+.titleFormAddComment {
     display: flex;
     justify-content: center;
     align-items: center;
 
     margin: 0px auto;
 }
-#formComment {
+#formAddComment {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 30% 70%;
     grid-template-areas: "label input"
                          "label input"
                          "submit submit";

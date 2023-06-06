@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-winModaLogin.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-winModaAddEvent.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-winModaComment.css">
+    <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-winModaUpDateEvent.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-legalNotices.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-rules.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-cookie-popup.css">
@@ -100,16 +101,17 @@
                 ?>
                     
                 <?php
-                        if(App\Session::isAdmin()) {     // If it's the admin session display theses links
-                            ?>
-                            <div class="buttonAdmin">
-                                <button class="listUsers" onclick="window.location.href = 'index.php?ctrl=home&action=users'">Liste des membres</button>
-                                
-                                <button class="addEvent" onclick="window.location.href = 'index.php?ctrl=security&action=addEvent'">Ajout d'événements</button>
-                            </div>
-                            <?php
-                        }
-                        ?>
+                if(App\Session::isAdmin()) {     // If it's the admin session display theses links
+                    ?>
+                    <div class="buttonAdmin">
+                        <button class="listUsers" onclick="window.location.href = 'index.php?ctrl=home&action=users'">Liste des membres</button>
+                        
+                        <button class="addEvent" onclick="window.location.href = 'index.php?ctrl=security&action=addEvent'">Ajout d'événements</button>
+                    </div>
+                    <?php
+                }
+                ?>
+                
                 <?= $page ?>
             </main>
         </div><!-- /.mainpage -->
