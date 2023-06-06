@@ -27,11 +27,13 @@ $user = App\Session::getUser();
                 <p class="address">Au <?= $detailEvent->getAddress(); ?></p>
                 <p class="city"><?= $detailEvent->getCity(); ?></p>
                 <p class="zipcode"><?= $detailEvent->getZipcode(); ?></p>
-                <p class="maxUsers">Participants max. : <?= $detailEvent->getMaxUsers(); ?> pers.</p>
                 <p class="descSmall"><?= $detailEvent->getDescription(); ?></p>
+                <p class="maxUsers">Participants max. : <?= $detailEvent->getMaxUsers(); ?> pers.</p>
+
+                <button class="modifEvent" onclick="window.location.href = 'index.php?ctrl=event&action=updateEvent&id=<?= $detailEvent->getId() ?>';">Modifier</button>
             </div>
 
-            <button class="modifEvent" onclick="window.location.href = 'index.php?ctrl=event&action=updateEvent&id=<?= $detailEvent->getId() ?>';">Modifier</button>
+            
         
 
         <!-- If not connected -->       
@@ -49,11 +51,12 @@ $user = App\Session::getUser();
                 <p class="zipcode"><?= $detailEvent->getZipcode(); ?></p>
                 <p class="maxUsers">Participants max. : <?= $detailEvent->getMaxUsers(); ?> pers.</p>
                 <p class="descSmall"><?= $detailEvent->getDescription(); ?></p>
+
+                <button id="btnParticipate">Je participe</button> 
             </div>
         <?php 
         }
-        ?> 
-        <button id="btnParticipate">Je participe</button>      
+        ?>      
     </div>
         
     <div id="map">
