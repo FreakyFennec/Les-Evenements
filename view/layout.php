@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-winModaRegister.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-winModaLogin.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-winModaAddEvent.css">
+    <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-winModaComment.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-legalNotices.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-rules.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-cookie-popup.css">
