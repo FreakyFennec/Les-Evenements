@@ -96,7 +96,7 @@
                 <?php    
                 } else {
                 ?>
-                    <p class="pseudoUser">Bienvenue invité !</p>
+                    <p class="pseudoUser">Bienvenue Invité !</p>
                 <?php
                 }
                 ?>
