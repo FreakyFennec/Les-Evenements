@@ -109,6 +109,20 @@
             ]);
         }
 
+        public function updateMaxUsers($id, $data)
+        {           
+            $sql = "UPDATE maxUsers
+                    SET 
+                        maxUsers = :maxUsers
+                    WHERE id_event = :id_event";
+
+                    
+            DAO::update($sql, [
+                'id_event' => $id,
+                'maxUsers' => $data['maxUsers']
+            ]);
+        }
+
         public function findEventByIdUser($id) {
             $eventManager = new EventManager();
 
