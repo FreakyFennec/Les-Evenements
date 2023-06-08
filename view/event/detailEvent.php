@@ -12,11 +12,10 @@ $user = App\Session::getUser();
     <h2 class="titleEvent titleDetailEvent"><?= $detailEvent->getTitleEvent(); ?></h2>
 
     <img src="public/img/<?= $detailEvent->getImgEvent(); ?>" alt="<?= $detailEvent->getAlt(); ?>" class="imgDetailEvent" id="imgDetailEvent">
-
     
         <!-- If connected as admin or moderator -->       
         <?php
-        if ($user && ($user->getStatus() == 'admin' || $user->getStatus() == 'moderator')) {
+        if ($user && ($user->getStatus() == 'admin' || $user->getStatus() == 'moderator' || $user->getStatus() == 'user')) {
         ?>
         <div class="descAndInfos">
             <div class="infoForAll">
@@ -30,12 +29,29 @@ $user = App\Session::getUser();
                 <p class="descSmall"><?= $detailEvent->getDescription(); ?></p>
                 <p class="maxUsers">Participants max. : <?= $detailEvent->getMaxUsers(); ?> pers.</p>
 
-                <button class="modifEvent" onclick="window.location.href = 'index.php?ctrl=event&action=updateEvent&id=<?= $detailEvent->getId() ?>';">Modifier</button>
+                <?php
+                // Condition if maxUsers > 0
+                if ($detailEvent->getMaxUsers() > 0) {
+                ?>
+                    <a href="index.php?ctrl=event&action=participate&id=<?= $detailEvent->getId(); ?>" id="LinkParticipate"><button id="btnParticipate">Je participe</button></a>
+                <?php
+                } else {
+                    echo "Complet";
+                }
+                ?>
+
+                <?php
+                if ($user && ($user->getStatus() == 'admin' || $user->getStatus() == 'moderator')) {
+                ?>
+                
+                    <button class="modifEvent" onclick="window.location.href = 'index.php?ctrl=event&action=updateEvent&id=<?= $detailEvent->getId() ?>';">Modifier</button>
+                    <?php
+                } else {
+                    echo "Complet";
+                }
+                ?>    
             </div>
-
-            
-        
-
+           
         <!-- If not connected -->       
         <?php
         } else {
@@ -51,8 +67,6 @@ $user = App\Session::getUser();
                 <p class="zipcode"><?= $detailEvent->getZipcode(); ?></p>
                 <p class="maxUsers">Participants max. : <?= $detailEvent->getMaxUsers(); ?> pers.</p>
                 <p class="descSmall"><?= $detailEvent->getDescription(); ?></p>
-
-                <button id="btnParticipate">Je participe</button> 
             </div>
         <?php 
         }
