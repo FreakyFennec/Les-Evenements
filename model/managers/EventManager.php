@@ -120,14 +120,15 @@
             ]);
         }
 
-        public function countParticipants($data) {
+        public function countParticipants($id) {
             $sql = "
                 SELECT COUNT(*) AS nbrParticipants
                 FROM ". $this->tableName ." p
                 WHERE p.event_id = :event_id";
 
             return $this->getOneOrNullResult(
-
+                DAO::count($sql, ['event_id' => $id]),
+                $this->className
             );
         }
 
