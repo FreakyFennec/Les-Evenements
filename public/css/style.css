@@ -1,243 +1,251 @@
-@media (max-width: 768px) {
+*,
+    ::before,
+    ::after {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+#mainpage {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "main";
+
+    gap: 0px;
+
+    text-align: center;
+
+    margin: 0px auto;
+    padding: auto;
+
+    background-color: #DFF6FF;  
+}
+
+/************** Header *********************/
+#header {
+    grid-area: header;
+    grid-column: 1/3;
+
+    display: grid;
+    grid-template-columns: 69% 1% 30%;
+    grid-template-areas: "logoAndSiteName nav";
+
+    color: #DFF6FF;
+
+    background-color: #06283D;
+}
+.logoAndSiteName {
+    grid-area: logoAndSiteName;
+
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-areas: "logo siteName";
+
+    color: #DFF6FF;
+    text-decoration: none;
+}
+.logo {
+    grid-area: logo;
+
+    width: 70px;
+    height: 70px;
+
+    font-size: 2.3em;
+    color: #06283D;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #DFF6FF;
+    border-radius: 50%;
+}
+.siteName {
+    grid-area: siteName;
+
+    font-size: 2.3em;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+/************** Nav *********************/
+nav {
+    grid-area: nav;
+    grid-column: 3/4;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "icon_connexion icon_register";   
+
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+#nav-left {
+    color: #DFF6FF;
+}
+#nav-right a {        
+    color: #DFF6FF;
+
+    display: inline-block;
+}
+.icon_connexion, .icon_register {
+    grid-area: icon_connexion icon_register;
+
+    width: 40px;
+    height: 40px;
+    margin: 10px;   
+}
+.icon_user, .icon_deconnexion {
+    grid-area: icon_user icon_deconnexion;
+    width: 40px;
+    height: 40px;
+    margin: 10px;   
+}
+.linksAdmin {
+    color: #242525;
+}
+
+/************** Main *********************/
+main {
+    grid-area: main;
+}
+.pseudoUser {
+    font-size: 1.3em;
+    margin: 15px 0px 0px 0px;
+}
+.linksAdmin {
+    color: #171818;
+}
+.listUsers, .addEvent {
+    margin: 10px;
+}
+.featuredEvent {
+    grid-area: featuredEvent;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "titleEvent"
+        "linkEvent"
+        "descAndInfos";
     
-    #mainpage {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "header"
-            "main";
+    margin: 0px auto;
+    padding: 5px;
+}
+.titleEvent {
+    grid-area: titleEvent;
+    text-align: left;
 
-        gap: 0px;
+    margin: 10px 0px;
+    padding: 10px;
+    background-color: #ffffff;
+}
+.linkEvent img {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+}
 
-        text-align: center;
+#imgEventFeatured {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+}
+.descAndInfos {
+    grid-area: descAndInfos;
 
-        margin: 0px auto;
-        padding: auto;
+    display: grid;
 
-        background-color: #DFF6FF;  
-    }
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "infoForAll"
+        "descSmall";
 
-    /************** Header *********************/
-    #header {
-        grid-area: header;
-        grid-column: 1/3;
+    background-color: #ffffff;
+}
 
-        display: grid;
-        grid-template-columns: 69% 1% 30%;
-        grid-template-areas: "logoAndSiteName nav";
+.nextEvents {
+    grid-area: nextEvents;
 
-        color: #DFF6FF;
+    display: grid;
 
-        background-color: #06283D;
-    }
-    .logoAndSiteName {
-        grid-area: logoAndSiteName;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+        "titleNextEvent titleNextEvent"
+        "nextEvent nextEvent"
+        "nextEvent nextEvent"
+        "nextEvent nextEvent";
+    
+    gap: 10px;
 
-        display: grid;
-        grid-template-columns: 25% 75%;
-        grid-template-areas: "logo siteName";
+    margin: 20px 0px 0px 0px;
+    padding: 5px;
+}
 
-        color: #DFF6FF;
-        text-decoration: none;
-    }
-    .logo {
-        grid-area: logo;
+.titleNextEvent {
+    grid-area: titleNextEvent;
+}
+.nextEvent {
+    background-color: #ffffff; 
+    max-height: 400px;
+}
+.linkEvent {
+    object-fit: cover; 
+}
+.imgEvent {
+    object-fit: cover;
+    max-height: 300px; 
+}
+.passedEvents {
+    grid-area: passedEvents;
 
-        width: 70px;
-        height: 70px;
+    display: grid;
 
-        font-size: 2.3em;
-        color: #06283D;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        background-color: #DFF6FF;
-        border-radius: 50%;
-    }
-    .siteName {
-        grid-area: siteName;
-
-        font-size: 2.3em;
-
-        display: flex;
-        justify-content: left;
-        align-items: center;
-    }
-
-    /************** Nav *********************/
-    nav {
-        grid-area: nav;
-        grid-column: 3/4;
-
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: "icon_connexion icon_register";   
-
-        display: flex;
-        justify-content: right;
-        align-items: center;
-    }
-    #nav-left {
-        color: #DFF6FF;
-    }
-    #nav-right a {        
-        color: #DFF6FF;
-
-        display: inline-block;
-    }
-    .icon_connexion, .icon_register {
-        grid-area: icon_connexion icon_register;
-
-        width: 40px;
-        height: 40px;
-        margin: 10px;   
-    }
-    .icon_user, .icon_deconnexion {
-        grid-area: icon_user icon_deconnexion;
-        width: 40px;
-        height: 40px;
-        margin: 10px;   
-    }
-
-    /************** Main *********************/
-    main {
-        grid-area: main;
-    }
-    .pseudoUser {
-        font-size: 1.3em;
-        margin: 15px 0px 0px 0px;
-    }
-    .linksAdmin {
-        color: #171818;
-    }
-    .listUsers, .addEvent {
-        margin: 10px;
-    }
-    .featuredEvent {
-        grid-area: featuredEvent;
-
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-            "titleEvent"
-            "linkEvent"
-            "descAndInfos";
-        
-        margin: 0px auto;
-        padding: 5px;
-    }
-    .titleEvent {
-        grid-area: titleEvent;
-        text-align: left;
-
-        margin: 10px 0px;
-        padding: 10px;
-        background-color: #ffffff;
-    }
-    .linkEvent img {
-        object-fit: cover;
-        width: 100%;
-        max-height: 100%;
-    }
-
-    #imgEventFeatured {
-        object-fit: cover;
-        width: 100%;
-        max-height: 100%;
-    }
-    .descAndInfos {
-        grid-area: descAndInfos;
-
-        display: grid;
-
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-            "infoForAll"
-            "descSmall";
-
-        background-color: #ffffff;
-    }
-
-    .nextEvents {
-        grid-area: nextEvents;
-
-        display: grid;
-
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: 
-            "titleNextEvent titleNextEvent"
-            "nextEvent nextEvent"
-            "nextEvent nextEvent"
-            "nextEvent nextEvent";
-        
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+        "titlePassedEvent titlePassedEvent"
+        "passedEvent passedEvent"
+        "passedEvent passedEvent";
+    
         gap: 10px;
 
         margin: 20px 0px 0px 0px;
         padding: 5px;
-    }
-    
-    .titleNextEvent {
-        grid-area: titleNextEvent;
-    }
-    .nextEvent {
-        background-color: #ffffff; 
-        max-height: 400px;
-    }
-    .linkEvent {
-        object-fit: cover; 
-    }
-    .imgEvent {
-        object-fit: cover;
-        max-height: 300px; 
-    }
-    .passedEvents {
-        grid-area: passedEvents;
+}
+.titlePassedEvent {
+    grid-area: titlePassedEvent;
+}
+.passedEvent { 
+    background-color: #ffffff;
+}
 
-        display: grid;
+/************** Social icons ****************/
+#social-icons-area {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:
+        "img-social-icon img-social-icon img-social-icon img-social-icon img-social-icon";
 
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: 
-            "titlePassedEvent titlePassedEvent"
-            "passedEvent passedEvent"
-            "passedEvent passedEvent";
-        
-            gap: 10px;
+    width: 300px;
+    margin: 0px auto;
+}
+#img-social-icon {
+    width: 40px;
+}
+/************** Footer *********************/
+footer {
+    grid-area: footer;
 
-            margin: 20px 0px 0px 0px;
-            padding: 5px;
-    }
-    .titlePassedEvent {
-        grid-area: titlePassedEvent;
-    }
-    .passedEvent { 
-        background-color: #ffffff;
-    }
-
-    /************** Social icons ****************/
-    #social-icons-area {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-areas:
-            "img-social-icon img-social-icon img-social-icon img-social-icon";
-
-        width: 300px;
-        margin: 0px auto;
-    }
-    #img-social-icon {
-        width: 40px;
-    }
-    /************** Footer *********************/
-    footer {
-        grid-area: footer;
-
-        background-color: #06283D;
-        border: 1px solid black;
-    }
-    .info-footer, .info-footer a {
-        text-align: center;
-        color: #DFF6FF;
-        padding: 15px;
-    }
+    background-color: #06283D;
+    border: 1px solid black;
+}
+.info-footer, .info-footer a {
+    text-align: center;
+    color: #DFF6FF;
+    padding: 15px;
 }
