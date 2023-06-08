@@ -19,10 +19,10 @@
     <link rel="shortcut icon" href="public/img/icon/mibs_logo.svg" type="image/x-icon">
     <title>Les événements</title>
     
-    <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-responsive.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-listUsers-responsive.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-listUsers.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-table.css">
+    <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-responsive.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style.css">
 
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-winModaRegister.css">
@@ -120,6 +120,7 @@
                     <a href="#"><img id="img-social-icon" src="public/img/icon/social-icons/instagram.svg" alt="instagram" title="instagram"></a>
                     <a href="#"><img id="img-social-icon" src="public/img/icon/social-icons/twitter.svg" alt="twitter" title="twitter"></a>
                     <a href="#"><img id="img-social-icon" src="public/img/icon/social-icons/rss.svg" alt="rss" title="rss"></a>
+                    <a href="#"><img id="img-social-icon" src="public/img/icon/social-icons/mail.svg" alt="mail" title="mail"></a>
                 </div>
             </main>
         </div><!-- /.mainpage -->
