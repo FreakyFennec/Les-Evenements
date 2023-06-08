@@ -221,38 +221,29 @@
             ];
         }
         
-        public function updateMaxUsers($id) {
+        public function participate($id) {
+            echo '<pre>';
+            var_dump($id);
+            // die();
+            echo '</pre>';
 
             // Retrive the event for the given id
             $eventManager = new EventManager();
-            $event = $eventManager->findOneById($id);
-
-            // Retrive session user
             $user = Session::getUser();
 
-            if (isset($_POST['submit'])) {
+            // Verify there are datas
+            if (isset($_GET['id'])) {
 
-                // Name of the columns placed in the super global $_POST that is stored in the variable.
-                $maxUsers = filter_input(INPUT_POST, "maxUsers", FILTER_SANITIZE_NUMBER_INT);
-
-                // Verify there are filtered datas
-                if ($maxUsers) {
-
-                    // This associative array contain the columns name and de values.
-                    $data = [
-                        'maxUsers' => $maxUsers
-                    ];
-                    $eventManager->update($id, $data);
-
-                    $this->redirectTo('event', 'index');
-                }
-
-                return [
-                    "view" => VIEW_DIR."security/updateMaxUsers.php",
-                    "data" => [
-                        "event" => $eventManager->findOneById($id),
-                    ]
+                // This associative array contain the columns name and de values.
+                $data = [
+                    'user_id' => $user->getId(),
+                    'event_id' => $id,
                 ];
+                
+                // Here we tell to EventManager to execute method add with attribut $data.
+                $eventManager->insertParticipation($data);
+                // And redirection to (view, method, id) with empty imput.
+                $this->redirectTo('event', 'detailEvent', $id);
             }
         }
 
