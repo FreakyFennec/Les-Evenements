@@ -114,7 +114,7 @@
                     VALUES (:user_id, :event_id)";
             
             DAO::insert($sql, [
-                'user_id' => $data['id'],
+                'user_id' => $data['user_id'],
                 'event_id' => $data['event_id']
             ]);
         }
