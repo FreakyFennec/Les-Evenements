@@ -12,84 +12,81 @@ $user = App\Session::getUser();
     <h2 class="titleEvent titleDetailEvent"><?= $detailEvent->getTitleEvent(); ?></h2>
 
     <img src="public/img/<?= $detailEvent->getImgEvent(); ?>" alt="<?= $detailEvent->getAlt(); ?>" class="imgDetailEvent" id="imgDetailEvent">
-
     
         <!-- If connected as admin or moderator -->       
         <?php
         if ($user && ($user->getStatus() == 'admin' || $user->getStatus() == 'moderator')) {
         ?>
-        <div class="descAndInfos">
-            <div class="infoForAll">
-                <div class="dateStartEnd">
-                    <p class="dateEvent">Du : <?= $detailEvent->getDateStart(); ?><br /> au : <?= $detailEvent->getDateEnd(); ?></p>
-                </div>
-                
-                <p class="address">Au <?= $detailEvent->getAddress(); ?></p>
-                <p class="city"><?= $detailEvent->getCity(); ?></p>
-                <p class="zipcode"><?= $detailEvent->getZipcode(); ?></p>
-                <p class="descSmall"><?= $detailEvent->getDescription(); ?></p>
-                <p class="maxUsers">Participants max. : <?= $detailEvent->getMaxUsers(); ?> pers.</p>
+            <div class="descAndInfos">
+                <div class="infoForAll">
+                    <div class="dateStartEnd">
+                        <p class="dateEvent">Du : <?= $detailEvent->getDateStart(); ?><br /> au : <?= $detailEvent->getDateEnd(); ?></p>
+                    </div>
+                    
+                    <p class="address">Au <?= $detailEvent->getAddress(); ?></p>
+                    <p class="city"><?= $detailEvent->getCity(); ?></p>
+                    <p class="zipcode"><?= $detailEvent->getZipcode(); ?></p>
+                    <p class="descSmall"><?= $detailEvent->getDescription(); ?></p>
+                    <p class="maxUsers">Participants max. : <?= $detailEvent->getMaxUsers(); ?> pers.</p>
 
-                <?php
-                // Condition if maxUsers > 0
-                if ($detailEvent->getMaxUsers() > 0) {
-                ?>
-                    <a href="index.php?ctrl=event&action=participate&id=<?= $detailEvent->getId(); ?>" id="LinkParticipate"><button id="btnParticipate">Je participe</button></a>
-                <?php
-                } else {
-                    echo "Complet";
-                }
-                ?>
-                
-                <a href="index.php?ctrl=event&action=participate&id=<?= $detailEvent->getId(); ?>" id="LinkParticipate"><button id="btnParticipate">Je participe</button></a>
-                
-                <button class="modifEvent" onclick="window.location.href = 'index.php?ctrl=event&action=updateEvent&id=<?= $detailEvent->getId() ?>';">Modifier</button>
-            </div>
+                    <?php
+                    // Condition if maxUsers > 0
+                    if ($detailEvent->getMaxUsers() > 0) {
+                    ?>
+                        <a href="index.php?ctrl=event&action=participate&id=<?= $detailEvent->getId(); ?>" id="LinkParticipate"><button id="btnParticipate">Je participe</button></a>
+                    <?php
+                    } else {
+                        echo "Complet";
+                    }
+                    ?>
+                    
+                    <button class="modifEvent" onclick="window.location.href = 'index.php?ctrl=event&action=updateEvent&id=<?= $detailEvent->getId() ?>';">Modifier</button>
+                </div>
         <?php
         } else if ($user && ($user->getStatus() == 'user')) {
         ?>
 
-        <div class="descAndInfos">
-            <div class="infoForAll">
-                <div class="dateStartEnd">
-                    <p class="dateEvent">Du : <?= $detailEvent->getDateStart(); ?><br /> au : <?= $detailEvent->getDateEnd(); ?></p>
+            <div class="descAndInfos">
+                <div class="infoForAll">
+                    <div class="dateStartEnd">
+                        <p class="dateEvent">Du : <?= $detailEvent->getDateStart(); ?><br /> au : <?= $detailEvent->getDateEnd(); ?></p>
+                    </div>
+                    
+                    <p class="address">Au <?= $detailEvent->getAddress(); ?></p>
+                    <p class="city"><?= $detailEvent->getCity(); ?></p>
+                    <p class="zipcode"><?= $detailEvent->getZipcode(); ?></p>
+                    <p class="descSmall"><?= $detailEvent->getDescription(); ?></p>
+                    <p class="maxUsers">Participants max. : <?= $detailEvent->getMaxUsers(); ?> pers.</p>
+
+                    <?php
+                    // Condition if maxUsers > 0
+                    if ($detailEvent->getMaxUsers() > 0) {
+                    ?>
+                        <a href="index.php?ctrl=event&action=participate&id=<?= $detailEvent->getId(); ?>" id="LinkParticipate"><button id="btnParticipate">Je participe</button></a>
+                    <?php
+                    } else {
+                        echo "Complet";
+                    }
+                    ?>
+
                 </div>
-                
-                <p class="address">Au <?= $detailEvent->getAddress(); ?></p>
-                <p class="city"><?= $detailEvent->getCity(); ?></p>
-                <p class="zipcode"><?= $detailEvent->getZipcode(); ?></p>
-                <p class="descSmall"><?= $detailEvent->getDescription(); ?></p>
-                <p class="maxUsers">Participants max. : <?= $detailEvent->getMaxUsers(); ?> pers.</p>
-
-                <?php
-                // Condition if maxUsers > 0
-                if ($detailEvent->getMaxUsers() > 0) {
-                ?>
-                    <a href="index.php?ctrl=event&action=participate&id=<?= $detailEvent->getId(); ?>" id="LinkParticipate"><button id="btnParticipate">Je participe</button></a>
-                <?php
-                } else {
-                    echo "Complet";
-                }
-                ?>
-
-            </div>
             
         <!-- If not connected -->       
         <?php
         } else {
         ?>
-        <div class="descAndInfos">
-            <div class="infoForAll">
-                <div class="dateStartEnd">
-                    <p class="dateEvent">Du : <?= $detailEvent->getDateStart(); ?><br /> au : <?= $detailEvent->getDateEnd(); ?></p>
+            <div class="descAndInfos">
+                <div class="infoForAll">
+                    <div class="dateStartEnd">
+                        <p class="dateEvent">Du : <?= $detailEvent->getDateStart(); ?><br /> au : <?= $detailEvent->getDateEnd(); ?></p>
+                    </div>
+                    
+                    <p class="address">Au <?= $detailEvent->getAddress(); ?></p>
+                    <p class="city"><?= $detailEvent->getCity(); ?></p>
+                    <p class="zipcode"><?= $detailEvent->getZipcode(); ?></p>
+                    <p class="maxUsers">Participants max. : <?= $detailEvent->getMaxUsers(); ?> pers.</p>
+                    <p class="descSmall"><?= $detailEvent->getDescription(); ?></p>
                 </div>
-                
-                <p class="address">Au <?= $detailEvent->getAddress(); ?></p>
-                <p class="city"><?= $detailEvent->getCity(); ?></p>
-                <p class="zipcode"><?= $detailEvent->getZipcode(); ?></p>
-                <p class="maxUsers">Participants max. : <?= $detailEvent->getMaxUsers(); ?> pers.</p>
-                <p class="descSmall"><?= $detailEvent->getDescription(); ?></p>
-            </div>
         <?php 
         }
         ?>      
