@@ -222,10 +222,6 @@
         }
         
         public function participate($id) {
-            echo '<pre>';
-            var_dump($id);
-            // die();
-            echo '</pre>';
 
             // Retrive the event for the given id
             $eventManager = new EventManager();
