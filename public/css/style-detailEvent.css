@@ -1,0 +1,84 @@
+
+/************ Detail event ************/
+.detailEvent {
+    grid-area: detailEvent;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "titleDetailEvent"
+        "descAndInfos"
+        "map";
+    
+    margin: 0px 5px 10px 5px;
+    padding: 0px 0px 0px 0px;
+    
+    background-color: #DFF6FF;
+}
+.titleDetailEvent {
+    grid-area: titleDetailEvent;
+    margin-bottom: 5px;
+}
+
+.descAndInfos {
+    grid-area: descAndInfos;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "imgDetailEvent"
+        "infoForAll";
+}
+#imgDetailEvent {
+    grid-area: imgDetailEvent;
+    object-fit: cover;
+    width: 80%;
+    max-width: 400px;
+    max-height: 100%;
+    margin: 10px auto;
+}
+.infoForAll {
+    grid-area: infoForAll;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+        "dateStartEnd dateStartEnd"
+        "city zipcode"
+        "descSmall descSmall"
+        "maxUsers maxUsers"
+        "btnParticipate btnParticipate"
+        "modifEvent modifEvent";
+}
+.dateStartEnd, .city, .zipcode, .descSmall, .maxUsers {
+    grid-area: city zipcode dateStartEnd descSmall maxUsers;
+    text-align: left;
+}
+.modifEvent {
+    grid-area: modifEvent;
+    text-align: left;
+}
+#btnParticipate {
+    grid-area: btnParticipate;
+    width: 100px;
+    height: 45px;
+    margin: 10px;
+}
+#map {
+    grid-area: map;
+    margin: 10px 0px;
+}
+
+.imgPopup {
+    height: 150px;
+}
+.title-page {
+    text-align: center;
+}
+.messageNoCom, .messageNoEvent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

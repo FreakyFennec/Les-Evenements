@@ -20,10 +20,12 @@
     <title>Les événements</title>
     
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-responsive.css">
+    <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-detailEvent-responsive.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-listUsers-responsive.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-listUsers.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-table.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style.css">
+    <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-detailEvent.css">
 
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-winModaRegister.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-winModaLogin.css">
