@@ -110,13 +110,23 @@
         }
 
         public function insertParticipation($data) {
-            $sql = "INSERT INTO participate (user_id, event_id)
-                    VALUES (:user_id, :event_id)";
+            $sql = "
+                INSERT INTO participate (user_id, event_id)
+                VALUES (:user_id, :event_id)";
             
             DAO::insert($sql, [
                 'user_id' => $data['user_id'],
                 'event_id' => $data['event_id']
             ]);
+        }
+
+        public function countParticipants($data) {
+            $sql = "
+                SELECT COUNT(*) AS nbrParticipants
+                FROM participate
+                WHERE event_id = :event_id";
+
+            
         }
 
         public function findEventByIdUser($id) {
