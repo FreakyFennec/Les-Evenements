@@ -215,6 +215,7 @@
         background-color: #ffffff;
     }
 
+/************ Detail event ************/
     .detailEvent {
         grid-area: detailEvent;
     
@@ -223,7 +224,6 @@
         grid-template-columns: 1fr;
         grid-template-areas: 
             "titleDetailEvent"
-            "imgDetailEvent"
             "descAndInfos"
             "map";
         
@@ -236,10 +236,24 @@
         grid-area: titleDetailEvent;
         margin-bottom: 5px;
     }
+
+    .descAndInfos {
+        grid-area: descAndInfos;
+
+        display: grid;
+    
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "imgDetailEvent"
+            "infoForAll";
+    }
     #imgDetailEvent {
+        grid-area: imgDetailEvent;
         object-fit: cover;
-        width: 50%;
+        width: 80%;
+        max-width: 400px;
         max-height: 100%;
+        margin: 10px auto;
     }
     .infoForAll {
         grid-area: infoForAll;
