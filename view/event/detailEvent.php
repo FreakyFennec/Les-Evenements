@@ -27,6 +27,7 @@ $user = App\Session::getUser();
                     <p class="city"><?= $detailEvent->getCity(); ?></p>
                     <p class="zipcode"><?= $detailEvent->getZipcode(); ?></p>
                     <p class="descSmall"><?= $detailEvent->getDescription(); ?></p>
+                    
                     <p class="maxUsers">Participants max. : <?= $detailEvent->getMaxUsers(); ?> pers.</p>
 
                     <?php

@@ -109,4 +109,20 @@
                 echo $e->getMessage();
             }
         }
+
+        public function count($sql, $params)
+        {
+            try {
+                $stmt = self::$bdd->prepare($sql);
+                $stmt->execute($params);
+
+                $results = ($multiple) ? $stmt->fetchAll() : $stmt->fetch();
+
+                $stmt->closeCursor();
+                return ($result == false) ? null : $results;
+            }
+            catch(\Execption $e) {
+                echo $e->getMessage();
+            }
+        }
     }

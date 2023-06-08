@@ -123,10 +123,12 @@
         public function countParticipants($data) {
             $sql = "
                 SELECT COUNT(*) AS nbrParticipants
-                FROM participate
-                WHERE event_id = :event_id";
+                FROM ". $this->tableName ." p
+                WHERE p.event_id = :event_id";
 
-            
+            return $this->getOneOrNullResult(
+
+            );
         }
 
         public function findEventByIdUser($id) {
