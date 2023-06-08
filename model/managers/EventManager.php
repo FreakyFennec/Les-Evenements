@@ -109,17 +109,13 @@
             ]);
         }
 
-        public function updateMaxUsers($id, $data)
-        {           
-            $sql = "UPDATE maxUsers
-                    SET 
-                        maxUsers = :maxUsers
-                    WHERE id_event = :id_event";
-
-                    
-            DAO::update($sql, [
-                'id_event' => $id,
-                'maxUsers' => $data['maxUsers']
+        public function insertParticipation($data) {
+            $sql = "INSERT INTO participate (user_id, event_id)
+                    VALUES (:user_id, :event_id)";
+            
+            DAO::insert($sql, [
+                'user_id' => $data['id'],
+                'event_id' => $data['event_id']
             ]);
         }
 
