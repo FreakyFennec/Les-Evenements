@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 body {
-    max-width: 1280px;
+    max-width: 1200px;
 
     font-family: 'Neucha', cursive;
     font-size: 1.2em; 
@@ -230,14 +230,15 @@ main {
 .passedEvent { 
     background-color: #ffffff;
 }
+
 .detailEvent {
     grid-area: detailEvent;
 
     display: grid;
+
     grid-template-columns: 50% 50%;
     grid-template-areas: 
         "titleDetailEvent titleDetailEvent"
-        "imgDetailEvent map"
         "descAndInfos map";
     
     /*width: auto;*/
@@ -250,13 +251,24 @@ main {
     grid-area: titleDetailEvent;
     margin: 0px 0px 10px 0px;
 }
+
+.descAndInfos {
+    grid-area: descAndInfos;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "imgDetailEvent"
+        "infoForAll";
+}
+
 #imgDetailEvent {
+    grid-area: imgDetailEvent;
+
     object-fit: cover;
     width: 50%;
     max-height: 100%;
-}
-.descSmall {
-    grid-area: descSmall;
 }
 .infoForAll {
     grid-area: infoForAll;
@@ -271,15 +283,16 @@ main {
         "btnParticipate btnParticipate"
         "modifEvent modifEvent";
 }
-.dateStartEnd, .city, .zipcode, .descSmall, .maxUsers, #btnParticipate {
-    grid-area: dateEvent city zipcode descSmall maxUsers btnParticipate;
+.dateStartEnd, .city, .zipcode, .descSmall, .maxUsers {
+    grid-area: dateEvent city zipcode descSmall maxUsers;
     text-align: left;
 }
 .modifEvent {
     grid-area: modifEvent;
-    text-align: left;
+    text-align: center;
 }
 #btnParticipate {
+    grid-area: btnParticipate;
     width: 100px;
     height: 45px;
     
