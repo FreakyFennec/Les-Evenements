@@ -39,11 +39,11 @@
             );
         }
 
-        public static function insert($sql, $params)
+        public static function insert($sql, ) // $params
         {
             try{
                 $stmt = self::$bdd->prepare($sql);
-                $stmt->execute($params);
+                $stmt->execute();                   // $params
                 //on renvoie l'id de l'enregistrement qui vient d'être ajouté en base, 
                 //pour s'en servir aussitôt dans le controleur
                 return self::$bdd->lastInsertId();
@@ -109,8 +109,7 @@
                 echo $e->getMessage();
             }
         }
-
-        public function count($sql, $params)
+        public function count($sql, $params) 
         {
             try {
                 $stmt = self::$bdd->prepare($sql);
@@ -125,4 +124,5 @@
                 echo $e->getMessage();
             }
         }
+
     }
