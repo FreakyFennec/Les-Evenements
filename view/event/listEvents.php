@@ -10,7 +10,10 @@ $featuredEvent = $result["data"]['featuredEvent'];
 
 <div class="featuredEvent">
     <h2 class="titleEvent"><?= htmlspecialchars($featuredEvent->getTitleEvent());?></h2>
-    <a class="linkEvent" href="index.php?ctrl=event&action=detailEvent&id=<?= htmlspecialchars($featuredEvent->getId()); ?>"><img id="imgEventFeatured" src="public/img/<?= htmlspecialchars($featuredEvent->getImgEvent());?>" alt="<?= htmlspecialchars($featuredEvent->getAlt());?>"></a>
+    <a class="linkEvent" href="index.php?ctrl=event&action=detailEvent&id=<?= htmlspecialchars($featuredEvent->getId()); ?>">
+        <img id="imgEventFeatured" src="public/img/<?= htmlspecialchars($featuredEvent->getImgEvent());?>" alt="<?= htmlspecialchars($featuredEvent->getAlt());?>">
+    </a>
+    
     <div class="descAndInfos">
         <div class="descSmall"><?= htmlspecialchars($featuredEvent->getDescription());?></div>
         <div class="infoForAll">
@@ -32,7 +35,9 @@ $findNextEvents = $result["data"]['findNextEvent'];
     ?>
         <div class="nextEvent">
             <h3 class="titleNextEvent"><?= htmlspecialchars($findNextEvent->getTitleEvent());?></h3>
-            <a class="linkEvent" href="index.php?ctrl=event&action=detailEvent&id=<?= htmlspecialchars($findNextEvent->getId()); ?>"><img class="imgEvent" src="public/img/<?= htmlspecialchars($findNextEvent->getImgEvent());?>" alt="<?= htmlspecialchars($findNextEvent->getAlt());?>"></a>
+            <a class="linkEvent" href="index.php?ctrl=event&action=detailEvent&id=<?= htmlspecialchars($findNextEvent->getId()); ?>">
+                <img class="imgEvent" src="public/img/<?= htmlspecialchars($findNextEvent->getImgEvent());?>" alt="<?= htmlspecialchars($findNextEvent->getAlt());?>">
+            </a>
         </div>
         
     <?php } ?>
@@ -50,7 +55,9 @@ $findPassedEvents = $result["data"]['findPassedEvent'];
     ?>
         <div class="passedEvent">
             <h3 class="titlePassedEvent"><?= htmlspecialchars($findPassedEvent->getTitleEvent());?></h3>
-            <a class="linkEvent" href="index.php?ctrl=event&action=detailEvent&id=<?= htmlspecialchars($findPassedEvent->getId()); ?>"><img class="imgEvent" src="public/img/<?= htmlspecialchars($findPassedEvent->getImgEvent()); ?>" alt="<?= htmlspecialchars($findPassedEvent->getAlt()); ?>"></a>
+            <a class="linkEvent" href="index.php?ctrl=event&action=detailEvent&id=<?= htmlspecialchars($findPassedEvent->getId()); ?>">
+                <img class="imgEvent" src="public/img/<?= htmlspecialchars($findPassedEvent->getImgEvent()); ?>" alt="<?= htmlspecialchars($findPassedEvent->getAlt()); ?>">
+            </a>
         </div>
     <?php } ?>
 </div>
