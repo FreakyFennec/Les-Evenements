@@ -11,11 +11,10 @@ $user = App\Session::getUser();
 <div class="detailEvent">
     <h2 class="titleEvent titleDetailEvent"><?= $detailEvent->getTitleEvent(); ?></h2>
 
-    
     <img src="public/img/<?= $detailEvent->getImgEvent(); ?>" alt="<?= $detailEvent->getAlt(); ?>" class="imgDetailEvent" id="imgDetailEvent">
+    
     <div class="descAndInfos">
         
-
         <div class="infoForAll">
             <div class="dateStartEnd">
                 <p class="dateEvent">Du : <?= $detailEvent->getDateStart(); ?><br /> au : <?= $detailEvent->getDateEnd(); ?></p>
@@ -59,18 +58,7 @@ $user = App\Session::getUser();
         <?php
         } else {
         ?>
-            <div class="descAndInfos">
-                <div class="infoForAll">
-                    <div class="dateStartEnd">
-                        <p class="dateEvent">Du : <?= $detailEvent->getDateStart(); ?><br /> au : <?= $detailEvent->getDateEnd(); ?></p>
-                    </div>
-                    
-                    <p class="address">Au <?= $detailEvent->getAddress(); ?></p>
-                    <p class="city"><?= $detailEvent->getCity(); ?></p>
-                    <p class="zipcode"><?= $detailEvent->getZipcode(); ?></p>
-                    <p class="maxUsers">Participants max. : <?= $detailEvent->getMaxUsers(); ?> pers.</p>
-                    <p class="descSmall"><?= $detailEvent->getDescription(); ?></p>
-                </div>
+            </div>
         <?php 
         }
         ?>      
