@@ -27,47 +27,48 @@ $user = App\Session::getUser();
             
             <p class="maxUsers">Participants max. : <?= $detailEvent->getMaxUsers(); ?> pers.</p>
 
-        <!-- If connected as admin or moderator or user -->       
-        <?php
-        if ($user && ($user->getStatus() == 'admin' || $user->getStatus() == 'moderator' || $user->getStatus() == "user")) {
-        ?>           
-
+            <!-- If connected as admin or moderator or user -->       
             <?php
-            // Condition if maxUsers > 0
-            if ($detailEvent->getMaxUsers() > 0) {
-            ?>
-                <a href="index.php?ctrl=event&action=participate&id=<?= $detailEvent->getId(); ?>" id="LinkParticipate"><button id="btnParticipate">Je participe</button></a>
+            if ($user && ($user->getStatus() == 'admin' || $user->getStatus() == 'moderator' || $user->getStatus() == "user")) {
+            ?>           
+
+                <?php
+                // Condition if maxUsers > 0
+                if ($detailEvent->getMaxUsers() > 0) {
+                ?>
+                    <a href="index.php?ctrl=event&action=participate&id=<?= $detailEvent->getId(); ?>" id="LinkParticipate"><button id="btnParticipate">Je participe</button></a>
+                <?php
+                } else {
+                    echo "Complet";
+                }
+                ?>
+
+                <?php
+                if ($user && ($user->getStatus() == 'admin' || $user->getStatus() == 'moderator')) {
+                ?>
+
+                    <button class="modifEvent" onclick="window.location.href = 'index.php?ctrl=event&action=updateEvent&id=<?= $detailEvent->getId() ?>';">Modifier</button>
+
+                <?php
+                }
+                ?>
+            </div><!-- /. end infoForAll connected -->          
+                
+            <!-- If not connected -->       
             <?php
             } else {
-                echo "Complet";
+            ?>
+        </div><!-- /. end infoForAll unconnected -->
+            <?php 
             }
-            ?>
-
-            <?php
-            if ($user && ($user->getStatus() == 'admin' || $user->getStatus() == 'moderator')) {
-            ?>
-
-                <button class="modifEvent" onclick="window.location.href = 'index.php?ctrl=event&action=updateEvent&id=<?= $detailEvent->getId() ?>';">Modifier</button>
-
-            <?php
-            }
-            ?>
-        </div>          
-            
-        <!-- If not connected -->       
-        <?php
-        } else {
-        ?>
-            </div>
-        <?php 
-        }
-        ?>      
-    </div>
+            ?>      
+    </div><!-- /. end descAndInfos -->
         
     <div id="map">
         <!-- Map's place -->
     </div>
-</div>
+    
+</div><!-- /. end detailEvent -->
 
 <div class="comArea">
     <h2 class="titleComArea">Commentaires</h2>
