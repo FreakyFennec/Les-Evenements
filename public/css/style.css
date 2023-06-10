@@ -172,6 +172,7 @@
             "nextEvent nextEvent"
             "nextEvent nextEvent";
         
+
         gap: 10px;
 
         margin: 20px 0px 0px 0px;
@@ -255,6 +256,8 @@
             "maxUsers maxUsers"
             "btnParticipate btnParticipate"
             "modifEvent modifEvent";
+
+        padding: 10px 10px 0px 10px;
     }
     .dateStartEnd, .city, .zipcode, .descSmall, .maxUsers {
         grid-area: city zipcode dateStartEnd descSmall maxUsers;
@@ -262,7 +265,9 @@
     }
     .modifEvent {
         grid-area: modifEvent;
-        text-align: left;
+        width: 100px;
+        height: 45px;
+        margin: 0px 0px 10px 0px;
     }
     #btnParticipate {
         grid-area: btnParticipate;
