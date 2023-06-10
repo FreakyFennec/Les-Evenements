@@ -197,17 +197,19 @@ main {
 }
 .titleNextEvent {
     grid-area: titleNextEvent;
+    padding-left: 5px;
 }
 .nextEvent {
     background-color: #ffffff;
     max-height: 400px;
 }
 .linkEvent {
-    object-fit: cover; 
+    object-fit: cover;
 }
 .imgEvent {
     object-fit: cover;
-    max-height: 300px; 
+    max-height: 300px;
+    padding: 5px;
 }
 .passedEvents {
     grid-area: passedEvents;
@@ -226,6 +228,7 @@ main {
 }
 .titlePassedEvent {
     grid-area: titlePassedEvent;
+    padding-left: 5px;
 }
 .passedEvent { 
     background-color: #ffffff;

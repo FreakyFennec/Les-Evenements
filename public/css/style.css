@@ -180,6 +180,7 @@
     
     .titleNextEvent {
         grid-area: titleNextEvent;
+        padding-left: 5px;
     }
     .nextEvent {
         background-color: #ffffff; 
@@ -191,6 +192,7 @@
     .imgEvent {
         object-fit: cover;
         max-height: 300px; 
+        padding: 5px;
     }
     .passedEvents {
         grid-area: passedEvents;

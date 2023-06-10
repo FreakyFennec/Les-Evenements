@@ -31,7 +31,7 @@ $findNextEvents = $result["data"]['findNextEvent'];
     foreach($findNextEvents as $findNextEvent) {
     ?>
         <div class="nextEvent">
-            <h3><?= htmlspecialchars($findNextEvent->getTitleEvent());?></h3>
+            <h3 class="titleNextEvent"><?= htmlspecialchars($findNextEvent->getTitleEvent());?></h3>
             <a class="linkEvent" href="index.php?ctrl=event&action=detailEvent&id=<?= htmlspecialchars($findNextEvent->getId()); ?>"><img class="imgEvent" src="public/img/<?= htmlspecialchars($findNextEvent->getImgEvent());?>" alt="<?= htmlspecialchars($findNextEvent->getAlt());?>"></a>
         </div>
         
