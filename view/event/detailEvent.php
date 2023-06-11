@@ -13,9 +13,9 @@ $user = App\Session::getUser();
 
     <img src="public/img/<?= $detailEvent->getImgEvent(); ?>" alt="<?= $detailEvent->getAlt(); ?>" class="imgDetailEvent" id="imgDetailEvent">
     
-    <div class="descAndInfos">
+    <div class="descAndInfosDetEvent">
         
-        <div class="infoForAll">
+        <div class="infoForDetEvent">
             <div class="dateStartEnd">
                 <p class="dateEvent">Du : <?= $detailEvent->getDateStart(); ?><br /> au : <?= $detailEvent->getDateEnd(); ?></p>
             </div>
@@ -62,7 +62,7 @@ $user = App\Session::getUser();
             <?php 
             }
             ?>      
-    </div><!-- /. end descAndInfos -->
+    </div><!-- /. end infoForDetEvent -->
         
     <div id="map">
         <!-- Map's place -->

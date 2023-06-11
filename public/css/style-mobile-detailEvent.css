@@ -7,12 +7,12 @@
     grid-template-areas: 
         "titleDetailEvent"
         "imgDetailEvent"
-        "descAndInfos"
+        "descAndInfosDetEvent"
         "map";
     
     /*width: auto;*/
     margin-top: 10px;
-    padding: 0px;
+    padding: 5px;
     
     background-color: #ffffff;
 }
@@ -23,27 +23,29 @@
 #imgDetailEvent {
     grid-area: imgDetailEvent;
     object-fit: cover;
-    width: 80%;
+    width: 100%;
     max-height: 100%;
-    margin: 10px auto;
+    margin: 0px auto;
 }
-.descSmall {
-    grid-area: descSmall;
+.descAndInfosDetEvent {
+    grid-area: descAndInfosDetEvent;
+    padding: 5px;
 }
-.infoForAllDetEvent {
-    grid-area: infoForAllDetEvent;
+.infoForDetEvent {
+    grid-area: infoForDetEvent;
 
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-areas:
         "dateStartEnd dateStartEnd"
+        "address address"
         "city zipcode"
         "descSmall descSmall"
         "maxUsers btnParticipate"
         "modifEvent modifEvent";
 }
-.dateStartEnd, .city, .zipcode, .descSmall, .maxUsers, #btnParticipate {
-    grid-area: dateEvent city zipcode descSmall maxUsers btnParticipate;
+.dateStartEnd, .address, .city, .zipcode, .descSmall, .maxUsers, #btnParticipate {
+    grid-area: dateEvent address city zipcode descSmall maxUsers btnParticipate;
     text-align: left;
 }
 #btnParticipate {

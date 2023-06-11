@@ -21,6 +21,8 @@
     
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-mobile.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-desktop.css">
+    <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-mobile-detailEvent.css">
+    <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-desktop-detailEvent.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-listUsers-responsive.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-listUsers.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-table.css">
