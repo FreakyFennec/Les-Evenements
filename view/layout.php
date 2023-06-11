@@ -19,11 +19,11 @@
     <link rel="shortcut icon" href="public/img/icon/mibs_logo.svg" type="image/x-icon">
     <title>Les événements</title>
     
-    <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-responsive.css">
+    <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-mobile.css">
+    <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-desktop.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-listUsers-responsive.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-listUsers.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-table.css">
-    <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style.css">
 
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-winModaRegister.css">
     <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style-winModaLogin.css">
@@ -61,10 +61,6 @@
                             <a href="index.php?ctrl=security&action=deconnexion"><img class="icon_deconnexion" src="public/img/icon/ico_deconnection_01.svg" alt="Icon deconnection"></a>
 
                             <?php
-
-                            // if(App\Session::getUser()) {
-
-                            // }
                         }
                         else {
                             ?>
@@ -74,11 +70,7 @@
                             <a href="index.php?ctrl=security&action=addUser"><img class="icon_register" src="public/img/icon/ico_register_01.svg" alt="Icon register"></a>
                             
                             <?php
-                        
-                            // if(App\Session::getUser()) {
-
-                            // }
-                        }    
+                        }   
                     ?>
                     </div>
                 </nav>
@@ -102,7 +94,7 @@
                 ?>
                     
                 <?php
-                if(App\Session::isAdmin()) {     // If it's the admin session display theses links
+                if(App\Session::isAdmin() || App\Session::isModerator()) {     // If it's the admin session display theses links
                     ?>
                     <div class="buttonAdmin">
                         <button class="listUsers" onclick="window.location.href = 'index.php?ctrl=home&action=users'">Liste des membres</button>

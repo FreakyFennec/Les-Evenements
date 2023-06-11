@@ -5,15 +5,15 @@
 */
 
 /**************** Table ********************/
-.titleComArea {
-  text-align: center;
-  margin-top: 20px;
-}
+
 .tableProfileUser, .tableEvents, .tableComments, .tableListUsers, .tableCom {
-  width: 100%;
-  margin: 20px auto;
-  background-color: #ffffff;
-  border-collapse: collapse;
+  margin: 0px auto;
+}
+
+.tableProfileUser, .tableEvents, .tableComments, .tableListUsers, .tableCom {
+    width: 95%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
 }
 
 .tableProfileUser th,
