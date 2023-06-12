@@ -30,10 +30,12 @@ $(document).ready(function() {
         fetch(url,{method: 'get'})                  // Promise by making an HTTP request.
             .then(response => response .json())     // Callback: Response is chained to fetch promise.
                 .then(results => {                  // Callback: Results are chained to the response.
+
 // console.log(results); // Display results.
 
                 // $(city).find('option').remove();        // Deletes all old option fields.
 
+                // Filter the content of JSON file (associative array).
                 const filteredResults = results.filter(element => element.nom === city);
 
                 if (filteredResults.length) {             // if result is > 0.
@@ -42,6 +44,7 @@ $(document).ready(function() {
                         const coordinates = element.centre.coordinates;
                         const lon = coordinates[0];
                         const lat = coordinates[1];
+
 //console.log("lon : ", lon);
 //console.log("lat : ", lat);
 
