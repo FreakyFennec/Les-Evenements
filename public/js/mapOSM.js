@@ -9,7 +9,7 @@ $(document).ready(function() {
 
     if (zipcodeElement && cityElement && imgElement) {
 
-        const zipcode = zipcodeElement.textContent.trim();
+        const zipcode = zipcodeElement.textContent.trim(); // trim() = remove empty spaces
         const city = cityElement.textContent.trim();
         const img = imgSrc.trim();
         const alt = imgAlt.trim();
@@ -21,17 +21,18 @@ $(document).ready(function() {
         const format = '&format=json'; // Format with wich we retrive the datas.
 
         let url = apiUrl + zipcode + '&fields=code,nom,centre' + format; // Adresse of geoApi + zipcode + format. (concatenation).
+
 // console.log(url); // Displays data binded to the zipcode.
 
         // fetch() retrive datas by GET methode
-        // converted with Json in JS object
-        // then the results are processed.
-        fetch(url,{method: 'get'})
-            .then(response => response .json())
-                .then(results => {
+        // Converted with Json in JS object
+        // Then the results are processed.
+        fetch(url,{method: 'get'})                  // Promise by making an HTTP request.
+            .then(response => response .json())     // Callback: Response is chained to fetch promise.
+                .then(results => {                  // Callback: Results are chained to the response.
 // console.log(results); // Display results.
 
-                //$(city).find('option').remove();        // Deletes all old option fields.
+                // $(city).find('option').remove();        // Deletes all old option fields.
 
                 const filteredResults = results.filter(element => element.nom === city);
 
